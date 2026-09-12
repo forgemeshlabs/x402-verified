@@ -3,7 +3,7 @@
 // Regenerates README tables, dist/verified.json (the canonical machine feed) and badges/*.json.
 const fs = require("node:fs");
 const path = require("node:path");
-const { ROOT, DIRS, loadSellers, loadPartners, loadState, writeJsonAtomic, feedErrors } = require("./lib/sellers");
+const { ROOT, DIRS, loadSellers, loadPartners, loadState, readJson, writeJsonAtomic, feedErrors } = require("./lib/sellers");
 const { compute } = require("./lib/score");
 const { SPEC } = require("./lib/rubrics/x402");
 
@@ -74,10 +74,19 @@ function partnerTable(partners) {
 (function main() {
   const sellers = loadSellers().map(sellerRecord).sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
   const partners = loadPartners().sort((a, b) => a.name.localeCompare(b.name));
+  const feedPath = path.join(DIRS.dist, "verified.json");
   const feed = { version: 2, program: "x402", generated_at: new Date().toISOString(), score_spec: SPEC, disclaimer: DISCLAIMER, marks: MARKS, sellers, partners };
+  // Keep generated_at stable when nothing else changed, so bots do not commit timestamp-only churn.
+  if (fs.existsSync(feedPath)) {
+    try {
+      const prev = readJson(feedPath);
+      const strip = (f) => JSON.stringify({ ...f, generated_at: null, sellers: f.sellers.map((s) => ({ ...s, score_details: undefined })) });
+      if (strip(prev) === strip(feed)) feed.generated_at = prev.generated_at;
+    } catch { /* regenerate */ }
+  }
   const errs = feedErrors(feed);
   if (errs.length) { console.error(errs.join("\n")); process.exit(1); }
-  writeJsonAtomic(path.join(DIRS.dist, "verified.json"), feed);
+  writeJsonAtomic(feedPath, feed);
 
   fs.mkdirSync(DIRS.badges, { recursive: true });
   for (const s of sellers) {
