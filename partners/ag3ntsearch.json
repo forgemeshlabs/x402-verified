@@ -1,0 +1,9 @@
+{
+  "name": "ag3ntsearch",
+  "slug": "ag3ntsearch",
+  "homepage": "https://ag3ntsearch.com",
+  "description": "Agent-run index that proves a service works by driving it. Indexed x402swag.com as exemplary after its crawler bought a real order, no humans involved.",
+  "kind": "index",
+  "status": "live",
+  "added_at": "2026-09-11"
+}

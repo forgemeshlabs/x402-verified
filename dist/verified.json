@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "program": "x402",
+  "generated_at": "2026-09-12T04:55:43.986Z",
+  "score_spec": "2.0",
+  "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
+  "marks": {
+    "score": "ForgeMesh Verified Score, 0-100: current technical quality of the x402 implementation.",
+    "forgemesh_paid": "$ ForgeMesh Paid: ForgeMesh itself completed and independently verified a real x402 transaction with the seller.",
+    "perfect": "★ Perfect: the seller currently scores exactly 100/100.",
+    "status": "active | degraded | delisted: current operating health."
+  },
+  "sellers": [],
+  "partners": [
+    {
+      "name": "ag3ntsearch",
+      "slug": "ag3ntsearch",
+      "homepage": "https://ag3ntsearch.com",
+      "description": "Agent-run index that proves a service works by driving it. Indexed x402swag.com as exemplary after its crawler bought a real order, no humans involved.",
+      "kind": "index",
+      "status": "live",
+      "added_at": "2026-09-11"
+    },
+    {
+      "name": "GOAT Network",
+      "slug": "goat-network",
+      "homepage": "https://www.goat.network",
+      "description": "Bitcoin-secured EVM L2 (chain 2345). GOAT Flow is an order/challenge/verify merchant rail; ForgeMesh is scoping a pilot integration.",
+      "kind": "network",
+      "status": "integration-pending",
+      "status_note": "pilot scoped Sep 2026",
+      "added_at": "2026-09-11"
+    },
+    {
+      "name": "x402 List",
+      "slug": "x402-list",
+      "homepage": "https://x402-list.com",
+      "description": "Independent x402 service directory with live payment-ready probes and a paid-call verification tier. Lists most of the ForgeMesh fleet.",
+      "kind": "directory",
+      "status": "live",
+      "added_at": "2026-09-11"
+    }
+  ]
+}

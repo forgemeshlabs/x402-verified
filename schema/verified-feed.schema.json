@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/forgemeshlabs/x402-verified/schema/verified-feed.schema.json",
+  "title": "x402 Verified machine feed (dist/verified.json, served at https://forgemesh.io/partners.json)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "program", "generated_at", "score_spec", "disclaimer", "sellers", "partners"],
+  "properties": {
+    "version": { "const": 2 },
+    "program": { "const": "x402" },
+    "generated_at": { "type": "string" },
+    "score_spec": { "type": "string" },
+    "disclaimer": { "type": "string" },
+    "marks": { "type": "object" },
+    "sellers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slug", "name", "homepage", "protocols", "endpoints", "payTo", "networks", "score", "score_band", "dimensions", "status", "perfect", "forgemesh_paid", "protocol_capabilities"],
+        "properties": {
+          "slug": { "type": "string" },
+          "name": { "type": "string" },
+          "homepage": { "type": "string" },
+          "description": { "type": "string" },
+          "protocols": { "type": "array", "items": { "type": "string" } },
+          "endpoints": { "type": "array" },
+          "nominated_endpoint": { "type": "integer" },
+          "payTo": { "type": "string" },
+          "networks": { "type": "array", "items": { "type": "string" } },
+          "networks_detected": { "type": "array", "items": { "type": "string" } },
+          "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "score_band": { "type": "string", "enum": ["excellent", "ready", "friction", "at-risk"] },
+          "dimensions": {
+            "type": "object",
+            "required": ["payability", "reliability", "interoperability", "discoverability"],
+            "properties": {
+              "payability": { "type": "integer" },
+              "reliability": { "type": "integer" },
+              "interoperability": { "type": "integer" },
+              "discoverability": { "type": "integer" }
+            }
+          },
+          "status": { "type": "string", "enum": ["active", "degraded", "delisted"] },
+          "perfect": { "type": "boolean" },
+          "forgemesh_paid": { "type": "boolean" },
+          "forgemesh_paid_at": { "type": ["string", "null"] },
+          "forgemesh_paid_tx": { "type": ["string", "null"] },
+          "forgemesh_paid_amount_atomic": { "type": ["string", "null"] },
+          "forgemesh_paid_stale": { "type": "boolean" },
+          "proof": { "type": "object" },
+          "proof_check": { "type": ["object", "null"] },
+          "probes": { "type": "array" },
+          "last_probe": { "type": ["string", "null"] },
+          "bazaar_listed": { "type": "boolean" },
+          "protocol_capabilities": { "type": "object" },
+          "added_at": { "type": "string" },
+          "page": { "type": "string" },
+          "badge": { "type": "string" }
+        }
+      }
+    },
+    "partners": { "type": "array" }
+  }
+}

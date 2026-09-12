@@ -1,0 +1,21 @@
+{
+  "name": "x402-verified",
+  "version": "2.0.0",
+  "private": true,
+  "description": "x402 Verified by ForgeMesh: x402 sellers with a settled on-chain payment behind every row, a recomputable 0-100 score, and a live README badge.",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "validate": "node scripts/validate.js --all",
+    "build": "node scripts/build.js",
+    "test": "node --test scripts/test/*.test.js"
+  },
+  "dependencies": {
+    "@x402/core": "^2.0.0",
+    "@x402/evm": "^2.0.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "dotenv": "^16.4.0",
+    "viem": "^2.21.0"
+  }
+}

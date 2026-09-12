@@ -1,0 +1,10 @@
+{
+  "name": "GOAT Network",
+  "slug": "goat-network",
+  "homepage": "https://www.goat.network",
+  "description": "Bitcoin-secured EVM L2 (chain 2345). GOAT Flow is an order/challenge/verify merchant rail; ForgeMesh is scoping a pilot integration.",
+  "kind": "network",
+  "status": "integration-pending",
+  "status_note": "pilot scoped Sep 2026",
+  "added_at": "2026-09-11"
+}
