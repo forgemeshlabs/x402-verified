@@ -1,0 +1,16 @@
+{
+  "name": "HumanMirror",
+  "slug": "humanmirror",
+  "homepage": "https://humanmirror.fr",
+  "description": "Safety, verification and data-quality APIs for autonomous agents: preflight, execution receipts, JSON cleanup, secret scanning.",
+  "protocols": ["x402"],
+  "endpoints": [
+    { "url": "https://humanmirror.fr/api/x402/safe-preflight/", "method": "POST", "price_usdc": "0.010", "body": { "input": "ls -la" } }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x48096526488f2D51df6bcA1B1f3A3639986cc3dD",
+  "networks": ["eip155:8453"],
+  "contact": "mailto:contact.humanmirror@gmail.com",
+  "proof": { "tx_hash": "0xc6e5e7b4fba10bac7b9622361f8bc2e2ef4800cd3f5cac9a53d8f32a1a4c11e8", "endpoint": 0, "payer_kind": "self" },
+  "added_at": "2026-09-12"
+}
