@@ -1,0 +1,51 @@
+{
+  "name": "Saymon RU Data API",
+  "slug": "saymon-ru-data-api",
+  "homepage": "https://payforapi.com",
+  "description": "Runet data APIs for AI agents: EGRUL/INN company checks, NPD status, Cyrillic search, Russian Post, CBR rates, MOEX quotes.",
+  "protocols": ["x402"],
+  "endpoints": [
+    {
+      "url": "https://payforapi.com/v1/ticker",
+      "method": "POST",
+      "price_usdc": "0.005",
+      "body": { "symbol": "BTCUSDT" }
+    },
+    {
+      "url": "https://payforapi.com/v1/inn-lookup",
+      "method": "POST",
+      "price_usdc": "0.010",
+      "body": { "inn": "7707083893" }
+    },
+    {
+      "url": "https://payforapi.com/v1/pochta-track",
+      "method": "POST",
+      "price_usdc": "0.010",
+      "body": { "barcode": "ED109243163RU" }
+    },
+    {
+      "url": "https://payforapi.com/v1/ru-search",
+      "method": "POST",
+      "price_usdc": "0.020",
+      "body": { "query": "ООО Рога и Копыта", "limit": 5 }
+    },
+    {
+      "url": "https://payforapi.com/v1/company-report",
+      "method": "POST",
+      "price_usdc": "0.050",
+      "body": { "inn": "7707083893" }
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x4890a2C67dde6b16aF059eb5DBC1594169910948",
+  "networks": ["eip155:8453"],
+  "manifest": "https://payforapi.com/.well-known/x402",
+  "llms_txt": "https://payforapi.com/llms.txt",
+  "contact": "mailto:saymon74462@gmail.com",
+  "proof": {
+    "tx_hash": "0x00294faacf6bc8ff8cea2380c1f6510bb53a1666334338fe3fa07d85b7a542ec",
+    "endpoint": 0,
+    "payer_kind": "self"
+  },
+  "added_at": "2026-09-16"
+}
