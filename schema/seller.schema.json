@@ -44,7 +44,7 @@
       "properties": {
         "tx_hash": { "type": "string", "pattern": "^0x[0-9a-f]{64}$" },
         "endpoint": { "type": "integer", "minimum": 0, "maximum": 4 },
-        "payer_kind": { "type": "string", "enum": ["self"] }
+        "payer_kind": { "type": "string", "enum": ["self", "customer"], "description": "self = a wallet the seller operates paid; customer = an independent buyer paid" }
       }
     },
     "added_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }

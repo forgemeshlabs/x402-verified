@@ -20,7 +20,7 @@ One pull request adds one file: `sellers/<slug>.json`. CI validates it with no s
   "manifest": "https://example.com/.well-known/x402",
   "llms_txt": "https://example.com/llms.txt",
   "contact": "mailto:you@example.com",
-  "proof": { "tx_hash": "0x...", "endpoint": 0, "payer_kind": "self" },
+  "proof": { "tx_hash": "0x...", "endpoint": 0, "payer_kind": "self" },   // payer_kind: "self" (your wallet paid) or "customer" (an independent buyer paid)
   "added_at": "2026-09-12"
 }
 ```
