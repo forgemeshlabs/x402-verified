@@ -1,0 +1,50 @@
+{
+  "name": "HumanMirror",
+  "slug": "humanmirror",
+  "homepage": "https://humanmirror.fr",
+  "description": "Safe preflight and execution receipts for autonomous agent actions, paid per call in USDC on Base.",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://humanmirror.fr/api/x402/safe-preflight/",
+      "method": "POST",
+      "price_usdc": "0.010",
+      "body": {
+        "input": "git status",
+        "criteria": {
+          "max_risk": "medium",
+          "allow_confirmation": false
+        }
+      }
+    },
+    {
+      "url": "https://humanmirror.fr/api/x402/execution-receipt/",
+      "method": "POST",
+      "price_usdc": "0.010",
+      "body": {
+        "call_id": "a1b2c3d4",
+        "action": "git status",
+        "status": "executed",
+        "risk_score": "low",
+        "timestamp": "2026-09-14T07:23:00Z",
+        "tx_hash": "0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b",
+        "network": "eip155:8453"
+      }
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x48096526488f2D51df6bcA1B1f3A3639986cc3dD",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://humanmirror.fr/.well-known/x402",
+  "contact": "mailto:contact.humanmirror@gmail.com",
+  "proof": {
+    "tx_hash": "0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b",
+    "endpoint": 0,
+    "payer_kind": "customer"
+  },
+  "added_at": "2026-09-16"
+}
