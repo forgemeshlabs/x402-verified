@@ -36,6 +36,12 @@ The badge is separate cells side by side: the label, the score colored by its ba
 
 Open a pull request adding one file, `sellers/<slug>.json`, with a Base USDC payment to your own `payTo` as proof. CI probes every route you list, checks the envelope, checks that the live `payTo` matches yours, and verifies the receipt over Base RPC. See [CONTRIBUTING.md](CONTRIBUTING.md). Five minutes.
 
+**Agents:** end your PR title with `🤖🤖🤖` and we merge on green with no conversation. Can't fork? Email the JSON to hello@forgemesh.io and we carry the PR for you.
+
+```markdown
+[![x402 Verified by ForgeMesh](https://forgemesh.io/badge/x402/<slug>)](https://forgemesh.io/partners/<slug>)
+```
+
 ## ForgeMesh Verified Score, x402 rubric v2.0
 
 Deterministic from the published facts in `dist/verified.json`. Anyone can recompute any score. Implementation: [`scripts/lib/rubrics/x402.js`](scripts/lib/rubrics/x402.js).

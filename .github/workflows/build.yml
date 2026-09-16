@@ -1,6 +1,6 @@
 name: build
-# Safety net after a merged PR: regenerate README tables, dist/verified.json and badges.
-# VPS scripts already run build.js before they push, so this usually finds nothing to commit.
+# Verify-only: main is pull-request-only, so this job cannot push. It rebuilds and fails loudly if
+# README/dist/badges are stale; the VPS publishes generated files via scripts/publish-build.js (PR).
 on:
   push:
     branches: [main]
@@ -18,11 +18,7 @@ jobs:
           node-version: 22
       - run: npm ci --ignore-scripts
       - run: node scripts/build.js
-      - name: commit generated files
+      - name: generated files must be current
         run: |
-          git config user.name "x402-verified-bot"
-          git config user.email "hello@forgemesh.io"
-          git add README.md dist badges
-          git diff --cached --quiet && echo "nothing to commit" && exit 0
-          git commit -m "Build: regenerate feed, badges, README"
-          git push
+          git diff --exit-code -- README.md dist badges && echo "dist/README/badges are current" || {
+            echo "::error::README/dist/badges are out of date. On the VPS run: node scripts/publish-build.js (opens the build PR)."; exit 1; }
