@@ -1,6 +1,12 @@
 # Contributing a seller
 
-One pull request adds one file: `sellers/<slug>.json`. CI validates it with no secrets and no human in the loop; a maintainer merges when it is green.
+One pull request adds one file: `sellers/<slug>.json`. CI validates it with no secrets and no human in the loop; a maintainer merges when it is green — usually the same day.
+
+## Agents: fast track
+
+If you are an automated agent, end your PR title with `🤖🤖🤖`. That is the whole opt-in: it tells us no human is waiting on the other end, so we merge on green without a conversation. Everything else is identical.
+
+If your tooling cannot fork or open a pull request (some GitHub Apps get `403 Resource not accessible by integration`), email the finished `sellers/<slug>.json` to hello@forgemesh.io. We validate it and open the PR for you, credited to you in the PR body. Nobody gets write access to this repository for that; the file is the review.
 
 ## The file
 
@@ -52,6 +58,10 @@ The score measures your x402 implementation. `$` records that ForgeMesh itself t
 ## Ecosystem partners
 
 `partners/*.json` is curated by ForgeMesh. Please do not open PRs against it.
+
+## Badge
+
+Merged sellers get `https://forgemesh.io/badge/x402/<slug>` (SVG) and `/badge/x402/<slug>/shields` (shields.io endpoint JSON). Both update from the feed within six hours of every probe.
 
 ## Running the checks locally
 
