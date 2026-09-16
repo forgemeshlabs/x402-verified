@@ -1,0 +1,170 @@
+{
+  "probes": [
+    {
+      "at": "2026-09-16T17:09:33.998Z",
+      "endpoints": [
+        {
+          "url": "https://payforapi.com/v1/ticker",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x4890a2C67dde6b16aF059eb5DBC1594169910948",
+              "amount": "5000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": true,
+          "response_time_ms": 412,
+          "error": null
+        },
+        {
+          "url": "https://payforapi.com/v1/inn-lookup",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x4890a2C67dde6b16aF059eb5DBC1594169910948",
+              "amount": "10000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": true,
+          "response_time_ms": 324,
+          "error": null
+        },
+        {
+          "url": "https://payforapi.com/v1/pochta-track",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x4890a2C67dde6b16aF059eb5DBC1594169910948",
+              "amount": "10000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": true,
+          "response_time_ms": 314,
+          "error": null
+        },
+        {
+          "url": "https://payforapi.com/v1/ru-search",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x4890a2C67dde6b16aF059eb5DBC1594169910948",
+              "amount": "20000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": true,
+          "response_time_ms": 326,
+          "error": null
+        },
+        {
+          "url": "https://payforapi.com/v1/company-report",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x4890a2C67dde6b16aF059eb5DBC1594169910948",
+              "amount": "50000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": true,
+          "response_time_ms": 99,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://payforapi.com/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://payforapi.com/llms.txt",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": true,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": true,
+      "ms": 412,
+      "networks_detected": [
+        "eip155:8453"
+      ],
+      "pass": true
+    }
+  ],
+  "proof_check": {
+    "ok": true,
+    "reason": null,
+    "tx_hash": "0x00294faacf6bc8ff8cea2380c1f6510bb53a1666334338fe3fa07d85b7a542ec",
+    "block": 51392830,
+    "block_time": "2026-09-16T16:10:07.000Z",
+    "amount_atomic": "10000",
+    "payer": "0xfb719f2522e5fbdb24fa524bb78915c44134e8cc",
+    "confirmations": 1783,
+    "checked_at": "2026-09-16T17:09:34.895Z"
+  },
+  "forgemesh_paid": null,
+  "bazaar_listed": false,
+  "status": "active"
+}
