@@ -45,11 +45,13 @@ If your tooling cannot fork or open a pull request (some GitHub Apps get `403 Re
 
 ## What you get
 
-A row on https://forgemesh.io/partners, a page at `/partners/<slug>` with the score breakdown and probe history, and a badge:
+A row on https://forgemesh.io/partners, a page at `/partners/<slug>` with the score breakdown and probe history, an entry in the machine feed `https://forgemesh.io/partners.json`, and a badge:
 
 ```markdown
 [![x402 Verified by ForgeMesh](https://forgemesh.io/badge/x402/<slug>)](https://forgemesh.io/partners/<slug>)
 ```
+
+What happens at merge: ForgeMesh has already verified your proof transaction on Base mainnet (amount, age, `payTo` matching the live envelope) and run the validator against your branch. Your first probe run is recorded the day you are merged, and probe history starts there. The weekly reprobe runs Mondays 05:30 UTC and keeps the last eight runs. We do not pre-record runs you send us; the value of the row is that we ran them. Reliability is 14 points for pass rate over the last eight runs plus 6 for latest latency, so you start at full marks and only lose points on failures. If the CDP Bazaar lists you later, the five discoverability points for that arrive automatically at the next reprobe.
 
 ## The three marks are independent
 

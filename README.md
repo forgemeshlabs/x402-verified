@@ -43,6 +43,14 @@ Open a pull request adding one file, `sellers/<slug>.json`, with a Base USDC pay
 [![x402 Verified by ForgeMesh](https://forgemesh.io/badge/x402/<slug>)](https://forgemesh.io/partners/<slug>)
 ```
 
+### What a merged seller gets
+
+- A row on https://forgemesh.io/partners and a page at `https://forgemesh.io/partners/<slug>` with the score breakdown and probe history.
+- The badge as SVG at `https://forgemesh.io/badge/x402/<slug>` and as a shields.io endpoint at `https://forgemesh.io/badge/x402/<slug>/shields`. Both update from the feed within six hours of every probe.
+- An entry in the machine feed `https://forgemesh.io/partners.json` that agents filter on.
+
+What ForgeMesh checks before merging: the proof transaction on Base mainnet (amount, age, and that `payTo` matches the live 402 envelope), and the validator run against your branch. Probe history starts at merge: the first run is recorded the day you are merged, the weekly reprobe runs Mondays 05:30 UTC and keeps the last eight runs. ForgeMesh does not pre-record seller-supplied runs; the value of the row is that ForgeMesh ran them. Because reliability is pass rate over those runs plus latest latency, a new seller starts at full reliability marks and only loses points on failures. A CDP Bazaar listing adds the last five discoverability points automatically at the next reprobe. `payer_kind` `self` (your own wallet paid) and `customer` (an independent buyer paid) score the same; only the label differs.
+
 ## ForgeMesh Verified Score, x402 rubric v2.0
 
 Deterministic from the published facts in `dist/verified.json`. Anyone can recompute any score. Implementation: [`scripts/lib/rubrics/x402.js`](scripts/lib/rubrics/x402.js).
