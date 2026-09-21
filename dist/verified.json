@@ -1,7 +1,7 @@
 {
   "version": 2,
   "program": "x402",
-  "generated_at": "2026-09-21T05:30:04.432Z",
+  "generated_at": "2026-09-21T21:06:11.301Z",
   "score_spec": "2.0",
   "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
   "marks": {
@@ -477,6 +477,173 @@
       "added_at": "2026-09-16",
       "page": "https://forgemesh.io/partners/saymon-ru-data-api",
       "badge": "https://forgemesh.io/badge/x402/saymon-ru-data-api"
+    },
+    {
+      "slug": "agentresolver",
+      "name": "AgentResolver",
+      "homepage": "https://agentresolver.vercel.app",
+      "description": "Verify x402 payment contracts before autonomous agents sign, with non-custodial Base USDC safety checks.",
+      "protocols": [
+        "x402"
+      ],
+      "endpoints": [
+        {
+          "url": "https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET",
+          "method": "GET",
+          "price_usdc": "0.001"
+        },
+        {
+          "url": "https://agentresolver.vercel.app/api/cdp-payment-guard?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET",
+          "method": "GET",
+          "price_usdc": "0.002"
+        }
+      ],
+      "nominated_endpoint": 1,
+      "payTo": "0x66E19457fFC829E8Ed74706f5c1399C6F6466dE8",
+      "networks": [
+        "eip155:8453"
+      ],
+      "networks_detected": [],
+      "score": 0,
+      "score_band": "at-risk",
+      "dimensions": {
+        "payability": 0,
+        "reliability": 0,
+        "interoperability": 0,
+        "discoverability": 0
+      },
+      "score_details": [
+        {
+          "dimension": "payability",
+          "points": 0,
+          "max": 10,
+          "check": "every declared endpoint answers HTTP 402",
+          "ok": false
+        },
+        {
+          "dimension": "payability",
+          "points": 0,
+          "max": 10,
+          "check": "every 402 carries a valid x402 envelope",
+          "ok": false
+        },
+        {
+          "dimension": "payability",
+          "points": 0,
+          "max": 5,
+          "check": "envelope payTo matches the declared payTo",
+          "ok": false
+        },
+        {
+          "dimension": "payability",
+          "points": 0,
+          "max": 15,
+          "check": "seller-supplied on-chain proof verified",
+          "ok": false
+        },
+        {
+          "dimension": "reliability",
+          "points": 0,
+          "max": 14,
+          "check": "0/0 recent probe runs passed",
+          "ok": false
+        },
+        {
+          "dimension": "reliability",
+          "points": 0,
+          "max": 6,
+          "check": "latest response n/a ms",
+          "ok": false
+        },
+        {
+          "dimension": "interoperability",
+          "points": 0,
+          "max": 5,
+          "check": "envelope declares x402Version 2",
+          "ok": false
+        },
+        {
+          "dimension": "interoperability",
+          "points": 0,
+          "max": 5,
+          "check": "envelope delivered in the payment-required header",
+          "ok": false
+        },
+        {
+          "dimension": "interoperability",
+          "points": 0,
+          "max": 5,
+          "check": "envelope also present in the JSON body (stock v1 clients)",
+          "ok": false
+        },
+        {
+          "dimension": "interoperability",
+          "points": 0,
+          "max": 5,
+          "check": "accepts[] entries well-formed: exact scheme, CAIP-2 network, canonical USDC, amount = declared price",
+          "ok": false
+        },
+        {
+          "dimension": "discoverability",
+          "points": 0,
+          "max": 6,
+          "check": "/.well-known/x402 manifest present",
+          "ok": false
+        },
+        {
+          "dimension": "discoverability",
+          "points": 0,
+          "max": 5,
+          "check": "manifest names every declared route",
+          "ok": false
+        },
+        {
+          "dimension": "discoverability",
+          "points": 0,
+          "max": 4,
+          "check": "llms.txt present",
+          "ok": false
+        },
+        {
+          "dimension": "discoverability",
+          "points": 0,
+          "max": 5,
+          "check": "listed in the CDP Bazaar",
+          "ok": false
+        }
+      ],
+      "status": "active",
+      "perfect": false,
+      "forgemesh_paid": false,
+      "forgemesh_paid_at": null,
+      "forgemesh_paid_tx": null,
+      "forgemesh_paid_amount_atomic": null,
+      "forgemesh_paid_stale": false,
+      "proof": {
+        "tx_hash": "0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b",
+        "endpoint": 0,
+        "payer_kind": "customer"
+      },
+      "proof_check": null,
+      "probes": [],
+      "last_probe": null,
+      "bazaar_listed": false,
+      "protocol_capabilities": {
+        "x402": {
+          "supported": false,
+          "verified": false,
+          "version": null
+        },
+        "mpp": {
+          "supported": false,
+          "verified": false,
+          "note": "detected only; MPP Verified by ForgeMesh is a separate future program"
+        }
+      },
+      "contact": "github:waxsway",
+      "added_at": "2026-09-21",
+      "page": "https://forgemesh.io/partners/agentresolver",
+      "badge": "https://forgemesh.io/badge/x402/agentresolver"
     }
   ],
   "partners": [
