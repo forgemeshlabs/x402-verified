@@ -1,20 +1,58 @@
 name: validate
-# Fork-safe: runs on pull_request with a read-only token and NO secrets. Results go to the job
-# summary (PR comments are not writable from fork PRs).
+# Fork-safe without manual approval (same pattern as punkpeye/awesome-mcp-servers): pull_request_target runs
+# THIS repo's workflow + scripts on the base branch. Only data files (sellers/*.json, partners/*.json) are
+# taken from the contributor's branch; nothing executable from the fork is ever run. NO secrets beyond the
+# default token, which is used only to post/update the report comment on the PR.
 on:
-  pull_request:
-    paths: ["sellers/**", "partners/**", "schema/**", "scripts/**", "package.json", "package-lock.json"]
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths: ["sellers/**", "partners/**"]
 permissions:
   contents: read
+  pull-requests: write
+concurrency:
+  group: validate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 jobs:
   validate:
     runs-on: ubuntu-latest
+    env:
+      PR: ${{ github.event.pull_request.number }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4          # base branch: trusted scripts + workflow
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm ci --ignore-scripts
-      - run: node scripts/validate.js --base origin/${{ github.base_ref }}
+      - name: import data files from the PR (data only, never code)
+        id: import
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "pull/${PR}/head:pr-head"
+          changed=$(git diff --name-only "HEAD...pr-head")
+          echo "$changed"
+          bad=$(echo "$changed" | grep -vE '^(sellers|partners)/[A-Za-z0-9._-]+\.json$' || true)
+          if [ -n "$bad" ]; then
+            echo "maintainer_review=true" >> "$GITHUB_OUTPUT"
+            printf '## x402 Verified validation\n\nThis PR changes paths outside `sellers/` / `partners/`, so the automated check does not run on it. A maintainer will review by hand.\n\n```\n%s\n```\n' "$bad" > report.md
+            exit 0
+          fi
+          echo "maintainer_review=false" >> "$GITHUB_OUTPUT"
+          echo "$changed" | xargs -r git checkout pr-head --
+          git -c user.name=x402-verified-ci -c user.email=ci@forgemesh.io commit -qam "ci: import PR ${PR} data files" || true
+      - name: validate changed sellers
+        if: steps.import.outputs.maintainer_review == 'false'
+        run: node scripts/validate.js --base origin/${{ github.base_ref }} --out report.md
+      - name: post report on the PR
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [ -f report.md ] || printf '## x402 Verified validation\n\nThe validator crashed before producing a report. A maintainer will look.\n' > report.md
+          { echo "<!-- x402-verified-validate -->"; cat report.md; echo; echo "_Automated check. Re-runs on every push to this PR. Green = merge-ready; the score shown is provisional until the weekly reprobe._"; } > comment.md
+          existing=$(gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" --paginate --jq '.[] | select(.body | startswith("<!-- x402-verified-validate -->")) | .id' | head -1)
+          if [ -n "$existing" ]; then gh api -X PATCH "repos/${GITHUB_REPOSITORY}/issues/comments/${existing}" -F body=@comment.md >/dev/null
+          else gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" -F body=@comment.md >/dev/null; fi
