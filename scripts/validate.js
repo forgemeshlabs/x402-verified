@@ -40,7 +40,14 @@ async function validateSeller(entry, all, { recordProbe }) {
     if (!r.reachable) report.errors.push(`${ep.method} ${ep.url}: unreachable (${r.error})`);
     else if (!r.is_402) report.errors.push(`${ep.method} ${ep.url}: expected HTTP 402, got ${r.http_status}`);
     else if (!r.envelope_valid) report.errors.push(`${ep.method} ${ep.url}: invalid x402 envelope (${r.envelope_errors.join("; ")})`);
-    else if (!r.accepts.every((a) => String(a.payTo || "").toLowerCase() === s.payTo.toLowerCase())) report.errors.push(`${ep.method} ${ep.url}: envelope payTo does not match declared payTo ${s.payTo}`);
+    else {
+      // Only the accepts on the seller's declared networks must pay to the declared wallet. Sellers may
+      // also accept other rails (e.g. Solana) with their own addresses; those are "detected", never scored.
+      const declared = new Set((s.networks || ["eip155:8453"]).map((n) => String(n).toLowerCase()));
+      const onDeclared = r.accepts.filter((a) => declared.has(String(a.network || "").toLowerCase()));
+      if (!onDeclared.length) report.errors.push(`${ep.method} ${ep.url}: envelope offers none of the declared networks (${[...declared].join(", ")})`);
+      else if (!onDeclared.every((a) => String(a.payTo || "").toLowerCase() === s.payTo.toLowerCase())) report.errors.push(`${ep.method} ${ep.url}: envelope payTo on ${[...declared].join(", ")} does not match declared payTo ${s.payTo}`);
+    }
   });
   if (!run.manifest_ok) report.warnings.push(`no x402 manifest at ${run.manifest_url} (discoverability points)`);
   else if (!run.manifest_lists_route) report.warnings.push("manifest does not name every declared route (discoverability points)");
