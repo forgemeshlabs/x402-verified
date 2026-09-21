@@ -1,14 +1,19 @@
 name: validate
 # Fork-safe without manual approval (same pattern as punkpeye/awesome-mcp-servers): pull_request_target runs
 # THIS repo's workflow + scripts on the base branch. Only data files (sellers/*.json, partners/*.json) are
-# taken from the contributor's branch; nothing executable from the fork is ever run. NO secrets beyond the
-# default token, which is used only to post/update the report comment on the PR.
+# taken from the contributor's branch; nothing executable from the fork is ever run.
+#
+# Two jobs on purpose. `validate` has a read-only token and touches PR data. `fast-track` is the only job
+# with contents:write, never checks out or reads anything from the PR, re-verifies the PR through the API
+# (head SHA unchanged since validation, files still only sellers/partners JSON, author under the daily
+# cap) and merges by exact head commit. The 🤖🤖🤖 title suffix is the published opt-in for agents; it is
+# not an identity check, and it authorises nothing on its own.
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
     paths: ["sellers/**", "partners/**"]
 permissions:
-  contents: write        # needed only by the fast-track merge step; nothing from the fork is executed
+  contents: read
   pull-requests: write
 concurrency:
   group: validate-${{ github.event.pull_request.number }}
@@ -16,8 +21,14 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     env:
       PR: ${{ github.event.pull_request.number }}
+    outputs:
+      fast_track_ok: ${{ steps.verdict.outputs.fast_track_ok }}
+      head_sha: ${{ github.event.pull_request.head.sha }}
     steps:
       - uses: actions/checkout@v4          # base branch: trusted scripts + workflow
         with:
@@ -43,8 +54,18 @@ jobs:
           echo "$changed" | xargs -r git checkout pr-head --
           git -c user.name=x402-verified-ci -c user.email=ci@forgemesh.io commit -qam "ci: import PR ${PR} data files" || true
       - name: validate changed sellers
+        id: validate
         if: steps.import.outputs.maintainer_review == 'false'
         run: node scripts/validate.js --base origin/${{ github.base_ref }} --out report.md
+      - name: verdict
+        id: verdict
+        if: always()
+        run: |
+          if [ "${{ steps.import.outputs.maintainer_review }}" = "false" ] && [ "${{ steps.validate.outcome }}" = "success" ]; then
+            echo "fast_track_ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "fast_track_ok=false" >> "$GITHUB_OUTPUT"
+          fi
       - name: post report on the PR
         if: always()
         env:
@@ -56,16 +77,38 @@ jobs:
           existing=$(gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" --paginate --jq '.[] | select(.body | startswith("<!-- x402-verified-validate -->")) | .id' | head -1)
           if [ -n "$existing" ]; then gh api -X PATCH "repos/${GITHUB_REPOSITORY}/issues/comments/${existing}" -F body=@comment.md >/dev/null
           else gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" -F body=@comment.md >/dev/null; fi
-      - name: fast track — merge agent PRs (title ends with 🤖🤖🤖) on green
-        # Reached only when validate.js exited 0 (every changed seller passed, proof verified) and the
-        # import step confirmed the PR touches nothing outside sellers/ and partners/. Human PRs stop
-        # at the green comment for a maintainer to merge.
-        if: success() && steps.import.outputs.maintainer_review == 'false' && endsWith(github.event.pull_request.title, '🤖🤖🤖')
-        env:
-          GH_TOKEN: ${{ github.token }}
+
+  fast-track:
+    # Agent PRs (title ends with 🤖🤖🤖) merge on green with no conversation. Human PRs stop at the
+    # green comment for a maintainer to merge. This job never checks out the PR.
+    needs: validate
+    if: needs.validate.outputs.fast_track_ok == 'true' && endsWith(github.event.pull_request.title, '🤖🤖🤖')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number }}
+      VALIDATED_SHA: ${{ needs.validate.outputs.head_sha }}
+      AUTHOR: ${{ github.event.pull_request.user.login }}
+      DAILY_CAP: "3"
+    steps:
+      - name: re-verify through the API, then merge the exact validated commit
         run: |
           set -euo pipefail
+          # 1. Head must be the commit that was validated (a push after validation restarts the workflow).
+          current=$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}" --jq .head.sha)
+          [ "$current" = "$VALIDATED_SHA" ] || { echo "head moved since validation ($current != $VALIDATED_SHA); not merging"; exit 0; }
+          # 2. Files must still be only sellers/partners JSON, checked from the API not the checkout.
+          bad=$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate --jq '.[].filename' | grep -vE '^(sellers|partners)/[A-Za-z0-9._-]+\.json$' || true)
+          [ -z "$bad" ] || { echo "non-data paths present; not merging: $bad"; exit 0; }
+          # 3. Per-author daily cap: one seller adding many records in a day is a review case, not a fast track.
+          since=$(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          n=$(gh api -X GET search/issues -f q="repo:${GITHUB_REPOSITORY} is:pr author:${AUTHOR} created:>=${since}" --jq .total_count)
+          [ "$n" -le "$DAILY_CAP" ] || { echo "author opened $n PRs in 24h (cap $DAILY_CAP); leaving for a maintainer"; gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body "Validation is green, but this author has opened more than ${DAILY_CAP} PRs in 24 hours, so a maintainer will merge by hand."; exit 0; }
+          # 4. Merge only that exact commit.
           state=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json state,mergeable --jq '"\(.state) \(.mergeable)"')
           [ "$state" = "OPEN MERGEABLE" ] || { echo "not merging: $state"; exit 0; }
-          gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash
+          gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$VALIDATED_SHA"
           gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body "Fast track: validation green, merged automatically. Your row, badge and feed entry publish with the next build. 🤖"
