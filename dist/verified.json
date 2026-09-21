@@ -1,7 +1,7 @@
 {
   "version": 2,
   "program": "x402",
-  "generated_at": "2026-09-21T21:06:11.301Z",
+  "generated_at": "2026-09-21T21:07:08.218Z",
   "score_spec": "2.0",
   "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
   "marks": {
@@ -503,29 +503,32 @@
       "networks": [
         "eip155:8453"
       ],
-      "networks_detected": [],
-      "score": 0,
-      "score_band": "at-risk",
+      "networks_detected": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "score": 79,
+      "score_band": "ready",
       "dimensions": {
-        "payability": 0,
-        "reliability": 0,
-        "interoperability": 0,
-        "discoverability": 0
+        "payability": 35,
+        "reliability": 20,
+        "interoperability": 20,
+        "discoverability": 4
       },
       "score_details": [
         {
           "dimension": "payability",
-          "points": 0,
+          "points": 10,
           "max": 10,
           "check": "every declared endpoint answers HTTP 402",
-          "ok": false
+          "ok": true
         },
         {
           "dimension": "payability",
-          "points": 0,
+          "points": 10,
           "max": 10,
           "check": "every 402 carries a valid x402 envelope",
-          "ok": false
+          "ok": true
         },
         {
           "dimension": "payability",
@@ -536,52 +539,52 @@
         },
         {
           "dimension": "payability",
-          "points": 0,
+          "points": 15,
           "max": 15,
           "check": "seller-supplied on-chain proof verified",
-          "ok": false
+          "ok": true
         },
         {
           "dimension": "reliability",
-          "points": 0,
+          "points": 14,
           "max": 14,
-          "check": "0/0 recent probe runs passed",
-          "ok": false
+          "check": "1/1 recent probe runs passed",
+          "ok": true
         },
         {
           "dimension": "reliability",
-          "points": 0,
+          "points": 6,
           "max": 6,
-          "check": "latest response n/a ms",
-          "ok": false
+          "check": "latest response 270 ms",
+          "ok": true
         },
         {
           "dimension": "interoperability",
-          "points": 0,
+          "points": 5,
           "max": 5,
           "check": "envelope declares x402Version 2",
-          "ok": false
+          "ok": true
         },
         {
           "dimension": "interoperability",
-          "points": 0,
+          "points": 5,
           "max": 5,
           "check": "envelope delivered in the payment-required header",
-          "ok": false
+          "ok": true
         },
         {
           "dimension": "interoperability",
-          "points": 0,
+          "points": 5,
           "max": 5,
           "check": "envelope also present in the JSON body (stock v1 clients)",
-          "ok": false
+          "ok": true
         },
         {
           "dimension": "interoperability",
-          "points": 0,
+          "points": 5,
           "max": 5,
           "check": "accepts[] entries well-formed: exact scheme, CAIP-2 network, canonical USDC, amount = declared price",
-          "ok": false
+          "ok": true
         },
         {
           "dimension": "discoverability",
@@ -599,10 +602,10 @@
         },
         {
           "dimension": "discoverability",
-          "points": 0,
+          "points": 4,
           "max": 4,
           "check": "llms.txt present",
-          "ok": false
+          "ok": true
         },
         {
           "dimension": "discoverability",
@@ -624,15 +627,41 @@
         "endpoint": 0,
         "payer_kind": "customer"
       },
-      "proof_check": null,
-      "probes": [],
-      "last_probe": null,
+      "proof_check": {
+        "ok": true,
+        "reason": null,
+        "tx_hash": "0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b",
+        "block": 51571036,
+        "block_time": "2026-09-20T19:10:19.000Z",
+        "amount_atomic": "1000",
+        "payer": "0x3a0aa040b8785babc28b8436065dd2057c17773e",
+        "confirmations": 46704,
+        "checked_at": "2026-09-21T21:07:07.800Z"
+      },
+      "probes": [
+        {
+          "at": "2026-09-21T21:07:07.491Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": false,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 270,
+          "manifest_ok": false,
+          "manifest_lists_route": false,
+          "llms_ok": true
+        }
+      ],
+      "last_probe": "2026-09-21T21:07:07.491Z",
       "bazaar_listed": false,
       "protocol_capabilities": {
         "x402": {
-          "supported": false,
-          "verified": false,
-          "version": null
+          "supported": true,
+          "verified": true,
+          "version": 2
         },
         "mpp": {
           "supported": false,

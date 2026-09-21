@@ -1,0 +1,101 @@
+{
+  "probes": [
+    {
+      "at": "2026-09-21T21:07:07.491Z",
+      "endpoints": [
+        {
+          "url": "https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x66E19457fFC829E8Ed74706f5c1399C6F6466dE8",
+              "amount": "1000",
+              "maxTimeoutSeconds": 300
+            },
+            {
+              "scheme": "exact",
+              "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+              "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "payTo": "AoQNzm7dB7dhBXfgq9ywqkfkS68fg2e1JwcxrgXnkLXa",
+              "amount": "1000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 270,
+          "error": null
+        },
+        {
+          "url": "https://agentresolver.vercel.app/api/cdp-payment-guard?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x66E19457fFC829E8Ed74706f5c1399C6F6466dE8",
+              "amount": "2000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 88,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://agentresolver.vercel.app/.well-known/x402",
+      "manifest_ok": false,
+      "manifest_lists_route": false,
+      "llms_url": "https://agentresolver.vercel.app/llms.txt",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": false,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 270,
+      "networks_detected": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "pass": true
+    }
+  ],
+  "proof_check": {
+    "ok": true,
+    "reason": null,
+    "tx_hash": "0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b",
+    "block": 51571036,
+    "block_time": "2026-09-20T19:10:19.000Z",
+    "amount_atomic": "1000",
+    "payer": "0x3a0aa040b8785babc28b8436065dd2057c17773e",
+    "confirmations": 46704,
+    "checked_at": "2026-09-21T21:07:07.800Z"
+  },
+  "forgemesh_paid": null,
+  "bazaar_listed": false,
+  "status": "active"
+}
