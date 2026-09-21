@@ -1,0 +1,31 @@
+{
+  "name": "AgentResolver",
+  "slug": "agentresolver",
+  "homepage": "https://agentresolver.vercel.app",
+  "description": "Verify x402 payment contracts before autonomous agents sign, with non-custodial Base USDC safety checks.",
+  "protocols": ["x402"],
+  "endpoints": [
+    {
+      "url": "https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET",
+      "method": "GET",
+      "price_usdc": "0.001"
+    },
+    {
+      "url": "https://agentresolver.vercel.app/api/cdp-payment-guard?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET",
+      "method": "GET",
+      "price_usdc": "0.002"
+    }
+  ],
+  "nominated_endpoint": 1,
+  "payTo": "0x66E19457fFC829E8Ed74706f5c1399C6F6466dE8",
+  "networks": ["eip155:8453"],
+  "manifest": "https://agentresolver.vercel.app/.well-known/x402",
+  "llms_txt": "https://agentresolver.vercel.app/llms.txt",
+  "contact": "github:waxsway",
+  "proof": {
+    "tx_hash": "0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b",
+    "endpoint": 0,
+    "payer_kind": "customer"
+  },
+  "added_at": "2026-09-21"
+}
