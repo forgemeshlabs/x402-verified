@@ -8,7 +8,7 @@ on:
     types: [opened, synchronize, reopened]
     paths: ["sellers/**", "partners/**"]
 permissions:
-  contents: read
+  contents: write        # needed only by the fast-track merge step; nothing from the fork is executed
   pull-requests: write
 concurrency:
   group: validate-${{ github.event.pull_request.number }}
@@ -56,3 +56,16 @@ jobs:
           existing=$(gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" --paginate --jq '.[] | select(.body | startswith("<!-- x402-verified-validate -->")) | .id' | head -1)
           if [ -n "$existing" ]; then gh api -X PATCH "repos/${GITHUB_REPOSITORY}/issues/comments/${existing}" -F body=@comment.md >/dev/null
           else gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" -F body=@comment.md >/dev/null; fi
+      - name: fast track — merge agent PRs (title ends with 🤖🤖🤖) on green
+        # Reached only when validate.js exited 0 (every changed seller passed, proof verified) and the
+        # import step confirmed the PR touches nothing outside sellers/ and partners/. Human PRs stop
+        # at the green comment for a maintainer to merge.
+        if: success() && steps.import.outputs.maintainer_review == 'false' && endsWith(github.event.pull_request.title, '🤖🤖🤖')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          state=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json state,mergeable --jq '"\(.state) \(.mergeable)"')
+          [ "$state" = "OPEN MERGEABLE" ] || { echo "not merging: $state"; exit 0; }
+          gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash
+          gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body "Fast track: validation green, merged automatically. Your row, badge and feed entry publish with the next build. 🤖"
