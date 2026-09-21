@@ -73,6 +73,80 @@
         "eip155:8453"
       ],
       "pass": true
+    },
+    {
+      "at": "2026-09-21T05:30:02.495Z",
+      "endpoints": [
+        {
+          "url": "https://humanmirror.fr/api/x402/safe-preflight/",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x48096526488f2D51df6bcA1B1f3A3639986cc3dD",
+              "amount": "10000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 441,
+          "error": null
+        },
+        {
+          "url": "https://humanmirror.fr/api/x402/execution-receipt/",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x48096526488f2D51df6bcA1B1f3A3639986cc3dD",
+              "amount": "10000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 631,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://humanmirror.fr/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://humanmirror.fr/llms.txt",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": true,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 631,
+      "networks_detected": [
+        "eip155:8453"
+      ],
+      "pass": true
     }
   ],
   "proof_check": {

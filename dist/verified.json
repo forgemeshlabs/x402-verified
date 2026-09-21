@@ -1,7 +1,7 @@
 {
   "version": 2,
   "program": "x402",
-  "generated_at": "2026-09-16T17:09:35.162Z",
+  "generated_at": "2026-09-21T05:30:04.432Z",
   "score_spec": "2.0",
   "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
   "marks": {
@@ -96,14 +96,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "1/1 recent probe runs passed",
+          "check": "2/2 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 893 ms",
+          "check": "latest response 631 ms",
           "ok": true
         },
         {
@@ -201,9 +201,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-09-21T05:30:02.495Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 631,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-16T17:09:32.140Z",
+      "last_probe": "2026-09-21T05:30:02.495Z",
       "bazaar_listed": true,
       "protocol_capabilities": {
         "x402": {
@@ -322,14 +337,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "1/1 recent probe runs passed",
+          "check": "2/2 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 412 ms",
+          "check": "latest response 401 ms",
           "ok": true
         },
         {
@@ -427,9 +442,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-09-21T05:30:03.526Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": true,
+          "ms": 401,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-16T17:09:33.998Z",
+      "last_probe": "2026-09-21T05:30:03.526Z",
       "bazaar_listed": false,
       "protocol_capabilities": {
         "x402": {

@@ -28,8 +28,8 @@ The badge is separate cells side by side: the label, the score colored by its ba
 <!-- SELLERS:START -->
 | Seller | Score | Marks | Status | Protocols | Cheapest route | Proof | Last probe |
 |---|---|---|---|---|---|---|---|
-| [HumanMirror](https://forgemesh.io/partners/humanmirror) | 100/100 excellent | ★ | active | x402 ✓ | POST https://humanmirror.fr/api/x402/safe-preflight/ $0.010 | [tx](https://basescan.org/tx/0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b) | 2026-09-16 |
-| [Saymon RU Data API](https://forgemesh.io/partners/saymon-ru-data-api) | 95/100 excellent | — | active | x402 ✓ · MPP detected | POST https://payforapi.com/v1/ticker $0.005 | [tx](https://basescan.org/tx/0x00294faacf6bc8ff8cea2380c1f6510bb53a1666334338fe3fa07d85b7a542ec) | 2026-09-16 |
+| [HumanMirror](https://forgemesh.io/partners/humanmirror) | 100/100 excellent | ★ | active | x402 ✓ | POST https://humanmirror.fr/api/x402/safe-preflight/ $0.010 | [tx](https://basescan.org/tx/0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b) | 2026-09-21 |
+| [Saymon RU Data API](https://forgemesh.io/partners/saymon-ru-data-api) | 95/100 excellent | — | active | x402 ✓ · MPP detected | POST https://payforapi.com/v1/ticker $0.005 | [tx](https://basescan.org/tx/0x00294faacf6bc8ff8cea2380c1f6510bb53a1666334338fe3fa07d85b7a542ec) | 2026-09-21 |
 <!-- SELLERS:END -->
 
 ## Get listed
