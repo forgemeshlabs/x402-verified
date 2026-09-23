@@ -18,10 +18,11 @@ function main() {
   const base = git(["rev-parse", "HEAD"]);
   const remoteBranch = git(["ls-remote", "--heads", "origin", `refs/heads/${BRANCH}`]).split(/\s/)[0];
   for (const { data: seller } of loadSellers()) {
-    if (!initialProbeNeeded(loadState(seller.slug))) continue;
+    const initial = initialProbeNeeded(loadState(seller.slug));
+    if (!initial && !process.argv.includes("--reprobe-all")) continue;
     node(path.join(__dirname, "reprobe.js"), "--slug", seller.slug, "--no-push");
     const state = loadState(seller.slug);
-    if (!state.proof_check?.ok || !state.probes?.at(-1)?.pass) {
+    if (initial && (!state.proof_check?.ok || !state.probes?.at(-1)?.pass)) {
       throw new Error(`initial verification failed for ${seller.slug}; will retry without publishing`);
     }
   }
