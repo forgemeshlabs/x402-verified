@@ -29,7 +29,9 @@ The badge is separate cells side by side: the label, the score colored by its ba
 | Seller | Score | Marks | Status | Protocols | Cheapest route | Proof | Last probe |
 |---|---|---|---|---|---|---|---|
 | [HumanMirror](https://forgemesh.io/partners/humanmirror) | 100/100 excellent | ★ | active | x402 ✓ | POST https://humanmirror.fr/api/x402/safe-preflight/ $0.010 | [tx](https://basescan.org/tx/0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b) | 2026-09-21 |
+| [loop2-quickstart](https://forgemesh.io/partners/loop2-quickstart) | 95/100 excellent | — | active | x402 ✓ | GET https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402 $0.001 | [tx](https://basescan.org/tx/0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6) | 2026-09-23 |
 | [Saymon RU Data API](https://forgemesh.io/partners/saymon-ru-data-api) | 95/100 excellent | — | active | x402 ✓ · MPP detected | POST https://payforapi.com/v1/ticker $0.005 | [tx](https://basescan.org/tx/0x00294faacf6bc8ff8cea2380c1f6510bb53a1666334338fe3fa07d85b7a542ec) | 2026-09-21 |
+| [Free Asset Radar x402](https://forgemesh.io/partners/free-asset-radar-x402) | 91/100 excellent | — | active | x402 ✓ | GET https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/decode-inspect $0.001 | [tx](https://basescan.org/tx/0x2f7023b65e7be37f248774908b13dd4be58cb0b03c11bbb9bfe01fce4c8a9a26) | 2026-09-23 |
 | [AgentResolver](https://forgemesh.io/partners/agentresolver) | 79/100 ready | — | active | x402 ✓ | GET https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET $0.001 | [tx](https://basescan.org/tx/0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b) | 2026-09-21 |
 <!-- SELLERS:END -->
 
