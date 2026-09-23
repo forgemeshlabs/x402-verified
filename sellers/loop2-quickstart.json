@@ -1,0 +1,50 @@
+{
+  "name": "loop2-quickstart",
+  "slug": "loop2-quickstart",
+  "homepage": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev",
+  "description": "Live Base USDC x402 v2 market-intel endpoints: all-network settlement snapshot, funded-seller leaderboard with on-chain tx_30d, seller…",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402",
+      "method": "GET",
+      "price_usdc": "0.001"
+    },
+    {
+      "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/funded",
+      "method": "GET",
+      "price_usdc": "0.001"
+    },
+    {
+      "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/agents",
+      "method": "GET",
+      "price_usdc": "0.001"
+    },
+    {
+      "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/diligence",
+      "method": "GET",
+      "price_usdc": "0.001"
+    },
+    {
+      "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/test-pay",
+      "method": "GET",
+      "price_usdc": "0.01"
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0xd34e4A6706ff438B5EeCf2601Ed73e33C7c005b1",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/.well-known/x402",
+  "llms_txt": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/llms.txt",
+  "contact": "mailto:loop2@agentmail.to",
+  "proof": {
+    "tx_hash": "0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6",
+    "endpoint": 0,
+    "payer_kind": "customer"
+  },
+  "added_at": "2026-09-23"
+}
