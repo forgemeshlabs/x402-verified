@@ -1,0 +1,50 @@
+{
+  "name": "Free Asset Radar x402",
+  "slug": "free-asset-radar-x402",
+  "homepage": "https://free-asset-radar-x402.besenok2018.workers.dev",
+  "description": "Pay-per-request EVM intelligence, gas estimation, DNS, package security, and API QA tools for autonomous agents.",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/decode-inspect",
+      "method": "GET",
+      "price_usdc": "0.001"
+    },
+    {
+      "url": "https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/evm-estimate-gas",
+      "method": "GET",
+      "price_usdc": "0.003"
+    },
+    {
+      "url": "https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/contract-profile",
+      "method": "GET",
+      "price_usdc": "0.003"
+    },
+    {
+      "url": "https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/transaction-decoder",
+      "method": "GET",
+      "price_usdc": "0.005"
+    },
+    {
+      "url": "https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/package-vulnerability-check",
+      "method": "GET",
+      "price_usdc": "0.005"
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x4875ff3a40d90dfb3e936f1dbcdd2c62ae6fade0",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://free-asset-radar-x402.besenok2018.workers.dev/.well-known/x402",
+  "llms_txt": "https://free-asset-radar-x402.besenok2018.workers.dev/llms.txt",
+  "contact": "github:besenok2018",
+  "proof": {
+    "tx_hash": "0x2f7023b65e7be37f248774908b13dd4be58cb0b03c11bbb9bfe01fce4c8a9a26",
+    "endpoint": 0,
+    "payer_kind": "customer"
+  },
+  "added_at": "2026-09-22"
+}
