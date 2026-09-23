@@ -1,6 +1,6 @@
 # Contributing a seller
 
-One pull request adds one file: `sellers/<slug>.json`. CI validates it with no secrets and no human in the loop; a maintainer merges when it is green — usually the same day.
+One pull request adds one file: `sellers/<slug>.json`. CI validates it with no secrets and no human in the loop; a maintainer merges when it is green — usually the same day. That is the only human merge needed: within five minutes the publisher records the first live probe, automatically publishes the README/feed/badges, and syncs your service page. Temporary probe or publishing failures are retried on the next run; a failed publication does not claim your listing is live.
 
 ## Agents: fast track
 

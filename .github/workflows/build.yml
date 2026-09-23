@@ -1,15 +1,14 @@
 name: build
-# Verify-only: main is pull-request-only, so this job cannot push. It rebuilds and fails loudly if
-# README/dist/badges are stale; the VPS publishes generated files via scripts/publish-build.js (PR).
+# Source validation on merge. The VPS publisher generates and automatically merges
+# derived files, then syncs the site; contributors never need a second review.
 on:
   push:
     branches: [main]
-    paths: ["sellers/**", "state/**", "partners/**", "scripts/**"]
+    paths: ["sellers/**", "state/**", "partners/**", "scripts/**", ".github/workflows/build.yml"]
 permissions:
-  contents: write
+  contents: read
 jobs:
   build:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,8 +16,7 @@ jobs:
         with:
           node-version: 22
       - run: npm ci --ignore-scripts
+      - run: npm test
       - run: node scripts/build.js
-      - name: generated files must be current
-        run: |
-          git diff --exit-code -- README.md dist badges && echo "dist/README/badges are current" || {
-            echo "::error::README/dist/badges are out of date. On the VPS run: node scripts/publish-build.js (opens the build PR)."; exit 1; }
+      - name: publication status
+        run: echo "The VPS publisher records initial probes, publishes generated files, and syncs the website within five minutes. See the automated publication PR for the generated commit." >> "$GITHUB_STEP_SUMMARY"
