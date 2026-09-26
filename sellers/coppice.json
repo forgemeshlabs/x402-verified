@@ -1,0 +1,27 @@
+{
+  "name": "Coppice",
+  "slug": "coppice",
+  "homepage": "https://coppice-ai.com",
+  "description": "Vet an x402 endpoint: a live conformance battery, a permanent public report page, and submission to a free daily monitor.",
+  "protocols": ["x402"],
+  "endpoints": [
+    {
+      "url": "https://coppice-ai.com/api/vet",
+      "method": "POST",
+      "price_usdc": "0.25",
+      "body": { "url": "https://example.com/paid-endpoint", "method": "POST" }
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0xd4f4fCD85b3B562631774246ad99F364E22043C4",
+  "networks": ["eip155:8453"],
+  "manifest": "https://coppice-ai.com/.well-known/x402",
+  "llms_txt": "https://coppice-ai.com/llms.txt",
+  "contact": "mailto:coppice@agentmail.to",
+  "proof": {
+    "tx_hash": "0x50048b47d46116c81f0ef9e3d6541f487e3743825078838c863bc6e8ecddb705",
+    "endpoint": 0,
+    "payer_kind": "self"
+  },
+  "added_at": "2026-09-26"
+}
