@@ -1,7 +1,7 @@
 {
   "version": 2,
   "program": "x402",
-  "generated_at": "2026-09-23T21:00:33.159Z",
+  "generated_at": "2026-09-28T05:30:17.486Z",
   "score_spec": "2.0",
   "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
   "marks": {
@@ -96,14 +96,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "2/2 recent probe runs passed",
+          "check": "3/3 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 631 ms",
+          "check": "latest response 599 ms",
           "ok": true
         },
         {
@@ -216,9 +216,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-09-28T05:30:12.702Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 599,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-21T05:30:02.495Z",
+      "last_probe": "2026-09-28T05:30:12.702Z",
       "bazaar_listed": true,
       "protocol_capabilities": {
         "x402": {
@@ -321,14 +336,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "1/1 recent probe runs passed",
+          "check": "2/2 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 835 ms",
+          "check": "latest response 939 ms",
           "ok": true
         },
         {
@@ -426,9 +441,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-09-28T05:30:14.135Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 939,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-23T21:00:30.712Z",
+      "last_probe": "2026-09-28T05:30:14.135Z",
       "bazaar_listed": false,
       "protocol_capabilities": {
         "x402": {
@@ -547,14 +577,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "2/2 recent probe runs passed",
+          "check": "3/3 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 401 ms",
+          "check": "latest response 467 ms",
           "ok": true
         },
         {
@@ -667,9 +697,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-09-28T05:30:16.386Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": true,
+          "ms": 467,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-21T05:30:03.526Z",
+      "last_probe": "2026-09-28T05:30:16.386Z",
       "bazaar_listed": false,
       "protocol_capabilities": {
         "x402": {
@@ -773,14 +818,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "1/1 recent probe runs passed",
+          "check": "2/2 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 2,
           "max": 6,
-          "check": "latest response 6472 ms",
+          "check": "latest response 6321 ms",
           "ok": false
         },
         {
@@ -878,9 +923,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-09-28T05:30:05.839Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 6321,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-23T21:00:23.307Z",
+      "last_probe": "2026-09-28T05:30:05.839Z",
       "bazaar_listed": false,
       "protocol_capabilities": {
         "x402": {
@@ -928,13 +988,13 @@
         "eip155:8453",
         "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
       ],
-      "score": 79,
+      "score": 82,
       "score_band": "ready",
       "dimensions": {
         "payability": 35,
-        "reliability": 20,
+        "reliability": 18,
         "interoperability": 20,
-        "discoverability": 4
+        "discoverability": 9
       },
       "score_details": [
         {
@@ -969,15 +1029,15 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "1/1 recent probe runs passed",
+          "check": "2/2 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
-          "points": 6,
+          "points": 4,
           "max": 6,
-          "check": "latest response 270 ms",
-          "ok": true
+          "check": "latest response 1954 ms",
+          "ok": false
         },
         {
           "dimension": "interoperability",
@@ -1030,10 +1090,10 @@
         },
         {
           "dimension": "discoverability",
-          "points": 0,
+          "points": 5,
           "max": 5,
           "check": "listed in the CDP Bazaar",
-          "ok": false
+          "ok": true
         }
       ],
       "status": "active",
@@ -1074,10 +1134,25 @@
           "manifest_ok": false,
           "manifest_lists_route": false,
           "llms_ok": true
+        },
+        {
+          "at": "2026-09-28T05:30:03.280Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": false,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 1954,
+          "manifest_ok": false,
+          "manifest_lists_route": false,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-21T21:07:07.491Z",
-      "bazaar_listed": false,
+      "last_probe": "2026-09-28T05:30:03.280Z",
+      "bazaar_listed": true,
       "protocol_capabilities": {
         "x402": {
           "supported": true,
