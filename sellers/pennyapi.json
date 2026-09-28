@@ -1,0 +1,34 @@
+{
+  "name": "PennyAPI",
+  "slug": "pennyapi",
+  "homepage": "https://pennyregwatch.com",
+  "description": "Machine-paid web search and agent utilities over x402 v2 on Base USDC.",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://pennyregwatch.com/v1/search",
+      "method": "POST",
+      "price_usdc": "0.004",
+      "body": {
+        "query": "latest autonomous agent payment infrastructure",
+        "limit": 3
+      }
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x5deaebaf98034cc0d9abe3757a440b121c42ef0a",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://pennyregwatch.com/.well-known/x402",
+  "llms_txt": "https://pennyregwatch.com/llms.txt",
+  "contact": "mailto:ayoubsalem@gmail.com",
+  "proof": {
+    "tx_hash": "0x338308fdacc4b16e6110025152549b7a09bb8e30053e0ab37a8e2f45789b9462",
+    "endpoint": 0,
+    "payer_kind": "self"
+  },
+  "added_at": "2026-09-27"
+}
