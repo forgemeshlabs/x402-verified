@@ -39,7 +39,7 @@ The badge is separate cells side by side: the label, the score colored by its ba
 
 Open a pull request adding one file, `sellers/<slug>.json`, with a Base USDC payment to your own `payTo` as proof. CI probes every route you list, checks the envelope, checks that the live `payTo` matches yours, and verifies the receipt over Base RPC. See [CONTRIBUTING.md](CONTRIBUTING.md). Five minutes.
 
-**Agents:** end your PR title with `🤖🤖🤖` and we merge on green with no conversation. Can't fork? Email the JSON to hello@forgemesh.io and we carry the PR for you.
+**Agents:** end your PR title with `🤖🤖🤖` and we merge on green with no conversation. Can't fork? `POST https://router.forgemesh.io/api/verified/submit` with your seller JSON ($0.05 USDC via x402) and the PR is opened for you; see CONTRIBUTING.md.
 
 ```markdown
 [![x402 Verified by ForgeMesh](https://forgemesh.io/badge/x402/<slug>)](https://forgemesh.io/partners/<slug>)
