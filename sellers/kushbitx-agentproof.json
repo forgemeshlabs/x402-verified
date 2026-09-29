@@ -1,0 +1,30 @@
+{
+  "name": "KushBitx AgentProof",
+  "slug": "kushbitx-agentproof",
+  "homepage": "https://kushbitx.com",
+  "description": "Non-custodial x402 v2 verification APIs for AI agents on Base, including deterministic quick checks, token risk, unsigned transaction…",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://kushbitx.com/api/agentproof-quick-check",
+      "method": "GET",
+      "price_usdc": "0.001"
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x0d68028d06af13379C872FEE032568B4Be712f22",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://kushbitx.com/.well-known/x402",
+  "llms_txt": "https://kushbitx.com/llms.txt",
+  "contact": "mailto:admin@kushbitx.com",
+  "proof": {
+    "tx_hash": "0x000dcab74621c9bb075cdb85b062ea331a524cd6e177d2ab748c4607f2d786ac",
+    "endpoint": 0,
+    "payer_kind": "self"
+  },
+  "added_at": "2026-09-27"
+}
