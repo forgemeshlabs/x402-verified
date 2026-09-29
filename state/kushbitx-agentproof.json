@@ -1,0 +1,66 @@
+{
+  "probes": [
+    {
+      "at": "2026-09-29T11:55:02.113Z",
+      "endpoints": [
+        {
+          "url": "https://kushbitx.com/api/agentproof-quick-check",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x0d68028d06af13379C872FEE032568B4Be712f22",
+              "amount": "1000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 165,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://kushbitx.com/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://kushbitx.com/llms.txt",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": true,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 165,
+      "networks_detected": [
+        "eip155:8453"
+      ],
+      "pass": true
+    }
+  ],
+  "proof_check": {
+    "ok": true,
+    "reason": null,
+    "tx_hash": "0x000dcab74621c9bb075cdb85b062ea331a524cd6e177d2ab748c4607f2d786ac",
+    "block": 51827855,
+    "block_time": "2026-09-26T17:50:57.000Z",
+    "amount_atomic": "2000",
+    "payer": "0x18bc8cbd245b72cc382e41fcdc4b34d8237772fd",
+    "confirmations": 118922,
+    "checked_at": "2026-09-29T11:55:02.392Z"
+  },
+  "forgemesh_paid": null,
+  "bazaar_listed": true,
+  "status": "active"
+}
