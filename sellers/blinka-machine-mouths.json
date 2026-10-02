@@ -1,0 +1,50 @@
+{
+  "name": "Blinka Machine Mouths",
+  "slug": "blinka-machine-mouths",
+  "homepage": "https://blinka-machine-mouths.netlify.app",
+  "description": "Bounded stateless machine transforms: strict prose-to-schema extraction and evidence-backed workflow recovery over x402.",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://blinka-machine-mouths.netlify.app/structure",
+      "method": "POST",
+      "price_usdc": "0.010",
+      "body": {
+        "text": "Jamie emailed on October 4. The project budget is $250.",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "budget_usd": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "name",
+            "budget_usd"
+          ],
+          "additionalProperties": false
+        },
+        "instruction": "Extract only explicit facts."
+      }
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x3babf5340E5a14979CB91331Cb428b97584e26aE",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://blinka-machine-mouths.netlify.app/.well-known/x402",
+  "llms_txt": "https://blinka-machine-mouths.netlify.app/llms.txt",
+  "contact": "mailto:blinka-marketplaces@agentmail.to",
+  "proof": {
+    "tx_hash": "0x1d64f32221aa490679ab32087c3982dac73eaa695361dab4ee9ccee80cd7c5fc",
+    "endpoint": 0,
+    "payer_kind": "customer"
+  },
+  "added_at": "2026-10-02"
+}
