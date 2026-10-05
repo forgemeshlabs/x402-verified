@@ -28,7 +28,7 @@ The badge is separate cells side by side: the label, the score colored by its ba
 <!-- SELLERS:START -->
 | Seller | Score | Marks | Status | Protocols | Cheapest route | Proof | Last probe |
 |---|---|---|---|---|---|---|---|
-| [HumanMirror](https://forgemesh.io/partners/humanmirror) | 100/100 excellent | ★ | active | x402 ✓ | POST https://humanmirror.fr/api/x402/safe-preflight/ $0.010 | [tx](https://basescan.org/tx/0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b) | 2026-09-28 |
+| [HumanMirror](https://forgemesh.io/partners/humanmirror) | 100/100 excellent | ★ | active | x402 ✓ | POST https://humanmirror.fr/api/x402/safe-preflight/ $0.010 | [tx](https://basescan.org/tx/0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b) | 2026-10-05 |
 | [KushBitx AgentProof](https://forgemesh.io/partners/kushbitx-agentproof) | 100/100 excellent | ★ | active | x402 ✓ | GET https://kushbitx.com/api/agentproof-quick-check $0.001 | [tx](https://basescan.org/tx/0x000dcab74621c9bb075cdb85b062ea331a524cd6e177d2ab748c4607f2d786ac) | 2026-09-29 |
 | [PennyAPI](https://forgemesh.io/partners/pennyapi) | 100/100 excellent | ★ | active | x402 ✓ | POST https://pennyregwatch.com/v1/search $0.004 | [tx](https://basescan.org/tx/0x338308fdacc4b16e6110025152549b7a09bb8e30053e0ab37a8e2f45789b9462) | 2026-09-28 |
 | [Blinka Machine Mouths](https://forgemesh.io/partners/blinka-machine-mouths) | 95/100 excellent | — | active | x402 ✓ | POST https://blinka-machine-mouths.netlify.app/structure $0.010 | [tx](https://basescan.org/tx/0x1d64f32221aa490679ab32087c3982dac73eaa695361dab4ee9ccee80cd7c5fc) | 2026-10-02 |
