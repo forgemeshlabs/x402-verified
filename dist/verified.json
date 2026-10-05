@@ -1,7 +1,7 @@
 {
   "version": 2,
   "program": "x402",
-  "generated_at": "2026-10-05T00:00:08.226Z",
+  "generated_at": "2026-10-05T05:30:18.727Z",
   "score_spec": "2.0",
   "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
   "marks": {
@@ -96,14 +96,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "4/4 recent probe runs passed",
+          "check": "5/5 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 421 ms",
+          "check": "latest response 791 ms",
           "ok": true
         },
         {
@@ -246,9 +246,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-10-05T05:30:12.349Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 791,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-10-05T00:00:07.395Z",
+      "last_probe": "2026-10-05T05:30:12.349Z",
       "bazaar_listed": true,
       "protocol_capabilities": {
         "x402": {
@@ -331,14 +346,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "1/1 recent probe runs passed",
+          "check": "2/2 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 165 ms",
+          "check": "latest response 180 ms",
           "ok": true
         },
         {
@@ -436,9 +451,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-10-05T05:30:13.895Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 180,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-29T11:55:02.113Z",
+      "last_probe": "2026-10-05T05:30:13.895Z",
       "bazaar_listed": true,
       "protocol_capabilities": {
         "x402": {
@@ -525,14 +555,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "1/1 recent probe runs passed",
+          "check": "2/2 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 195 ms",
+          "check": "latest response 197 ms",
           "ok": true
         },
         {
@@ -630,9 +660,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-10-05T05:30:16.886Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 197,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-28T12:55:01.887Z",
+      "last_probe": "2026-10-05T05:30:16.886Z",
       "bazaar_listed": true,
       "protocol_capabilities": {
         "x402": {
@@ -735,14 +780,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "1/1 recent probe runs passed",
+          "check": "2/2 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 290 ms",
+          "check": "latest response 410 ms",
           "ok": true
         },
         {
@@ -840,9 +885,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-10-05T05:30:04.452Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 410,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-10-02T07:15:02.744Z",
+      "last_probe": "2026-10-05T05:30:04.452Z",
       "bazaar_listed": false,
       "protocol_capabilities": {
         "x402": {
@@ -860,231 +920,6 @@
       "added_at": "2026-10-02",
       "page": "https://forgemesh.io/partners/blinka-machine-mouths",
       "badge": "https://forgemesh.io/badge/x402/blinka-machine-mouths"
-    },
-    {
-      "slug": "loop2-quickstart",
-      "name": "loop2-quickstart",
-      "homepage": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev",
-      "description": "Live Base USDC x402 v2 market-intel endpoints: all-network settlement snapshot, funded-seller leaderboard with on-chain tx_30d, seller…",
-      "protocols": [
-        "x402"
-      ],
-      "endpoints": [
-        {
-          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402",
-          "method": "GET",
-          "price_usdc": "0.001"
-        },
-        {
-          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/funded",
-          "method": "GET",
-          "price_usdc": "0.001"
-        },
-        {
-          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/agents",
-          "method": "GET",
-          "price_usdc": "0.001"
-        },
-        {
-          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/diligence",
-          "method": "GET",
-          "price_usdc": "0.001"
-        },
-        {
-          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/test-pay",
-          "method": "GET",
-          "price_usdc": "0.01"
-        }
-      ],
-      "nominated_endpoint": 0,
-      "payTo": "0xd34e4A6706ff438B5EeCf2601Ed73e33C7c005b1",
-      "networks": [
-        "eip155:8453"
-      ],
-      "networks_detected": [
-        "eip155:8453"
-      ],
-      "score": 95,
-      "score_band": "excellent",
-      "dimensions": {
-        "payability": 40,
-        "reliability": 20,
-        "interoperability": 20,
-        "discoverability": 15
-      },
-      "score_details": [
-        {
-          "dimension": "payability",
-          "points": 10,
-          "max": 10,
-          "check": "every declared endpoint answers HTTP 402",
-          "ok": true
-        },
-        {
-          "dimension": "payability",
-          "points": 10,
-          "max": 10,
-          "check": "every 402 carries a valid x402 envelope",
-          "ok": true
-        },
-        {
-          "dimension": "payability",
-          "points": 5,
-          "max": 5,
-          "check": "envelope payTo matches the declared payTo",
-          "ok": true
-        },
-        {
-          "dimension": "payability",
-          "points": 15,
-          "max": 15,
-          "check": "seller-supplied on-chain proof verified",
-          "ok": true
-        },
-        {
-          "dimension": "reliability",
-          "points": 14,
-          "max": 14,
-          "check": "2/2 recent probe runs passed",
-          "ok": true
-        },
-        {
-          "dimension": "reliability",
-          "points": 6,
-          "max": 6,
-          "check": "latest response 939 ms",
-          "ok": true
-        },
-        {
-          "dimension": "interoperability",
-          "points": 5,
-          "max": 5,
-          "check": "envelope declares x402Version 2",
-          "ok": true
-        },
-        {
-          "dimension": "interoperability",
-          "points": 5,
-          "max": 5,
-          "check": "envelope delivered in the payment-required header",
-          "ok": true
-        },
-        {
-          "dimension": "interoperability",
-          "points": 5,
-          "max": 5,
-          "check": "envelope also present in the JSON body (stock v1 clients)",
-          "ok": true
-        },
-        {
-          "dimension": "interoperability",
-          "points": 5,
-          "max": 5,
-          "check": "accepts[] entries well-formed: exact scheme, CAIP-2 network, canonical USDC, amount = declared price",
-          "ok": true
-        },
-        {
-          "dimension": "discoverability",
-          "points": 6,
-          "max": 6,
-          "check": "/.well-known/x402 manifest present",
-          "ok": true
-        },
-        {
-          "dimension": "discoverability",
-          "points": 5,
-          "max": 5,
-          "check": "manifest names every declared route",
-          "ok": true
-        },
-        {
-          "dimension": "discoverability",
-          "points": 4,
-          "max": 4,
-          "check": "llms.txt present",
-          "ok": true
-        },
-        {
-          "dimension": "discoverability",
-          "points": 0,
-          "max": 5,
-          "check": "listed in the CDP Bazaar",
-          "ok": false
-        }
-      ],
-      "status": "active",
-      "perfect": false,
-      "forgemesh_paid": false,
-      "forgemesh_paid_at": null,
-      "forgemesh_paid_tx": null,
-      "forgemesh_paid_amount_atomic": null,
-      "forgemesh_paid_stale": false,
-      "proof": {
-        "tx_hash": "0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6",
-        "endpoint": 0,
-        "payer_kind": "customer"
-      },
-      "proof_check": {
-        "ok": true,
-        "reason": null,
-        "tx_hash": "0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6",
-        "block": 51486781,
-        "block_time": "2026-09-18T20:21:49.000Z",
-        "amount_atomic": "1000",
-        "payer": "0x1a915801f9c3913c6072158cd4a2fff3b1d7f121",
-        "confirmations": 217161,
-        "checked_at": "2026-09-23T21:00:32.713Z"
-      },
-      "probes": [
-        {
-          "at": "2026-09-23T21:00:30.712Z",
-          "pass": true,
-          "is_402": true,
-          "envelope_valid": true,
-          "payto_match": true,
-          "header_envelope": true,
-          "body_envelope": true,
-          "x402_version_2": true,
-          "mpp_header": false,
-          "ms": 835,
-          "manifest_ok": true,
-          "manifest_lists_route": true,
-          "llms_ok": true
-        },
-        {
-          "at": "2026-09-28T05:30:14.135Z",
-          "pass": true,
-          "is_402": true,
-          "envelope_valid": true,
-          "payto_match": true,
-          "header_envelope": true,
-          "body_envelope": true,
-          "x402_version_2": true,
-          "mpp_header": false,
-          "ms": 939,
-          "manifest_ok": true,
-          "manifest_lists_route": true,
-          "llms_ok": true
-        }
-      ],
-      "last_probe": "2026-09-28T05:30:14.135Z",
-      "bazaar_listed": false,
-      "protocol_capabilities": {
-        "x402": {
-          "supported": true,
-          "verified": true,
-          "version": 2
-        },
-        "mpp": {
-          "supported": false,
-          "verified": false,
-          "note": "detected only; MPP Verified by ForgeMesh is a separate future program"
-        }
-      },
-      "contact": "mailto:loop2@agentmail.to",
-      "added_at": "2026-09-23",
-      "page": "https://forgemesh.io/partners/loop2-quickstart",
-      "badge": "https://forgemesh.io/badge/x402/loop2-quickstart"
     },
     {
       "slug": "saymon-ru-data-api",
@@ -1186,14 +1021,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "3/3 recent probe runs passed",
+          "check": "4/4 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 6,
           "max": 6,
-          "check": "latest response 467 ms",
+          "check": "latest response 419 ms",
           "ok": true
         },
         {
@@ -1321,9 +1156,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-10-05T05:30:17.695Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": true,
+          "ms": 419,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-28T05:30:16.386Z",
+      "last_probe": "2026-10-05T05:30:17.695Z",
       "bazaar_listed": false,
       "protocol_capabilities": {
         "x402": {
@@ -1341,6 +1191,246 @@
       "added_at": "2026-09-16",
       "page": "https://forgemesh.io/partners/saymon-ru-data-api",
       "badge": "https://forgemesh.io/badge/x402/saymon-ru-data-api"
+    },
+    {
+      "slug": "loop2-quickstart",
+      "name": "loop2-quickstart",
+      "homepage": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev",
+      "description": "Live Base USDC x402 v2 market-intel endpoints: all-network settlement snapshot, funded-seller leaderboard with on-chain tx_30d, seller…",
+      "protocols": [
+        "x402"
+      ],
+      "endpoints": [
+        {
+          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402",
+          "method": "GET",
+          "price_usdc": "0.001"
+        },
+        {
+          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/funded",
+          "method": "GET",
+          "price_usdc": "0.001"
+        },
+        {
+          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/agents",
+          "method": "GET",
+          "price_usdc": "0.001"
+        },
+        {
+          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/diligence",
+          "method": "GET",
+          "price_usdc": "0.001"
+        },
+        {
+          "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/test-pay",
+          "method": "GET",
+          "price_usdc": "0.01"
+        }
+      ],
+      "nominated_endpoint": 0,
+      "payTo": "0xd34e4A6706ff438B5EeCf2601Ed73e33C7c005b1",
+      "networks": [
+        "eip155:8453"
+      ],
+      "networks_detected": [
+        "eip155:8453"
+      ],
+      "score": 93,
+      "score_band": "excellent",
+      "dimensions": {
+        "payability": 40,
+        "reliability": 18,
+        "interoperability": 20,
+        "discoverability": 15
+      },
+      "score_details": [
+        {
+          "dimension": "payability",
+          "points": 10,
+          "max": 10,
+          "check": "every declared endpoint answers HTTP 402",
+          "ok": true
+        },
+        {
+          "dimension": "payability",
+          "points": 10,
+          "max": 10,
+          "check": "every 402 carries a valid x402 envelope",
+          "ok": true
+        },
+        {
+          "dimension": "payability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope payTo matches the declared payTo",
+          "ok": true
+        },
+        {
+          "dimension": "payability",
+          "points": 15,
+          "max": 15,
+          "check": "seller-supplied on-chain proof verified",
+          "ok": true
+        },
+        {
+          "dimension": "reliability",
+          "points": 14,
+          "max": 14,
+          "check": "3/3 recent probe runs passed",
+          "ok": true
+        },
+        {
+          "dimension": "reliability",
+          "points": 4,
+          "max": 6,
+          "check": "latest response 1003 ms",
+          "ok": false
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope declares x402Version 2",
+          "ok": true
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope delivered in the payment-required header",
+          "ok": true
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope also present in the JSON body (stock v1 clients)",
+          "ok": true
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "accepts[] entries well-formed: exact scheme, CAIP-2 network, canonical USDC, amount = declared price",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 6,
+          "max": 6,
+          "check": "/.well-known/x402 manifest present",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 5,
+          "max": 5,
+          "check": "manifest names every declared route",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 4,
+          "max": 4,
+          "check": "llms.txt present",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 0,
+          "max": 5,
+          "check": "listed in the CDP Bazaar",
+          "ok": false
+        }
+      ],
+      "status": "active",
+      "perfect": false,
+      "forgemesh_paid": false,
+      "forgemesh_paid_at": null,
+      "forgemesh_paid_tx": null,
+      "forgemesh_paid_amount_atomic": null,
+      "forgemesh_paid_stale": false,
+      "proof": {
+        "tx_hash": "0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6",
+        "endpoint": 0,
+        "payer_kind": "customer"
+      },
+      "proof_check": {
+        "ok": true,
+        "reason": null,
+        "tx_hash": "0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6",
+        "block": 51486781,
+        "block_time": "2026-09-18T20:21:49.000Z",
+        "amount_atomic": "1000",
+        "payer": "0x1a915801f9c3913c6072158cd4a2fff3b1d7f121",
+        "confirmations": 217161,
+        "checked_at": "2026-09-23T21:00:32.713Z"
+      },
+      "probes": [
+        {
+          "at": "2026-09-23T21:00:30.712Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 835,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
+        },
+        {
+          "at": "2026-09-28T05:30:14.135Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 939,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
+        },
+        {
+          "at": "2026-10-05T05:30:14.599Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 1003,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
+        }
+      ],
+      "last_probe": "2026-10-05T05:30:14.599Z",
+      "bazaar_listed": false,
+      "protocol_capabilities": {
+        "x402": {
+          "supported": true,
+          "verified": true,
+          "version": 2
+        },
+        "mpp": {
+          "supported": false,
+          "verified": false,
+          "note": "detected only; MPP Verified by ForgeMesh is a separate future program"
+        }
+      },
+      "contact": "mailto:loop2@agentmail.to",
+      "added_at": "2026-09-23",
+      "page": "https://forgemesh.io/partners/loop2-quickstart",
+      "badge": "https://forgemesh.io/badge/x402/loop2-quickstart"
     },
     {
       "slug": "free-asset-radar-x402",
@@ -1427,14 +1517,14 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "2/2 recent probe runs passed",
+          "check": "3/3 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
           "points": 2,
           "max": 6,
-          "check": "latest response 6321 ms",
+          "check": "latest response 6367 ms",
           "ok": false
         },
         {
@@ -1547,9 +1637,24 @@
           "manifest_ok": true,
           "manifest_lists_route": true,
           "llms_ok": true
+        },
+        {
+          "at": "2026-10-05T05:30:05.520Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 6367,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-28T05:30:05.839Z",
+      "last_probe": "2026-10-05T05:30:05.520Z",
       "bazaar_listed": false,
       "protocol_capabilities": {
         "x402": {
@@ -1597,11 +1702,11 @@
         "eip155:8453",
         "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
       ],
-      "score": 82,
+      "score": 84,
       "score_band": "ready",
       "dimensions": {
         "payability": 35,
-        "reliability": 18,
+        "reliability": 20,
         "interoperability": 20,
         "discoverability": 9
       },
@@ -1638,15 +1743,15 @@
           "dimension": "reliability",
           "points": 14,
           "max": 14,
-          "check": "2/2 recent probe runs passed",
+          "check": "3/3 recent probe runs passed",
           "ok": true
         },
         {
           "dimension": "reliability",
-          "points": 4,
+          "points": 6,
           "max": 6,
-          "check": "latest response 1954 ms",
-          "ok": false
+          "check": "latest response 598 ms",
+          "ok": true
         },
         {
           "dimension": "interoperability",
@@ -1758,9 +1863,24 @@
           "manifest_ok": false,
           "manifest_lists_route": false,
           "llms_ok": true
+        },
+        {
+          "at": "2026-10-05T05:30:03.170Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": false,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 598,
+          "manifest_ok": false,
+          "manifest_lists_route": false,
+          "llms_ok": true
         }
       ],
-      "last_probe": "2026-09-28T05:30:03.280Z",
+      "last_probe": "2026-10-05T05:30:03.170Z",
       "bazaar_listed": true,
       "protocol_capabilities": {
         "x402": {
