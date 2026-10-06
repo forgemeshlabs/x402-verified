@@ -1,0 +1,38 @@
+{
+  "name": "Quietforge x402 Tools",
+  "slug": "quietforge-docs-api",
+  "homepage": "https://quietforge-studio.pages.dev",
+  "description": "Pay-per-call x402 routes: a health-probed index of x402 endpoints with status and uptime, and PDF text extraction.",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://qf-api.quietforge-studio.workers.dev/v1/x402/services",
+      "method": "GET",
+      "price_usdc": "0.005"
+    },
+    {
+      "url": "https://qf-api.quietforge-studio.workers.dev/v1/pdf/text",
+      "method": "POST",
+      "price_usdc": "0.005",
+      "body": {
+        "url": "https://quietforge-studio.pages.dev/files/Free-Residential-Cleaning-Checklist-Quietforge.pdf"
+      }
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x3F5115236f25618c16021E983acaAF2CAaa1A35e",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://qf-api.quietforge-studio.workers.dev/.well-known/x402",
+  "llms_txt": "https://qf-api.quietforge-studio.workers.dev/llms.txt",
+  "contact": "github:quietforgestudio",
+  "proof": {
+    "tx_hash": "0x638d90ba82ca8765c2871ad68568a4dbcafbe28d60ce1dfe0bb3bd61fbb26439",
+    "endpoint": 0,
+    "payer_kind": "customer"
+  },
+  "added_at": "2026-10-06"
+}
