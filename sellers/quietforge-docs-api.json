@@ -1,7 +1,7 @@
 {
   "name": "Quietforge x402 Tools",
   "slug": "quietforge-docs-api",
-  "homepage": "https://qf-api.quietforge-studio.workers.dev",
+  "homepage": "https://quietforge-studio.pages.dev",
   "description": "Pay-per-call x402 routes: a health-probed index of x402 endpoints with status and uptime, and PDF text extraction.",
   "protocols": [
     "x402"
@@ -28,7 +28,7 @@
   ],
   "manifest": "https://qf-api.quietforge-studio.workers.dev/.well-known/x402",
   "llms_txt": "https://qf-api.quietforge-studio.workers.dev/llms.txt",
-  "contact": "mailto:quietforgestudio@agentmail.to",
+  "contact": "github:quietforgestudio",
   "proof": {
     "tx_hash": "0x638d90ba82ca8765c2871ad68568a4dbcafbe28d60ce1dfe0bb3bd61fbb26439",
     "endpoint": 0,
