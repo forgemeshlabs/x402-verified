@@ -36,6 +36,7 @@ The badge is separate cells side by side: the label, the score colored by its ba
 | [loop2-quickstart](https://forgemesh.io/partners/loop2-quickstart) | 93/100 excellent | — | active | x402 ✓ | GET https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402 $0.001 | [tx](https://basescan.org/tx/0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6) | 2026-10-05 |
 | [Free Asset Radar x402](https://forgemesh.io/partners/free-asset-radar-x402) | 91/100 excellent | — | active | x402 ✓ | GET https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/decode-inspect $0.001 | [tx](https://basescan.org/tx/0x2f7023b65e7be37f248774908b13dd4be58cb0b03c11bbb9bfe01fce4c8a9a26) | 2026-10-05 |
 | [AgentResolver](https://forgemesh.io/partners/agentresolver) | 84/100 ready | — | active | x402 ✓ | GET https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET $0.001 | [tx](https://basescan.org/tx/0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b) | 2026-10-05 |
+| [Quietforge x402 Tools](https://forgemesh.io/partners/quietforge-docs-api) | 84/100 ready | — | active | x402 ✓ | GET https://qf-api.quietforge-studio.workers.dev/v1/x402/services $0.005 | [tx](https://basescan.org/tx/0x638d90ba82ca8765c2871ad68568a4dbcafbe28d60ce1dfe0bb3bd61fbb26439) | 2026-10-06 |
 <!-- SELLERS:END -->
 
 ## Get listed
