@@ -8,6 +8,14 @@
   ],
   "endpoints": [
     {
+      "url": "https://humanmirror.fr/api/machine/resolve/",
+      "method": "POST",
+      "price_usdc": "0.001",
+      "body": {
+        "need": "Find the smallest live HumanMirror capability for a machine task"
+      }
+    },
+    {
       "url": "https://humanmirror.fr/api/x402/safe-preflight/",
       "method": "POST",
       "price_usdc": "0.010",
@@ -43,7 +51,7 @@
   "contact": "mailto:contact.humanmirror@gmail.com",
   "proof": {
     "tx_hash": "0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b",
-    "endpoint": 0,
+    "endpoint": 1,
     "payer_kind": "customer"
   },
   "added_at": "2026-09-16"
