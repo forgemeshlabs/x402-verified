@@ -49,7 +49,7 @@
       "pass": true
     },
     {
-      "at": "2026-10-05T05:30:04.452Z",
+      "at": "2026-10-07T19:41:00.309Z",
       "endpoints": [
         {
           "url": "https://blinka-machine-mouths.netlify.app/structure",
@@ -74,7 +74,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 410,
+          "response_time_ms": 92,
           "error": null
         }
       ],
@@ -90,7 +90,7 @@
       "body_envelope": true,
       "x402_version_2": true,
       "mpp_header": false,
-      "ms": 410,
+      "ms": 92,
       "networks_detected": [
         "eip155:8453"
       ],

@@ -167,7 +167,7 @@
       "pass": true
     },
     {
-      "at": "2026-10-05T05:30:03.170Z",
+      "at": "2026-10-07T19:40:59.889Z",
       "endpoints": [
         {
           "url": "https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET",
@@ -200,7 +200,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 439,
+          "response_time_ms": 164,
           "error": null
         },
         {
@@ -226,7 +226,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 598,
+          "response_time_ms": 79,
           "error": null
         }
       ],
@@ -242,7 +242,7 @@
       "body_envelope": true,
       "x402_version_2": true,
       "mpp_header": false,
-      "ms": 598,
+      "ms": 164,
       "networks_detected": [
         "eip155:8453",
         "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"

@@ -305,156 +305,109 @@
       "pass": true
     },
     {
-      "at": "2026-10-05T05:30:14.599Z",
+      "at": "2026-10-07T19:41:08.571Z",
       "endpoints": [
         {
           "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402",
           "method_used": "GET",
           "reachable": true,
-          "http_status": 402,
-          "is_402": true,
-          "envelope_source": "header",
-          "header_envelope": true,
-          "body_envelope": true,
-          "envelope_valid": true,
+          "http_status": 530,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
           "envelope_errors": [],
-          "x402_version": 2,
-          "accepts": [
-            {
-              "scheme": "exact",
-              "network": "eip155:8453",
-              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-              "payTo": "0xd34e4A6706ff438B5EeCf2601Ed73e33C7c005b1",
-              "amount": "1000",
-              "maxTimeoutSeconds": 1800
-            }
-          ],
+          "x402_version": null,
+          "accepts": [],
           "mpp_header": false,
-          "response_time_ms": 767,
+          "response_time_ms": 106,
           "error": null
         },
         {
           "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/funded",
           "method_used": "GET",
           "reachable": true,
-          "http_status": 402,
-          "is_402": true,
-          "envelope_source": "header",
-          "header_envelope": true,
-          "body_envelope": true,
-          "envelope_valid": true,
+          "http_status": 530,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
           "envelope_errors": [],
-          "x402_version": 2,
-          "accepts": [
-            {
-              "scheme": "exact",
-              "network": "eip155:8453",
-              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-              "payTo": "0xd34e4A6706ff438B5EeCf2601Ed73e33C7c005b1",
-              "amount": "1000",
-              "maxTimeoutSeconds": 1800
-            }
-          ],
+          "x402_version": null,
+          "accepts": [],
           "mpp_header": false,
-          "response_time_ms": 1003,
+          "response_time_ms": 66,
           "error": null
         },
         {
           "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/agents",
           "method_used": "GET",
           "reachable": true,
-          "http_status": 402,
-          "is_402": true,
-          "envelope_source": "header",
-          "header_envelope": true,
-          "body_envelope": true,
-          "envelope_valid": true,
+          "http_status": 530,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
           "envelope_errors": [],
-          "x402_version": 2,
-          "accepts": [
-            {
-              "scheme": "exact",
-              "network": "eip155:8453",
-              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-              "payTo": "0xd34e4A6706ff438B5EeCf2601Ed73e33C7c005b1",
-              "amount": "1000",
-              "maxTimeoutSeconds": 1800
-            }
-          ],
+          "x402_version": null,
+          "accepts": [],
           "mpp_header": false,
-          "response_time_ms": 928,
+          "response_time_ms": 5305,
           "error": null
         },
         {
           "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/diligence",
           "method_used": "GET",
           "reachable": true,
-          "http_status": 402,
-          "is_402": true,
-          "envelope_source": "header",
-          "header_envelope": true,
-          "body_envelope": true,
-          "envelope_valid": true,
+          "http_status": 530,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
           "envelope_errors": [],
-          "x402_version": 2,
-          "accepts": [
-            {
-              "scheme": "exact",
-              "network": "eip155:8453",
-              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-              "payTo": "0xd34e4A6706ff438B5EeCf2601Ed73e33C7c005b1",
-              "amount": "1000",
-              "maxTimeoutSeconds": 1800
-            }
-          ],
+          "x402_version": null,
+          "accepts": [],
           "mpp_header": false,
-          "response_time_ms": 557,
+          "response_time_ms": 76,
           "error": null
         },
         {
           "url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/test-pay",
           "method_used": "GET",
           "reachable": true,
-          "http_status": 402,
-          "is_402": true,
-          "envelope_source": "header",
-          "header_envelope": true,
-          "body_envelope": true,
-          "envelope_valid": true,
+          "http_status": 530,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
           "envelope_errors": [],
-          "x402_version": 2,
-          "accepts": [
-            {
-              "scheme": "exact",
-              "network": "eip155:8453",
-              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-              "payTo": "0xd34e4A6706ff438B5EeCf2601Ed73e33C7c005b1",
-              "amount": "10000",
-              "maxTimeoutSeconds": 1800
-            }
-          ],
+          "x402_version": null,
+          "accepts": [],
           "mpp_header": false,
-          "response_time_ms": 472,
+          "response_time_ms": 58,
           "error": null
         }
       ],
       "manifest_url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/.well-known/x402",
-      "manifest_ok": true,
-      "manifest_lists_route": true,
+      "manifest_ok": false,
+      "manifest_lists_route": false,
       "llms_url": "https://loop2-quickstart.manhliemcn4euwlu.workers.dev/llms.txt",
-      "llms_ok": true,
-      "is_402": true,
-      "envelope_valid": true,
-      "payto_match": true,
-      "header_envelope": true,
-      "body_envelope": true,
-      "x402_version_2": true,
+      "llms_ok": false,
+      "is_402": false,
+      "envelope_valid": false,
+      "payto_match": false,
+      "header_envelope": false,
+      "body_envelope": false,
+      "x402_version_2": false,
       "mpp_header": false,
-      "ms": 1003,
-      "networks_detected": [
-        "eip155:8453"
-      ],
-      "pass": true
+      "ms": 5305,
+      "networks_detected": [],
+      "pass": false
     }
   ],
   "proof_check": {
@@ -470,5 +423,5 @@
   },
   "forgemesh_paid": null,
   "bazaar_listed": false,
-  "status": "active"
+  "status": "degraded"
 }

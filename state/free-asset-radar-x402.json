@@ -387,7 +387,7 @@
       "pass": true
     },
     {
-      "at": "2026-10-05T05:30:05.520Z",
+      "at": "2026-10-07T19:41:00.792Z",
       "endpoints": [
         {
           "url": "https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/decode-inspect",
@@ -420,7 +420,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 6367,
+          "response_time_ms": 6311,
           "error": null
         },
         {
@@ -454,7 +454,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 6250,
+          "response_time_ms": 6340,
           "error": null
         },
         {
@@ -488,7 +488,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 6240,
+          "response_time_ms": 6336,
           "error": null
         },
         {
@@ -522,7 +522,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 6187,
+          "response_time_ms": 6439,
           "error": null
         },
         {
@@ -556,7 +556,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 9,
+          "response_time_ms": 45,
           "error": null
         }
       ],
@@ -572,7 +572,7 @@
       "body_envelope": true,
       "x402_version_2": true,
       "mpp_header": false,
-      "ms": 6367,
+      "ms": 6439,
       "networks_detected": [
         "eip155:8453",
         "eip155:42161"

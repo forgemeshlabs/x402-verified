@@ -457,7 +457,7 @@
       "pass": true
     },
     {
-      "at": "2026-10-05T05:30:17.695Z",
+      "at": "2026-10-07T19:41:14.357Z",
       "endpoints": [
         {
           "url": "https://payforapi.com/v1/ticker",
@@ -482,7 +482,7 @@
             }
           ],
           "mpp_header": true,
-          "response_time_ms": 319,
+          "response_time_ms": 7898,
           "error": null
         },
         {
@@ -508,7 +508,7 @@
             }
           ],
           "mpp_header": true,
-          "response_time_ms": 419,
+          "response_time_ms": 7673,
           "error": null
         },
         {
@@ -534,7 +534,7 @@
             }
           ],
           "mpp_header": true,
-          "response_time_ms": 321,
+          "response_time_ms": 7671,
           "error": null
         },
         {
@@ -560,7 +560,7 @@
             }
           ],
           "mpp_header": true,
-          "response_time_ms": 320,
+          "response_time_ms": 7960,
           "error": null
         },
         {
@@ -586,7 +586,7 @@
             }
           ],
           "mpp_header": true,
-          "response_time_ms": 98,
+          "response_time_ms": 227,
           "error": null
         }
       ],
@@ -602,7 +602,7 @@
       "body_envelope": true,
       "x402_version_2": true,
       "mpp_header": true,
-      "ms": 419,
+      "ms": 7960,
       "networks_detected": [
         "eip155:8453"
       ],

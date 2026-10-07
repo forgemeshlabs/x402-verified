@@ -297,8 +297,34 @@
       "pass": true
     },
     {
-      "at": "2026-10-05T05:30:12.349Z",
+      "at": "2026-10-07T19:41:07.337Z",
       "endpoints": [
+        {
+          "url": "https://humanmirror.fr/api/machine/resolve/",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x48096526488f2D51df6bcA1B1f3A3639986cc3dD",
+              "amount": "1000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 723,
+          "error": null
+        },
         {
           "url": "https://humanmirror.fr/api/x402/safe-preflight/",
           "method_used": "POST",
@@ -322,7 +348,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 791,
+          "response_time_ms": 390,
           "error": null
         },
         {
@@ -348,7 +374,7 @@
             }
           ],
           "mpp_header": false,
-          "response_time_ms": 705,
+          "response_time_ms": 429,
           "error": null
         }
       ],
@@ -364,7 +390,7 @@
       "body_envelope": true,
       "x402_version_2": true,
       "mpp_header": false,
-      "ms": 791,
+      "ms": 723,
       "networks_detected": [
         "eip155:8453"
       ],
