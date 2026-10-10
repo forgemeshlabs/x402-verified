@@ -1,0 +1,47 @@
+{
+  "name": "brick.blue",
+  "slug": "brick-blue",
+  "homepage": "https://brick.blue",
+  "description": "Measured registry of MCP servers, A2A agents and x402 endpoints, with paid checks of servers, tools and quotes.",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://brick.blue/api/v1/services/x402-quote",
+      "method": "POST",
+      "price_usdc": "0.001"
+    },
+    {
+      "url": "https://brick.blue/api/v1/services/verdict",
+      "method": "POST",
+      "price_usdc": "0.005"
+    },
+    {
+      "url": "https://brick.blue/api/v1/services/tool-brief",
+      "method": "POST",
+      "price_usdc": "0.002"
+    },
+    {
+      "url": "https://brick.blue/api/v1/services/card-read",
+      "method": "POST",
+      "price_usdc": "0.003"
+    },
+    {
+      "url": "https://brick.blue/api/v1/services/schema-to-english",
+      "method": "POST",
+      "price_usdc": "0.002"
+    }
+  ],
+  "payTo": "0x1d58FB0959863E2F368dF6E703f363CEB45e0A5c",
+  "networks": [
+    "eip155:8453"
+  ],
+  "contact": "mailto:hello@brick.blue",
+  "proof": {
+    "tx_hash": "0xadb7ba8d6cb6b7bf8f4dea39a358d5d8b4f702188a4d0d30c3a3f1dbef1d980d",
+    "endpoint": 0,
+    "payer_kind": "self"
+  },
+  "added_at": "2026-10-10"
+}
