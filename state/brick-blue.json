@@ -1,0 +1,170 @@
+{
+  "probes": [
+    {
+      "at": "2026-10-10T08:30:03.226Z",
+      "endpoints": [
+        {
+          "url": "https://brick.blue/api/v1/services/x402-quote",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x1d58FB0959863E2F368dF6E703f363CEB45e0A5c",
+              "amount": "1000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 605,
+          "error": null
+        },
+        {
+          "url": "https://brick.blue/api/v1/services/verdict",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x1d58FB0959863E2F368dF6E703f363CEB45e0A5c",
+              "amount": "5000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 455,
+          "error": null
+        },
+        {
+          "url": "https://brick.blue/api/v1/services/tool-brief",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x1d58FB0959863E2F368dF6E703f363CEB45e0A5c",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 447,
+          "error": null
+        },
+        {
+          "url": "https://brick.blue/api/v1/services/card-read",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x1d58FB0959863E2F368dF6E703f363CEB45e0A5c",
+              "amount": "3000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 467,
+          "error": null
+        },
+        {
+          "url": "https://brick.blue/api/v1/services/schema-to-english",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x1d58FB0959863E2F368dF6E703f363CEB45e0A5c",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 105,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://brick.blue/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://brick.blue/llms.txt",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": true,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 605,
+      "networks_detected": [
+        "eip155:8453"
+      ],
+      "pass": true
+    }
+  ],
+  "proof_check": {
+    "ok": true,
+    "reason": null,
+    "tx_hash": "0xadb7ba8d6cb6b7bf8f4dea39a358d5d8b4f702188a4d0d30c3a3f1dbef1d980d",
+    "block": 52415356,
+    "block_time": "2026-10-10T08:14:19.000Z",
+    "amount_atomic": "1000",
+    "payer": "0x8e5b627b6b19d45623cc4a47f32ea588e158d405",
+    "confirmations": 472,
+    "checked_at": "2026-10-10T08:30:04.251Z"
+  },
+  "forgemesh_paid": null,
+  "bazaar_listed": false,
+  "status": "active"
+}
