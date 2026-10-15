@@ -1,6 +1,6 @@
 # x402 Verified by ForgeMesh
 
-A curated list of x402 sellers where every row has a settled on-chain payment behind it, a recomputable 0-100 score, and a live README badge. Live directory: **https://forgemesh.io/verified** · machine feed: **https://forgemesh.io/partners.json** (mirror of [`dist/verified.json`](dist/verified.json)).
+A curated list of x402 sellers where every row has a settled on-chain payment behind it, a recomputable 0-100 score, and a live README badge. Live directory: **https://forgemesh.io/verified** · unclaimed index of every Bazaar-listed x402 origin: **https://forgemesh.io/unclaimed.json** (claim yours: [CONTRIBUTING](CONTRIBUTING.md#already-in-the-unclaimed-index)) · machine feed: **https://forgemesh.io/partners.json** (mirror of [`dist/verified.json`](dist/verified.json)).
 
 > **Independent program.** x402 Verified by ForgeMesh is run by [ForgeMesh](https://forgemesh.io). It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee. ForgeMesh Verified is the umbrella; x402 Verified is its first protocol program.
 

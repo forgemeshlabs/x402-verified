@@ -75,6 +75,7 @@ async function createChainTimedPaymentPayload(httpClient, publicClient, paymentR
   if (!run.payto_match) refuse("envelope payTo differs from the declared payTo");
   // 5. Seller-supplied proof.
   const proofEp = s.endpoints[s.proof.endpoint];
+  if (!s.proof) refuse("claimed record has no proof tx yet; ForgeMesh Paid needs a seller proof first");
   const proof = state.proof_check?.ok ? state.proof_check : await verifyUsdcTransfer({ txHash: s.proof.tx_hash, payTo: s.payTo, minAmountAtomic: usdcToAtomic(proofEp.price_usdc), maxAgeDays: 30 });
   if (!proof.ok) refuse(`seller proof: ${proof.reason}`);
   // Record this run so it counts as an independent probe.

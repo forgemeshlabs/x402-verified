@@ -11,6 +11,7 @@ const DIRS = {
   partners: path.join(ROOT, "partners"),
   badges: path.join(ROOT, "badges"),
   dist: path.join(ROOT, "dist"),
+  unclaimed: path.join(ROOT, "unclaimed"),
   schema: path.join(ROOT, "schema"),
 };
 
@@ -75,7 +76,7 @@ function staticErrors(entry, all) {
   } catch { /* reported above */ }
   const idx = s.nominated_endpoint ?? 0;
   if (s.endpoints && idx >= s.endpoints.length) errors.push(`nominated_endpoint ${idx} is out of range`);
-  if (s.endpoints && s.endpoints[idx] && Number(s.endpoints[idx].price_usdc) > 0.01) errors.push(`nominated endpoint price ${s.endpoints[idx].price_usdc} exceeds the $0.01 cap`);
+  if (!s.claim && s.endpoints && s.endpoints[idx] && Number(s.endpoints[idx].price_usdc) > 0.01) errors.push(`nominated endpoint price ${s.endpoints[idx].price_usdc} exceeds the $0.01 cap`);
   if (s.proof && s.endpoints && s.proof.endpoint >= s.endpoints.length) errors.push(`proof.endpoint ${s.proof.endpoint} is out of range`);
   for (const other of all) {
     if (other.file === entry.file) continue;
@@ -83,6 +84,7 @@ function staticErrors(entry, all) {
     if (o.slug === s.slug) errors.push(`duplicate slug ${s.slug}`);
     if (o.payTo && s.payTo && o.payTo.toLowerCase() === s.payTo.toLowerCase()) errors.push(`payTo already used by ${o.slug}`);
     if (o.proof?.tx_hash && s.proof?.tx_hash && o.proof.tx_hash.toLowerCase() === s.proof.tx_hash.toLowerCase()) errors.push(`proof tx already used by ${o.slug}`);
+    if (o.claim?.tx_hash && s.claim?.tx_hash && o.claim.tx_hash.toLowerCase() === s.claim.tx_hash.toLowerCase()) errors.push(`claim tx already used by ${o.slug}`);
     try {
       if (registrableDomain(new URL(o.homepage).hostname) === registrableDomain(new URL(s.homepage).hostname)) errors.push(`homepage domain already used by ${o.slug}`);
     } catch { /* ignore */ }

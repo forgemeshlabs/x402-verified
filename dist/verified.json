@@ -1,7 +1,7 @@
 {
   "version": 2,
   "program": "x402",
-  "generated_at": "2026-10-15T13:48:35.039Z",
+  "generated_at": "2026-10-15T14:42:37.446Z",
   "score_spec": "2.0",
   "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
   "marks": {
@@ -203,6 +203,7 @@
         "confirmations": 103982,
         "checked_at": "2026-09-16T17:09:33.294Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-09-16T17:09:32.140Z",
@@ -483,6 +484,7 @@
         "confirmations": 118922,
         "checked_at": "2026-09-29T11:55:02.392Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-09-29T11:55:02.113Z",
@@ -692,6 +694,7 @@
         "confirmations": 844384,
         "checked_at": "2026-09-28T12:55:02.291Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-09-28T12:55:01.887Z",
@@ -917,6 +920,7 @@
         "confirmations": 919,
         "checked_at": "2026-10-02T07:15:03.369Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-10-02T07:15:02.744Z",
@@ -1142,6 +1146,7 @@
         "confirmations": 472,
         "checked_at": "2026-10-10T08:30:04.251Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-10-10T08:30:03.226Z",
@@ -1353,6 +1358,7 @@
         "confirmations": 85364,
         "checked_at": "2026-09-23T21:00:29.957Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-09-23T21:00:23.307Z",
@@ -1609,6 +1615,7 @@
         "confirmations": 1783,
         "checked_at": "2026-09-16T17:09:34.895Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-09-16T17:09:33.998Z",
@@ -1850,6 +1857,7 @@
         "confirmations": 46704,
         "checked_at": "2026-09-21T21:07:07.800Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-09-21T21:07:07.491Z",
@@ -2078,6 +2086,7 @@
         "confirmations": 14404,
         "checked_at": "2026-10-06T15:20:03.417Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-10-06T15:20:02.588Z",
@@ -2286,6 +2295,7 @@
         "confirmations": 217161,
         "checked_at": "2026-09-23T21:00:32.713Z"
       },
+      "claimed": false,
       "probes": [
         {
           "at": "2026-09-23T21:00:30.712Z",

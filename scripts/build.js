@@ -38,6 +38,7 @@ function sellerRecord(entry) {
     forgemesh_paid: c.forgemesh_paid, forgemesh_paid_at: c.forgemesh_paid_at, forgemesh_paid_tx: c.forgemesh_paid_tx,
     forgemesh_paid_amount_atomic: c.forgemesh_paid_amount_atomic, forgemesh_paid_stale: c.forgemesh_paid_stale,
     proof: s.proof, proof_check: state.proof_check || null,
+    claimed: !!s.claim, claim: s.claim ? { at: s.claim.at, ownership: s.claim.ownership, tx_hash: s.claim.tx_hash } : undefined,
     probes: (state.probes || []).slice(-8).map((p) => ({ at: p.at, pass: p.pass, is_402: p.is_402, envelope_valid: p.envelope_valid, payto_match: p.payto_match, header_envelope: p.header_envelope, body_envelope: p.body_envelope, x402_version_2: p.x402_version_2, mpp_header: p.mpp_header, ms: p.ms, manifest_ok: p.manifest_ok, manifest_lists_route: p.manifest_lists_route, llms_ok: p.llms_ok })),
     last_probe: c.last_probe, bazaar_listed: !!state.bazaar_listed,
     protocol_capabilities: c.protocol_capabilities, contact: s.contact, added_at: s.added_at,

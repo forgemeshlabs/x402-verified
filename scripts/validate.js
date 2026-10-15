@@ -55,10 +55,17 @@ async function validateSeller(entry, all, { recordProbe }) {
   if (!run.header_envelope) report.warnings.push("envelope not delivered in the payment-required header (interoperability points)");
   if (!run.body_envelope) report.warnings.push("no envelope in the JSON body; stock v1 clients cannot pay (interoperability points)");
 
-  const proofEp = s.endpoints[s.proof.endpoint];
-  const proof = await verifyUsdcTransfer({ txHash: s.proof.tx_hash, payTo: s.payTo, minAmountAtomic: usdcToAtomic(proofEp.price_usdc), maxAgeDays: 30 });
-  report.proof = proof;
-  if (!proof.ok) report.errors.push(`proof ${s.proof.tx_hash}: ${proof.reason}`);
+  // Claimed records (claim present, proof absent) skip the proof check: the 15 proof points stay at 0
+  // until the seller adds a proof tx by PR. A record that carries both must satisfy the proof.
+  let proof = null;
+  if (s.proof) {
+    const proofEp = s.endpoints[s.proof.endpoint];
+    proof = await verifyUsdcTransfer({ txHash: s.proof.tx_hash, payTo: s.payTo, minAmountAtomic: usdcToAtomic(proofEp.price_usdc), maxAgeDays: 30 });
+    report.proof = proof;
+    if (!proof.ok) report.errors.push(`proof ${s.proof.tx_hash}: ${proof.reason}`);
+  } else if (s.claim) {
+    report.warnings.push("claimed record without a proof tx: payability proof points (15) stay unearned until a proof is added");
+  }
 
   // Provisional score from this run so submitters see where they land.
   const state = loadState(report.slug);

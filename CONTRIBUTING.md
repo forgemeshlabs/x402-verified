@@ -57,6 +57,17 @@ What happens at merge: ForgeMesh has already verified your proof transaction on 
 
 The score measures your x402 implementation. `$` records that ForgeMesh itself transacted with you. `★` records a perfect 100. ForgeMesh Paid is earned, never requested: sellers at 85 or above, `active`, with two successful independent probe runs become eligible, and ForgeMesh decides when to buy within its budget. Asking for it does nothing.
 
+## Already in the unclaimed index?
+
+ForgeMesh probes every x402 origin the CDP Bazaar lists and publishes the result as the unclaimed index: https://forgemesh.io/verified#unclaimed (feed `dist/unclaimed.json`, served at https://forgemesh.io/unclaimed.json). Those rows carry no contact, no badge and no proof tx, so they top out at 85/100.
+
+Two ways to take over your row:
+
+- **Free:** open the normal PR above. A merged seller record replaces the unclaimed row automatically.
+- **$5, one call, no GitHub:** `POST https://router.forgemesh.io/api/verified/claim` with `{"slug": "<row slug>", "contact": "mailto:you@example.com"}` ($5 USDC on Base via x402 or MPP). Pay from the row's own payTo wallet and ownership is settled at once; pay from any other wallet and publish the returned token in your `/.well-known/x402` or `llms.txt`. The intake validates, opens the PR with the agent opt-in suffix and it merges on green. A claimed record has a `claim` block instead of `proof`; add a `proof` later by PR to earn the last 15 points. Guide: https://forgemesh.io/verified/claim
+
+The score is never for sale: it is recomputed from protocol facts on every probe, claimed or not.
+
 ## Ecosystem partners
 
 `partners/*.json` is curated by ForgeMesh. Please do not open PRs against it.

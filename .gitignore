@@ -1,4 +1,5 @@
-node_modules/
-.log/
-.env
 *.log
+.env
+.log/
+node_modules/
+unclaimed/state/

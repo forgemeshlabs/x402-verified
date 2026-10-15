@@ -33,7 +33,7 @@ function bazaarListed(seller) {
     if (statusFrom(state.probes) === "delisted" && !opt("--slug")) continue; // delisted sellers relist via a new PR
     const run = await probeSeller(s);
     state.probes = [...(state.probes || []), run].slice(-8);
-    if (!state.proof_check?.ok) {
+    if (s.proof && !state.proof_check?.ok) {
       const ep = s.endpoints[s.proof.endpoint];
       state.proof_check = await verifyUsdcTransfer({ txHash: s.proof.tx_hash, payTo: s.payTo, minAmountAtomic: usdcToAtomic(ep.price_usdc), maxAgeDays: 30 });
     }
