@@ -12,7 +12,7 @@ const { execFileSync } = require("node:child_process");
 const { DIRS, loadSellers, readJson, writeJsonAtomic, registrableDomain } = require("./lib/sellers");
 // Operators see this line in their access logs: the probe doubles as the only notice an
 // unclaimed origin ever gets. Set before lib/probe reads it.
-process.env.X402_VERIFIED_UA ||= "x402-verified/2.0 (+https://forgemesh.io/verified/claim; your x402 origin is in the ForgeMesh unclaimed index, claim your row)";
+process.env.X402_VERIFIED_UA ||= "x402-verified/2.0 (+https://forgemesh.io/claim; your x402 origin is in the ForgeMesh unclaimed index, claim your row)";
 const { probeEndpoint, probeDiscovery } = require("./lib/probe");
 const { compute } = require("./lib/score");
 const { SPEC } = require("./lib/rubrics/x402");
