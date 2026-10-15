@@ -33,6 +33,24 @@ function nonSellerChanges(base) {
 // Where a claim token may be published: the origin's manifest or llms.txt, or the default branch of a
 // GitHub repo that either of those files links to (README.md or a .forgemesh-claim file). Returns the
 // URL where the token was seen, or null.
+const REPO_KEYS = /^(repository|repo|source|source_code|sourcecode|github|coderepository)$/i;
+function declaredRepos(manifestText) {
+  let m; try { m = JSON.parse(String(manifestText || "")); } catch { return []; }
+  if (!m || typeof m !== "object") return [];
+  const values = [];
+  const take = (v) => { if (typeof v === "string") values.push(v); else if (v && typeof v === "object" && typeof v.url === "string") values.push(v.url); };
+  for (const [k, v] of Object.entries(m)) {
+    if (REPO_KEYS.test(k)) take(v);
+    else if (v && typeof v === "object" && !Array.isArray(v)) for (const [k2, v2] of Object.entries(v)) if (REPO_KEYS.test(k2)) take(v2);
+  }
+  const out = [];
+  for (const v of values) {
+    const mm = /^https?:\/\/(?:www\.)?github\.com\/([A-Za-z0-9-]+)\/([A-Za-z0-9._-]+?)(?:\.git)?\/?$/.exec(v.trim());
+    if (mm && !out.includes(`${mm[1]}/${mm[2]}`)) out.push(`${mm[1]}/${mm[2]}`);
+  }
+  return out;
+}
+
 async function tokenPublished(s) {
   const origin = new URL(s.homepage).origin;
   const token = String(s.claim.token || "");
@@ -40,13 +58,14 @@ async function tokenPublished(s) {
   const files = [`${origin}/.well-known/x402`, `${origin}/llms.txt`];
   const texts = await Promise.all(files.map((u) => fetchText(u)));
   for (let i = 0; i < files.length; i++) if (typeof texts[i] === "string" && texts[i].includes(token)) return files[i];
-  // A linked repo counts only when the link is two-way: the origin names the repo AND the repo's
-  // README names the origin's host. A dependency, template or "powered by" mention is one-way and
-  // never qualifies, so the owner of a merely referenced repo cannot claim someone else's service.
+  // A repo counts only when the origin's own manifest DECLARES it as the service's source, in a
+  // repository-type field (repository, repo, source, source_code, sourceCode, github, codeRepository),
+  // at the top level or one level down, AND that repo's README names the origin's host back. A link
+  // in free text, a dependency, a template, an awesome-list or a "powered by" mention never qualifies,
+  // so nobody who can commit to a merely referenced repo can claim someone else's service.
   const host = new URL(origin).hostname.toLowerCase();
-  const repos = new Set();
-  for (const txt of texts) for (const m of String(txt || "").matchAll(/github\.com\/([A-Za-z0-9-]+)\/([A-Za-z0-9._-]+)/g)) repos.add(`${m[1]}/${m[2].replace(/\.git$/, "")}`);
-  for (const repo of [...repos].slice(0, 3)) {
+  const repos = declaredRepos(texts[0]);
+  for (const repo of repos.slice(0, 3)) {
     for (const branch of ["main", "master"]) {
       const readme = await fetchText(`https://raw.githubusercontent.com/${repo}/${branch}/README.md`);
       if (typeof readme !== "string" || !readme.toLowerCase().includes(host)) continue;
@@ -179,4 +198,4 @@ if (require.main === module) (async () => {
   process.exit(failed ? 1 : 0);
 })().catch((e) => { console.error(e); process.exit(1); });
 
-module.exports = { tokenPublished };
+module.exports = { tokenPublished, declaredRepos };
