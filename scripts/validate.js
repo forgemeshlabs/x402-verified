@@ -40,15 +40,19 @@ async function tokenPublished(s) {
   const files = [`${origin}/.well-known/x402`, `${origin}/llms.txt`];
   const texts = await Promise.all(files.map((u) => fetchText(u)));
   for (let i = 0; i < files.length; i++) if (typeof texts[i] === "string" && texts[i].includes(token)) return files[i];
+  // A linked repo counts only when the link is two-way: the origin names the repo AND the repo's
+  // README names the origin's host. A dependency, template or "powered by" mention is one-way and
+  // never qualifies, so the owner of a merely referenced repo cannot claim someone else's service.
+  const host = new URL(origin).hostname.toLowerCase();
   const repos = new Set();
   for (const txt of texts) for (const m of String(txt || "").matchAll(/github\.com\/([A-Za-z0-9-]+)\/([A-Za-z0-9._-]+)/g)) repos.add(`${m[1]}/${m[2].replace(/\.git$/, "")}`);
   for (const repo of [...repos].slice(0, 3)) {
     for (const branch of ["main", "master"]) {
-      for (const file of ["README.md", ".forgemesh-claim"]) {
-        const u = `https://raw.githubusercontent.com/${repo}/${branch}/${file}`;
-        const body = await fetchText(u);
-        if (typeof body === "string" && body.includes(token)) return u;
-      }
+      const readme = await fetchText(`https://raw.githubusercontent.com/${repo}/${branch}/README.md`);
+      if (typeof readme !== "string" || !readme.toLowerCase().includes(host)) continue;
+      if (readme.includes(token)) return `https://raw.githubusercontent.com/${repo}/${branch}/README.md`;
+      const marker = await fetchText(`https://raw.githubusercontent.com/${repo}/${branch}/.forgemesh-claim`);
+      if (typeof marker === "string" && marker.includes(token)) return `https://raw.githubusercontent.com/${repo}/${branch}/.forgemesh-claim`;
     }
   }
   return null;
@@ -147,7 +151,7 @@ function md(reports, partnerReports) {
   return lines.join("\n");
 }
 
-(async () => {
+if (require.main === module) (async () => {
   const all = loadSellers();
   let targets;
   const base = opt("--base");
@@ -174,3 +178,5 @@ function md(reports, partnerReports) {
   const failed = reports.some((r) => r.errors.length) || partnerReports.some((p) => p.errors.length);
   process.exit(failed ? 1 : 0);
 })().catch((e) => { console.error(e); process.exit(1); });
+
+module.exports = { tokenPublished };
