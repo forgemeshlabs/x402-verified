@@ -113,7 +113,7 @@ async function createChainTimedPaymentPayload(httpClient, publicClient, paymentR
   const account = privateKeyToAccount(key);
   const publicClient = createPublicClient({ chain: base, transport: http(process.env.BASE_RPC_URL || "https://mainnet.base.org") });
   const httpClient = new x402HTTPClient(new x402Client().register("eip155:*", new ExactEvmScheme(toClientEvmSigner(account))));
-  const init = { method: route.method, headers: { "content-type": "application/json", "user-agent": "x402-verified/2.0 (+https://forgemesh.io/partners)" }, body: route.method === "POST" ? JSON.stringify(route.body ?? {}) : undefined };
+  const init = { method: route.method, headers: { "content-type": "application/json", "user-agent": "x402-verified/2.0 (+https://forgemesh.io/verified)" }, body: route.method === "POST" ? JSON.stringify(route.body ?? {}) : undefined };
   const challenge = await fetch(route.url, init);
   if (challenge.status !== 402) refuse(`expected 402 at purchase time, got ${challenge.status}`);
   let challengeBody; try { challengeBody = await challenge.clone().json(); } catch { /* header-only */ }

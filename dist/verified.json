@@ -1,7 +1,7 @@
 {
   "version": 2,
   "program": "x402",
-  "generated_at": "2026-10-15T13:36:47.823Z",
+  "generated_at": "2026-10-15T13:48:35.039Z",
   "score_spec": "2.0",
   "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
   "marks": {
@@ -326,7 +326,7 @@
       },
       "contact": "mailto:contact.humanmirror@gmail.com",
       "added_at": "2026-09-16",
-      "page": "https://forgemesh.io/partners/humanmirror",
+      "page": "https://forgemesh.io/verified/humanmirror",
       "badge": "https://forgemesh.io/badge/x402/humanmirror"
     },
     {
@@ -531,7 +531,7 @@
       },
       "contact": "mailto:admin@kushbitx.com",
       "added_at": "2026-09-27",
-      "page": "https://forgemesh.io/partners/kushbitx-agentproof",
+      "page": "https://forgemesh.io/verified/kushbitx-agentproof",
       "badge": "https://forgemesh.io/badge/x402/kushbitx-agentproof"
     },
     {
@@ -740,7 +740,7 @@
       },
       "contact": "mailto:ayoubsalem@gmail.com",
       "added_at": "2026-09-27",
-      "page": "https://forgemesh.io/partners/pennyapi",
+      "page": "https://forgemesh.io/verified/pennyapi",
       "badge": "https://forgemesh.io/badge/x402/pennyapi"
     },
     {
@@ -965,7 +965,7 @@
       },
       "contact": "mailto:blinka-marketplaces@agentmail.to",
       "added_at": "2026-10-02",
-      "page": "https://forgemesh.io/partners/blinka-machine-mouths",
+      "page": "https://forgemesh.io/verified/blinka-machine-mouths",
       "badge": "https://forgemesh.io/badge/x402/blinka-machine-mouths"
     },
     {
@@ -1175,7 +1175,7 @@
       },
       "contact": "mailto:hello@brick.blue",
       "added_at": "2026-10-10",
-      "page": "https://forgemesh.io/partners/brick-blue",
+      "page": "https://forgemesh.io/verified/brick-blue",
       "badge": "https://forgemesh.io/badge/x402/brick-blue"
     },
     {
@@ -1416,7 +1416,7 @@
       },
       "contact": "github:besenok2018",
       "added_at": "2026-09-22",
-      "page": "https://forgemesh.io/partners/free-asset-radar-x402",
+      "page": "https://forgemesh.io/verified/free-asset-radar-x402",
       "badge": "https://forgemesh.io/badge/x402/free-asset-radar-x402"
     },
     {
@@ -1687,7 +1687,7 @@
       },
       "contact": "mailto:saymon74462@gmail.com",
       "added_at": "2026-09-16",
-      "page": "https://forgemesh.io/partners/saymon-ru-data-api",
+      "page": "https://forgemesh.io/verified/saymon-ru-data-api",
       "badge": "https://forgemesh.io/badge/x402/saymon-ru-data-api"
     },
     {
@@ -1913,7 +1913,7 @@
       },
       "contact": "github:waxsway",
       "added_at": "2026-09-21",
-      "page": "https://forgemesh.io/partners/agentresolver",
+      "page": "https://forgemesh.io/verified/agentresolver",
       "badge": "https://forgemesh.io/badge/x402/agentresolver"
     },
     {
@@ -2111,7 +2111,7 @@
       },
       "contact": "github:quietforgestudio",
       "added_at": "2026-10-06",
-      "page": "https://forgemesh.io/partners/quietforge-docs-api",
+      "page": "https://forgemesh.io/verified/quietforge-docs-api",
       "badge": "https://forgemesh.io/badge/x402/quietforge-docs-api"
     },
     {
@@ -2349,7 +2349,7 @@
       },
       "contact": "mailto:loop2@agentmail.to",
       "added_at": "2026-09-23",
-      "page": "https://forgemesh.io/partners/loop2-quickstart",
+      "page": "https://forgemesh.io/verified/loop2-quickstart",
       "badge": "https://forgemesh.io/badge/x402/loop2-quickstart"
     }
   ],

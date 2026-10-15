@@ -41,7 +41,7 @@ function sellerRecord(entry) {
     probes: (state.probes || []).slice(-8).map((p) => ({ at: p.at, pass: p.pass, is_402: p.is_402, envelope_valid: p.envelope_valid, payto_match: p.payto_match, header_envelope: p.header_envelope, body_envelope: p.body_envelope, x402_version_2: p.x402_version_2, mpp_header: p.mpp_header, ms: p.ms, manifest_ok: p.manifest_ok, manifest_lists_route: p.manifest_lists_route, llms_ok: p.llms_ok })),
     last_probe: c.last_probe, bazaar_listed: !!state.bazaar_listed,
     protocol_capabilities: c.protocol_capabilities, contact: s.contact, added_at: s.added_at,
-    page: `${SITE}/partners/${s.slug}`, badge: `${SITE}/badge/x402/${s.slug}`,
+    page: `${SITE}/verified/${s.slug}`, badge: `${SITE}/badge/x402/${s.slug}`,
   };
 }
 

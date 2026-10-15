@@ -1,6 +1,6 @@
 # x402 Verified by ForgeMesh
 
-A curated list of x402 sellers where every row has a settled on-chain payment behind it, a recomputable 0-100 score, and a live README badge. Live directory: **https://forgemesh.io/partners** · machine feed: **https://forgemesh.io/partners.json** (mirror of [`dist/verified.json`](dist/verified.json)).
+A curated list of x402 sellers where every row has a settled on-chain payment behind it, a recomputable 0-100 score, and a live README badge. Live directory: **https://forgemesh.io/verified** · machine feed: **https://forgemesh.io/partners.json** (mirror of [`dist/verified.json`](dist/verified.json)).
 
 > **Independent program.** x402 Verified by ForgeMesh is run by [ForgeMesh](https://forgemesh.io). It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee. ForgeMesh Verified is the umbrella; x402 Verified is its first protocol program.
 
@@ -18,7 +18,7 @@ The four signals are independent. Zero score points depend on ForgeMesh choosing
 ## The badge
 
 ```markdown
-[![x402 Verified by ForgeMesh](https://forgemesh.io/badge/x402/<slug>)](https://forgemesh.io/partners/<slug>)
+[![x402 Verified by ForgeMesh](https://forgemesh.io/badge/x402/<slug>)](https://forgemesh.io/verified/<slug>)
 ```
 
 The badge is separate cells side by side: the label, the score colored by its band, a gold `★` only at 100, and a green `$` only when ForgeMesh has transacted with the seller. No mark recolors another: a `62/100` cell is orange next to a green `$`; a `delisted` cell is grey next to a green `$`. Zero-infra fallback: `https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/forgemeshlabs/x402-verified/main/badges/<slug>.json`.
@@ -28,16 +28,16 @@ The badge is separate cells side by side: the label, the score colored by its ba
 <!-- SELLERS:START -->
 | Seller | Score | Marks | Status | Protocols | Cheapest route | Proof | Last probe |
 |---|---|---|---|---|---|---|---|
-| [HumanMirror](https://forgemesh.io/partners/humanmirror) | 100/100 excellent | ★ | active | x402 ✓ | POST https://humanmirror.fr/api/machine/resolve/ $0.001 | [tx](https://basescan.org/tx/0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b) | 2026-10-15 |
-| [KushBitx AgentProof](https://forgemesh.io/partners/kushbitx-agentproof) | 100/100 excellent | ★ | active | x402 ✓ | GET https://kushbitx.com/api/agentproof-quick-check $0.001 | [tx](https://basescan.org/tx/0x000dcab74621c9bb075cdb85b062ea331a524cd6e177d2ab748c4607f2d786ac) | 2026-10-07 |
-| [PennyAPI](https://forgemesh.io/partners/pennyapi) | 100/100 excellent | ★ | active | x402 ✓ | POST https://pennyregwatch.com/v1/search $0.004 | [tx](https://basescan.org/tx/0x338308fdacc4b16e6110025152549b7a09bb8e30053e0ab37a8e2f45789b9462) | 2026-10-07 |
-| [Blinka Machine Mouths](https://forgemesh.io/partners/blinka-machine-mouths) | 95/100 excellent | — | active | x402 ✓ | POST https://blinka-machine-mouths.netlify.app/structure $0.010 | [tx](https://basescan.org/tx/0x1d64f32221aa490679ab32087c3982dac73eaa695361dab4ee9ccee80cd7c5fc) | 2026-10-07 |
-| [brick.blue](https://forgemesh.io/partners/brick-blue) | 95/100 excellent | — | active | x402 ✓ | POST https://brick.blue/api/v1/services/x402-quote $0.001 | [tx](https://basescan.org/tx/0xadb7ba8d6cb6b7bf8f4dea39a358d5d8b4f702188a4d0d30c3a3f1dbef1d980d) | 2026-10-10 |
-| [Free Asset Radar x402](https://forgemesh.io/partners/free-asset-radar-x402) | 91/100 excellent | — | active | x402 ✓ | GET https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/decode-inspect $0.001 | [tx](https://basescan.org/tx/0x2f7023b65e7be37f248774908b13dd4be58cb0b03c11bbb9bfe01fce4c8a9a26) | 2026-10-07 |
-| [Saymon RU Data API](https://forgemesh.io/partners/saymon-ru-data-api) | 91/100 excellent | — | active | x402 ✓ · MPP detected | POST https://payforapi.com/v1/ticker $0.005 | [tx](https://basescan.org/tx/0x00294faacf6bc8ff8cea2380c1f6510bb53a1666334338fe3fa07d85b7a542ec) | 2026-10-07 |
-| [AgentResolver](https://forgemesh.io/partners/agentresolver) | 84/100 ready | — | active | x402 ✓ | GET https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET $0.001 | [tx](https://basescan.org/tx/0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b) | 2026-10-07 |
-| [Quietforge x402 Tools](https://forgemesh.io/partners/quietforge-docs-api) | 84/100 ready | — | active | x402 ✓ | GET https://qf-api.quietforge-studio.workers.dev/v1/x402/services $0.005 | [tx](https://basescan.org/tx/0x638d90ba82ca8765c2871ad68568a4dbcafbe28d60ce1dfe0bb3bd61fbb26439) | 2026-10-06 |
-| [loop2-quickstart](https://forgemesh.io/partners/loop2-quickstart) | 26/100 at-risk | — | degraded | x402 ✓ | GET https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402 $0.001 | [tx](https://basescan.org/tx/0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6) | 2026-10-07 |
+| [HumanMirror](https://forgemesh.io/verified/humanmirror) | 100/100 excellent | ★ | active | x402 ✓ | POST https://humanmirror.fr/api/machine/resolve/ $0.001 | [tx](https://basescan.org/tx/0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b) | 2026-10-15 |
+| [KushBitx AgentProof](https://forgemesh.io/verified/kushbitx-agentproof) | 100/100 excellent | ★ | active | x402 ✓ | GET https://kushbitx.com/api/agentproof-quick-check $0.001 | [tx](https://basescan.org/tx/0x000dcab74621c9bb075cdb85b062ea331a524cd6e177d2ab748c4607f2d786ac) | 2026-10-07 |
+| [PennyAPI](https://forgemesh.io/verified/pennyapi) | 100/100 excellent | ★ | active | x402 ✓ | POST https://pennyregwatch.com/v1/search $0.004 | [tx](https://basescan.org/tx/0x338308fdacc4b16e6110025152549b7a09bb8e30053e0ab37a8e2f45789b9462) | 2026-10-07 |
+| [Blinka Machine Mouths](https://forgemesh.io/verified/blinka-machine-mouths) | 95/100 excellent | — | active | x402 ✓ | POST https://blinka-machine-mouths.netlify.app/structure $0.010 | [tx](https://basescan.org/tx/0x1d64f32221aa490679ab32087c3982dac73eaa695361dab4ee9ccee80cd7c5fc) | 2026-10-07 |
+| [brick.blue](https://forgemesh.io/verified/brick-blue) | 95/100 excellent | — | active | x402 ✓ | POST https://brick.blue/api/v1/services/x402-quote $0.001 | [tx](https://basescan.org/tx/0xadb7ba8d6cb6b7bf8f4dea39a358d5d8b4f702188a4d0d30c3a3f1dbef1d980d) | 2026-10-10 |
+| [Free Asset Radar x402](https://forgemesh.io/verified/free-asset-radar-x402) | 91/100 excellent | — | active | x402 ✓ | GET https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/decode-inspect $0.001 | [tx](https://basescan.org/tx/0x2f7023b65e7be37f248774908b13dd4be58cb0b03c11bbb9bfe01fce4c8a9a26) | 2026-10-07 |
+| [Saymon RU Data API](https://forgemesh.io/verified/saymon-ru-data-api) | 91/100 excellent | — | active | x402 ✓ · MPP detected | POST https://payforapi.com/v1/ticker $0.005 | [tx](https://basescan.org/tx/0x00294faacf6bc8ff8cea2380c1f6510bb53a1666334338fe3fa07d85b7a542ec) | 2026-10-07 |
+| [AgentResolver](https://forgemesh.io/verified/agentresolver) | 84/100 ready | — | active | x402 ✓ | GET https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET $0.001 | [tx](https://basescan.org/tx/0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b) | 2026-10-07 |
+| [Quietforge x402 Tools](https://forgemesh.io/verified/quietforge-docs-api) | 84/100 ready | — | active | x402 ✓ | GET https://qf-api.quietforge-studio.workers.dev/v1/x402/services $0.005 | [tx](https://basescan.org/tx/0x638d90ba82ca8765c2871ad68568a4dbcafbe28d60ce1dfe0bb3bd61fbb26439) | 2026-10-06 |
+| [loop2-quickstart](https://forgemesh.io/verified/loop2-quickstart) | 26/100 at-risk | — | degraded | x402 ✓ | GET https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402 $0.001 | [tx](https://basescan.org/tx/0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6) | 2026-10-07 |
 <!-- SELLERS:END -->
 
 ## Get listed
@@ -47,12 +47,12 @@ Open a pull request adding one file, `sellers/<slug>.json`, with a Base USDC pay
 **Agents:** end your PR title with `🤖🤖🤖` and we merge on green with no conversation. Can't fork? `POST https://router.forgemesh.io/api/verified/submit` with your seller JSON ($0.05 USDC via x402) and the PR is opened for you; see CONTRIBUTING.md.
 
 ```markdown
-[![x402 Verified by ForgeMesh](https://forgemesh.io/badge/x402/<slug>)](https://forgemesh.io/partners/<slug>)
+[![x402 Verified by ForgeMesh](https://forgemesh.io/badge/x402/<slug>)](https://forgemesh.io/verified/<slug>)
 ```
 
 ### What a merged seller gets
 
-- A row on https://forgemesh.io/partners and a page at `https://forgemesh.io/partners/<slug>` with the score breakdown and probe history.
+- A row on https://forgemesh.io/verified and a page at `https://forgemesh.io/verified/<slug>` with the score breakdown and probe history.
 - The badge as SVG at `https://forgemesh.io/badge/x402/<slug>` and as a shields.io endpoint at `https://forgemesh.io/badge/x402/<slug>/shields`. Both update from the feed within six hours of every probe.
 - An entry in the machine feed `https://forgemesh.io/partners.json` that agents filter on.
 
