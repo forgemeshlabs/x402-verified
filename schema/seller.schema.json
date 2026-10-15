@@ -179,7 +179,24 @@
             "manifest-token"
           ],
           "description": "payer-wallet = fee paid from the record's payTo; manifest-token = token published at /.well-known/x402 or llms.txt"
+        },
+        "token": {
+          "type": "string",
+          "pattern": "^forgemesh-claim-[a-f0-9]{24}$",
+          "description": "manifest-token claims: the token the seller published at /.well-known/x402 or llms.txt; must still be visible there"
         }
+      },
+      "if": {
+        "properties": {
+          "ownership": {
+            "const": "manifest-token"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "token"
+        ]
       }
     }
   },

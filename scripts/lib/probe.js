@@ -266,4 +266,4 @@ async function probeSeller(seller, { concurrency = 4 } = {}) {
   };
 }
 
-module.exports = { ProbeInputError, validateTarget, probeEndpoint, probeDiscovery, probeSeller, validateEnvelope, USER_AGENT };
+module.exports = { ProbeInputError, validateTarget, probeEndpoint, probeDiscovery, probeSeller, validateEnvelope, fetchText, USER_AGENT };

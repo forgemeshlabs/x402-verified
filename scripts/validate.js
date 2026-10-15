@@ -9,7 +9,10 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { execFileSync } = require("node:child_process");
 const { ROOT, DIRS, loadSellers, loadPartners, loadState, saveState, staticErrors, partnerErrors } = require("./lib/sellers");
-const { probeSeller } = require("./lib/probe");
+const { probeSeller, fetchText } = require("./lib/probe");
+// Claim fee wallet and price, as published at router.forgemesh.io (POST /api/verified/claim). Public facts.
+const CLAIM_FEE_WALLET = "0xC7cED5079D619478aaeb0c54C3673E83C5b4A020";
+const CLAIM_FEE_USDC = "5";
 const { verifyUsdcTransfer, usdcToAtomic } = require("./lib/receipt");
 const { compute } = require("./lib/score");
 
@@ -64,6 +67,22 @@ async function validateSeller(entry, all, { recordProbe }) {
     report.proof = proof;
     if (!proof.ok) report.errors.push(`proof ${s.proof.tx_hash}: ${proof.reason}`);
   } else if (s.claim) {
+    // A claim block is a statement, not evidence. CI re-verifies it with no secrets: the fee must be a
+    // settled USDC transfer of at least CLAIM_FEE_USDC to the published fee wallet, sent by claim.payer,
+    // and ownership must hold: payer-wallet means the fee came from the record's own payTo; manifest-token
+    // means the token is visible right now at the origin's /.well-known/x402 or llms.txt.
+    const fee = await verifyUsdcTransfer({ txHash: s.claim.tx_hash, payTo: CLAIM_FEE_WALLET, minAmountAtomic: usdcToAtomic(CLAIM_FEE_USDC), maxAgeDays: 30 });
+    report.claim = fee;
+    if (!fee.ok) report.errors.push(`claim fee ${s.claim.tx_hash}: ${fee.reason}`);
+    else if (String(fee.payer).toLowerCase() !== String(s.claim.payer).toLowerCase()) report.errors.push(`claim fee was paid by ${fee.payer}, not the declared claim.payer ${s.claim.payer}`);
+    if (s.claim.ownership === "payer-wallet") {
+      if (String(s.claim.payer).toLowerCase() !== String(s.payTo).toLowerCase()) report.errors.push(`payer-wallet claim: claim.payer ${s.claim.payer} is not the record's payTo ${s.payTo}`);
+    } else if (s.claim.ownership === "manifest-token") {
+      const origin = new URL(s.homepage).origin;
+      const token = String(s.claim.token || "");
+      const seen = token && (await Promise.all([`${origin}/.well-known/x402`, `${origin}/llms.txt`].map((u) => fetchText(u)))).some((txt) => typeof txt === "string" && txt.includes(token));
+      if (!seen) report.errors.push(`manifest-token claim: token not found at ${origin}/.well-known/x402 or ${origin}/llms.txt (keep it published; the claim is re-checked on every validation)`);
+    }
     report.warnings.push("claimed record without a proof tx: payability proof points (15) stay unearned until a proof is added");
   }
 
@@ -84,6 +103,7 @@ function md(reports, partnerReports) {
     if (r.score) lines.push(`Provisional ForgeMesh Verified Score: **${r.score.score}/100** (${r.score.score_band})  · payability ${r.score.dimensions.payability}/40 · reliability ${r.score.dimensions.reliability}/20 · interoperability ${r.score.dimensions.interoperability}/20 · discoverability ${r.score.dimensions.discoverability}/20`);
     if (r.probe) lines.push(`Protocols: x402 ${r.probe.is_402 && r.probe.envelope_valid ? "✓" : "✗"}${r.probe.mpp_header ? " · MPP detected" : ""} · networks detected: ${r.probe.networks_detected.join(", ") || "none"}`);
     if (r.proof) lines.push(`Proof: ${r.proof.ok ? `verified, ${Number(r.proof.amount_atomic) / 1e6} USDC in block ${r.proof.block}` : r.proof.reason}`);
+    if (r.claim) lines.push(`Claim fee: ${r.claim.ok ? `verified, ${Number(r.claim.amount_atomic) / 1e6} USDC from ${r.claim.payer} in block ${r.claim.block}` : r.claim.reason}`);
     for (const e of r.errors) lines.push(`- ❌ ${e}`);
     for (const w of r.warnings) lines.push(`- ⚠️ ${w}`);
     lines.push("");
