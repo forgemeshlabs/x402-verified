@@ -10,7 +10,7 @@ const net = require("node:net");
 const TIMEOUT_MS = 8000;
 const MAX_BYTES = 64 * 1024;
 const ALLOWED_PORTS = new Set(["80", "443", "8080", "8443"]);
-const USER_AGENT = "x402-verified/2.0 (+https://forgemesh.io/verified)";
+const USER_AGENT = process.env.X402_VERIFIED_UA || "x402-verified/2.0 (+https://forgemesh.io/verified)";
 
 class ProbeInputError extends Error {}
 
