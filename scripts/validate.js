@@ -30,6 +30,30 @@ function nonSellerChanges(base) {
   return out.split("\n").filter(Boolean).filter((f) => !f.startsWith("sellers/"));
 }
 
+// Where a claim token may be published: the origin's manifest or llms.txt, or the default branch of a
+// GitHub repo that either of those files links to (README.md or a .forgemesh-claim file). Returns the
+// URL where the token was seen, or null.
+async function tokenPublished(s) {
+  const origin = new URL(s.homepage).origin;
+  const token = String(s.claim.token || "");
+  if (!/^forgemesh-claim-[a-f0-9]{24}$/.test(token)) return null;
+  const files = [`${origin}/.well-known/x402`, `${origin}/llms.txt`];
+  const texts = await Promise.all(files.map((u) => fetchText(u)));
+  for (let i = 0; i < files.length; i++) if (typeof texts[i] === "string" && texts[i].includes(token)) return files[i];
+  const repos = new Set();
+  for (const txt of texts) for (const m of String(txt || "").matchAll(/github\.com\/([A-Za-z0-9-]+)\/([A-Za-z0-9._-]+)/g)) repos.add(`${m[1]}/${m[2].replace(/\.git$/, "")}`);
+  for (const repo of [...repos].slice(0, 3)) {
+    for (const branch of ["main", "master"]) {
+      for (const file of ["README.md", ".forgemesh-claim"]) {
+        const u = `https://raw.githubusercontent.com/${repo}/${branch}/${file}`;
+        const body = await fetchText(u);
+        if (typeof body === "string" && body.includes(token)) return u;
+      }
+    }
+  }
+  return null;
+}
+
 async function validateSeller(entry, all, { recordProbe }) {
   const s = entry.data;
   const report = { slug: s.slug || path.basename(entry.file, ".json"), errors: [], warnings: [], probe: null, proof: null, score: null };
@@ -71,17 +95,23 @@ async function validateSeller(entry, all, { recordProbe }) {
     // settled USDC transfer of at least CLAIM_FEE_USDC to the published fee wallet, sent by claim.payer,
     // and ownership must hold: payer-wallet means the fee came from the record's own payTo; manifest-token
     // means the token is visible right now at the origin's /.well-known/x402 or llms.txt.
-    const fee = await verifyUsdcTransfer({ txHash: s.claim.tx_hash, payTo: CLAIM_FEE_WALLET, minAmountAtomic: usdcToAtomic(CLAIM_FEE_USDC), maxAgeDays: 30 });
-    report.claim = fee;
-    if (!fee.ok) report.errors.push(`claim fee ${s.claim.tx_hash}: ${fee.reason}`);
-    else if (String(fee.payer).toLowerCase() !== String(s.claim.payer).toLowerCase()) report.errors.push(`claim fee was paid by ${fee.payer}, not the declared claim.payer ${s.claim.payer}`);
+    if (s.claim.tx_hash) {
+      const fee = await verifyUsdcTransfer({ txHash: s.claim.tx_hash, payTo: CLAIM_FEE_WALLET, minAmountAtomic: usdcToAtomic(CLAIM_FEE_USDC), maxAgeDays: 30 });
+      report.claim = fee;
+      if (!fee.ok) report.errors.push(`claim fee ${s.claim.tx_hash}: ${fee.reason}`);
+      else if (String(fee.payer).toLowerCase() !== String(s.claim.payer).toLowerCase()) report.errors.push(`claim fee was paid by ${fee.payer}, not the declared claim.payer ${s.claim.payer}`);
+    } else if (s.claim.stripe_session) {
+      // Card fee: nothing in CI can check Stripe. The verdict step reads this marker and withholds
+      // the fast track, so a maintainer confirms the session in Stripe and merges by hand.
+      report.maintainer_required = `card claim ${s.claim.stripe_session}: confirm the paid session in Stripe before merging`;
+      if (s.claim.ownership !== "manifest-token") report.errors.push("card claims must use manifest-token ownership");
+    }
     if (s.claim.ownership === "payer-wallet") {
       if (String(s.claim.payer).toLowerCase() !== String(s.payTo).toLowerCase()) report.errors.push(`payer-wallet claim: claim.payer ${s.claim.payer} is not the record's payTo ${s.payTo}`);
     } else if (s.claim.ownership === "manifest-token") {
-      const origin = new URL(s.homepage).origin;
-      const token = String(s.claim.token || "");
-      const seen = token && (await Promise.all([`${origin}/.well-known/x402`, `${origin}/llms.txt`].map((u) => fetchText(u)))).some((txt) => typeof txt === "string" && txt.includes(token));
-      if (!seen) report.errors.push(`manifest-token claim: token not found at ${origin}/.well-known/x402 or ${origin}/llms.txt (keep it published; the claim is re-checked on every validation)`);
+      const found = await tokenPublished(s);
+      if (!found) report.errors.push(`manifest-token claim: token not found at the origin's /.well-known/x402 or llms.txt, nor in a GitHub repo those files link to (keep it published; the claim is re-checked on every validation)`);
+      else report.warnings.push(`claim token found at ${found}`);
     }
     report.warnings.push("claimed record without a proof tx: payability proof points (15) stay unearned until a proof is added");
   }
@@ -104,6 +134,7 @@ function md(reports, partnerReports) {
     if (r.probe) lines.push(`Protocols: x402 ${r.probe.is_402 && r.probe.envelope_valid ? "✓" : "✗"}${r.probe.mpp_header ? " · MPP detected" : ""} · networks detected: ${r.probe.networks_detected.join(", ") || "none"}`);
     if (r.proof) lines.push(`Proof: ${r.proof.ok ? `verified, ${Number(r.proof.amount_atomic) / 1e6} USDC in block ${r.proof.block}` : r.proof.reason}`);
     if (r.claim) lines.push(`Claim fee: ${r.claim.ok ? `verified, ${Number(r.claim.amount_atomic) / 1e6} USDC from ${r.claim.payer} in block ${r.claim.block}` : r.claim.reason}`);
+    if (r.maintainer_required) lines.push(`- 🧑 MAINTAINER-REVIEW: ${r.maintainer_required}`);
     for (const e of r.errors) lines.push(`- ❌ ${e}`);
     for (const w of r.warnings) lines.push(`- ⚠️ ${w}`);
     lines.push("");

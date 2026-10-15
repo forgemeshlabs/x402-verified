@@ -153,7 +153,6 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "tx_hash",
         "payer",
         "at",
         "ownership"
@@ -167,7 +166,8 @@
         },
         "payer": {
           "type": "string",
-          "pattern": "^0x[0-9a-fA-F]{40}$"
+          "pattern": "^0x[0-9a-fA-F]{40}$",
+          "description": "wallet that paid the claim fee; the zero address for card claims"
         },
         "at": {
           "type": "string"
@@ -178,12 +178,17 @@
             "payer-wallet",
             "manifest-token"
           ],
-          "description": "payer-wallet = fee paid from the record's payTo; manifest-token = token published at /.well-known/x402 or llms.txt"
+          "description": "payer-wallet = fee paid from the record's payTo; manifest-token = token published at /.well-known/x402, llms.txt, or in the GitHub repo those files link to"
         },
         "token": {
           "type": "string",
           "pattern": "^forgemesh-claim-[a-f0-9]{24}$",
           "description": "manifest-token claims: the token the seller published at /.well-known/x402 or llms.txt; must still be visible there"
+        },
+        "stripe_session": {
+          "type": "string",
+          "pattern": "^cs_(live|test)_[A-Za-z0-9]+$",
+          "description": "card claims via kit.forgemesh.io checkout: the Stripe Checkout session id. CI cannot verify card payments, so these PRs are merged by a maintainer after checking the session in Stripe."
         }
       },
       "if": {
@@ -197,7 +202,19 @@
         "required": [
           "token"
         ]
-      }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "tx_hash"
+          ]
+        },
+        {
+          "required": [
+            "stripe_session"
+          ]
+        }
+      ]
     }
   },
   "anyOf": [

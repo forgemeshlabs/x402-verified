@@ -61,7 +61,7 @@ jobs:
         id: verdict
         if: always()
         run: |
-          if [ "${{ steps.import.outputs.maintainer_review }}" = "false" ] && [ "${{ steps.validate.outcome }}" = "success" ]; then
+          if [ "${{ steps.import.outputs.maintainer_review }}" = "false" ] && [ "${{ steps.validate.outcome }}" = "success" ] && ! grep -q 'MAINTAINER-REVIEW' report.md; then
             echo "fast_track_ok=true" >> "$GITHUB_OUTPUT"
           else
             echo "fast_track_ok=false" >> "$GITHUB_OUTPUT"
