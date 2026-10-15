@@ -2,7 +2,7 @@
   "version": 1,
   "program": "x402",
   "kind": "unclaimed-index",
-  "generated_at": "2026-10-15T14:49:22.065Z",
+  "generated_at": "2026-10-15T19:56:06.228Z",
   "score_spec": "2.0",
   "source": "CDP Bazaar snapshot, probed by ForgeMesh on protocol facts only; no seller input",
   "note": "Unclaimed rows have no proof tx, so the ceiling is 85/100. Claiming adds contact, routes, the README badge and re-probe on demand; a proof tx added by PR unlocks the last 15 points. The free GitHub PR path is unchanged.",
@@ -19,7 +19,7 @@
   "free_path": "https://github.com/forgemeshlabs/x402-verified/blob/main/CONTRIBUTING.md",
   "list_min_score": 70,
   "counts": {
-    "probed": 1662,
+    "probed": 1816,
     "payable": 1662,
     "listed": 1090
   },
@@ -5741,7 +5741,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "supplier-risk-api-production-up-railway-",
+      "slug": "supplier-risk-api-production-up-railway",
       "origin": "https://supplier-risk-api-production.up.railway.app",
       "name": "supplier-risk-api-production.up.railway.app",
       "payTo": "0x32fb20b949bf1606f01d344601571b5c56d07ed0",
@@ -35612,7 +35612,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "paid-mcp-opportunity-lab-taylorboucher1-",
+      "slug": "paid-mcp-opportunity-lab-taylorboucher1",
       "origin": "https://paid-mcp-opportunity-lab--taylorboucher1.replit.app",
       "name": "paid-mcp-opportunity-lab--taylorboucher1.replit.app",
       "payTo": "0x6f490449c4f2afedcc7220ec3c7b339315152dbc",
@@ -38707,7 +38707,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "currency-api-production-4a8d-up-railway-",
+      "slug": "currency-api-production-4a8d-up-railway",
       "origin": "https://currency-api-production-4a8d.up.railway.app",
       "name": "currency-api-production-4a8d.up.railway.app",
       "payTo": "0xffc458db291b4abce020fe3de4f91f2770e537b1",
@@ -44012,7 +44012,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "calendar-api-production-33a1-up-railway-",
+      "slug": "calendar-api-production-33a1-up-railway",
       "origin": "https://calendar-api-production-33a1.up.railway.app",
       "name": "calendar-api-production-33a1.up.railway.app",
       "payTo": "0x5461f103b54fcfe37a99337d3cb5ab5d30239c18",
@@ -44264,7 +44264,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "contract-api-production-c176-up-railway-",
+      "slug": "contract-api-production-c176-up-railway",
       "origin": "https://contract-api-production-c176.up.railway.app",
       "name": "contract-api-production-c176.up.railway.app",
       "payTo": "0x5461f103b54fcfe37a99337d3cb5ab5d30239c18",
@@ -49641,7 +49641,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "7mavs5vu7ggbhtxvbavdgs26qa0cbawg-lambda-",
+      "slug": "7mavs5vu7ggbhtxvbavdgs26qa0cbawg-lambda",
       "origin": "https://7mavs5vu7ggbhtxvbavdgs26qa0cbawg.lambda-url.us-east-1.on.aws",
       "name": "7mavs5vu7ggbhtxvbavdgs26qa0cbawg.lambda-url.us-east-1.on.aws",
       "payTo": "0x274c184049480d9d4fac6414d02dced706f74c5a",
@@ -53377,7 +53377,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "joyful-charm-production-bf6d-up-railway-",
+      "slug": "joyful-charm-production-bf6d-up-railway",
       "origin": "https://joyful-charm-production-bf6d.up.railway.app",
       "name": "joyful-charm-production-bf6d.up.railway.app",
       "payTo": "0x1394a802c94ab096abbd91ccc632843b03f46614",
@@ -55805,7 +55805,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "x402-pulse-seller-production-up-railway-",
+      "slug": "x402-pulse-seller-production-up-railway",
       "origin": "https://x402-pulse-seller-production.up.railway.app",
       "name": "x402-pulse-seller-production.up.railway.app",
       "payTo": "0xd0918296ef13b0fa23b67b6195af6854868642b6",
@@ -59088,7 +59088,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "x402-gateway-production-1f21-up-railway-",
+      "slug": "x402-gateway-production-1f21-up-railway",
       "origin": "https://x402-gateway-production-1f21.up.railway.app",
       "name": "x402-gateway-production-1f21.up.railway.app",
       "payTo": "0xf7eb4b12d673df433d76b2dbd9ca41db3fe1836e",
@@ -62731,7 +62731,7 @@
       "claim_price_usdc": "5"
     },
     {
-      "slug": "reel24-web-792007954609-us-central1-run-",
+      "slug": "reel24-web-792007954609-us-central1-run",
       "origin": "https://reel24-web-792007954609.us-central1.run.app",
       "name": "reel24-web-792007954609.us-central1.run.app",
       "payTo": "0x429dfa4010511d0d4ed43e7f90ab07fa5533bcea",

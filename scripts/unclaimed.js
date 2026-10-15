@@ -34,7 +34,7 @@ function sql(q) {
 }
 function originOf(u) { try { return new URL(u).origin; } catch { return null; } }
 function slugFor(origin) {
-  return new URL(origin).hostname.toLowerCase().replace(/^www\./, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40);
+  return new URL(origin).hostname.toLowerCase().replace(/^www\./, "").replace(/[^a-z0-9]+/g, "-").slice(0, 40).replace(/^-+|-+$/g, "");
 }
 function priceUsdc(atomic) { return (Number(atomic) / 1e6).toFixed(6).replace(/0+$/, "").replace(/\.$/, ".0"); }
 
@@ -158,7 +158,7 @@ function rowFrom(slug, st) {
       if (r) rows.push(r);
     }
     rows.sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug));
-    writeFeed(rows, rows.length);
+    writeFeed(rows, fs.readdirSync(STATE_DIR).filter((x) => x.endsWith(".json")).length);
     return;
   }
   let list = candidates();
