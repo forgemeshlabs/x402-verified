@@ -40,6 +40,15 @@
         "tx_hash": "0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b",
         "network": "eip155:8453"
       }
+    },
+    {
+      "url": "https://humanmirror.fr/api/x402/action-verdict/",
+      "method": "POST",
+      "price_usdc": "0.001",
+      "body": {
+        "action": "publish the generated report to production",
+        "max_risk": "medium"
+      }
     }
   ],
   "nominated_endpoint": 0,
