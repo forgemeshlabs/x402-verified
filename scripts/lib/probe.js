@@ -73,14 +73,14 @@ async function readCapped(res, cap) {
   return Buffer.concat(chunks);
 }
 
-async function doFetch(url, method, body) {
+async function doFetch(url, method, body, ua = USER_AGENT) {
   const res = await fetch(url, {
     method,
     redirect: "manual",
     signal: AbortSignal.timeout(TIMEOUT_MS),
     cache: "no-store",
     headers: {
-      "user-agent": USER_AGENT,
+      "user-agent": ua,
       accept: "application/json, */*",
       ...(method === "POST" ? { "content-type": "application/json" } : {}),
     },
@@ -147,13 +147,14 @@ function emptyResult(endpoint, startedAt) {
 }
 
 // Probe one declared endpoint. Never throws for network problems; only for refused targets.
-async function probeEndpoint(endpoint) {
+// opts.ua overrides the User-Agent for this probe (the unclaimed crawl sends a per-origin claim link).
+async function probeEndpoint(endpoint, { ua = USER_AGENT } = {}) {
   const target = await validateTarget(endpoint.url);
   const t0 = Date.now();
   const out = emptyResult({ ...endpoint, url: target.href }, t0);
   let res;
   try {
-    res = await doFetch(target.href, endpoint.method, endpoint.body);
+    res = await doFetch(target.href, endpoint.method, endpoint.body, ua);
   } catch (e) {
     out.error = e.message;
     out.response_time_ms = Date.now() - t0;
@@ -193,9 +194,9 @@ async function probeEndpoint(endpoint) {
   return out;
 }
 
-async function fetchText(url, ms = 4000) {
+async function fetchText(url, ms = 4000, ua = USER_AGENT) {
   try {
-    const res = await fetch(url, { redirect: "manual", signal: AbortSignal.timeout(ms), cache: "no-store", headers: { "user-agent": USER_AGENT } });
+    const res = await fetch(url, { redirect: "manual", signal: AbortSignal.timeout(ms), cache: "no-store", headers: { "user-agent": ua } });
     if (!res.ok) return null;
     const buf = await readCapped(res, MAX_BYTES);
     return buf.toString("utf8");
@@ -207,12 +208,12 @@ function normalizeRoute(u) {
 }
 
 // Discovery facts for a seller: manifest present, manifest names every declared route, llms.txt present.
-async function probeDiscovery({ endpoints, manifest, llms_txt }) {
+async function probeDiscovery({ endpoints, manifest, llms_txt }, { ua = USER_AGENT } = {}) {
   const origin = new URL(endpoints[0].url).origin;
   const manifestUrl = manifest || `${origin}/.well-known/x402`;
   const llmsUrl = llms_txt || `${origin}/llms.txt`;
   const out = { manifest_url: manifestUrl, manifest_ok: false, manifest_lists_route: false, llms_url: llmsUrl, llms_ok: false };
-  const manifestText = await fetchText(manifestUrl);
+  const manifestText = await fetchText(manifestUrl, 4000, ua);
   if (manifestText) {
     try {
       const parsed = JSON.parse(manifestText);
@@ -227,7 +228,7 @@ async function probeDiscovery({ endpoints, manifest, llms_txt }) {
       });
     }
   }
-  const llms = await fetchText(llmsUrl);
+  const llms = await fetchText(llmsUrl, 4000, ua);
   out.llms_ok = typeof llms === "string" && llms.trim().length > 0 && !/^\s*</.test(llms);
   return out;
 }

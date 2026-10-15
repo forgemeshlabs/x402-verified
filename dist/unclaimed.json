@@ -2,7 +2,7 @@
   "version": 1,
   "program": "x402",
   "kind": "unclaimed-index",
-  "generated_at": "2026-10-15T20:33:47.716Z",
+  "generated_at": "2026-10-15T21:31:31.509Z",
   "score_spec": "2.0",
   "source": "CDP Bazaar snapshot, probed by ForgeMesh on protocol facts only; no seller input",
   "note": "Unclaimed rows have no proof tx, so the ceiling is 85/100. Claiming adds contact, routes, the README badge and re-probe on demand; a proof tx added by PR unlocks the last 15 points. The free GitHub PR path is unchanged.",
@@ -19,7 +19,7 @@
   "free_path": "https://github.com/forgemeshlabs/x402-verified/blob/main/CONTRIBUTING.md",
   "list_min_score": 70,
   "counts": {
-    "probed": 1827,
+    "probed": 1,
     "payable": 1669,
     "listed": 1087
   },
@@ -54,10 +54,10 @@
       "manifest_ok": true,
       "llms_ok": true,
       "mpp_detected": false,
-      "ms": 319,
-      "probes": 3,
-      "last_probe": "2026-10-15T20:30:11.529Z",
-      "first_seen": "2026-10-15T20:30:11.529Z",
+      "ms": 197,
+      "probes": 4,
+      "last_probe": "2026-10-15T21:31:31.488Z",
+      "first_seen": "2026-10-15T21:31:31.488Z",
       "listed": true,
       "claim_url": "https://router.forgemesh.io/api/verified/claim",
       "claim_price_usdc": "5"

@@ -11,8 +11,9 @@ const path = require("node:path");
 const { execFileSync } = require("node:child_process");
 const { DIRS, loadSellers, readJson, writeJsonAtomic, registrableDomain } = require("./lib/sellers");
 // Operators see this line in their access logs: the probe doubles as the only notice an
-// unclaimed origin ever gets. Set before lib/probe reads it.
-process.env.X402_VERIFIED_UA ||= "x402-verified/2.0 (+https://forgemesh.io/claim; your x402 origin is in the ForgeMesh unclaimed index, claim your row)";
+// unclaimed origin ever gets. Per origin, so the link opens that origin's own claim page
+// (forgemesh.io/claim/<slug> → /verified/claim?slug=<slug>&src=probe).
+const claimUa = (slug) => `x402-verified/2.0 (+https://forgemesh.io/claim/${slug}; your x402 origin is in the ForgeMesh unclaimed index, claim your row)`;
 const { probeEndpoint, probeDiscovery } = require("./lib/probe");
 const { compute } = require("./lib/score");
 const { SPEC } = require("./lib/rubrics/x402");
@@ -96,17 +97,18 @@ async function probeOrigin(c, prev) {
   for (const r of c.picked) {
     const price_usdc = priceUsdc(r.price_atomic);
     let ep = { url: r.url, method: "GET", price_usdc };
-    let res = await probeEndpoint(ep);
+    const ua = claimUa(c.slug);
+    let res = await probeEndpoint(ep, { ua });
     if (res.reachable && !res.is_402) {
       const post = { url: r.url, method: "POST", price_usdc, body: {} };
-      const r2 = await probeEndpoint(post);
+      const r2 = await probeEndpoint(post, { ua });
       if (r2.is_402) { ep = post; res = r2; }
     }
     endpoints.push({ ...ep, description: r.description.slice(0, 140) });
     results.push(res);
   }
   const seller = { slug: c.slug, name: new URL(c.origin).hostname.replace(/^www\./, ""), homepage: c.origin, endpoints, payTo: c.payTo, networks: ["eip155:8453"] };
-  const discovery = await probeDiscovery(seller);
+  const discovery = await probeDiscovery(seller, { ua: claimUa(c.slug) });
   const all = (fn) => results.every(fn);
   const run = {
     at: new Date().toISOString(),
