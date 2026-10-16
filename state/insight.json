@@ -1,0 +1,102 @@
+{
+  "probes": [
+    {
+      "at": "2026-10-16T15:15:02.645Z",
+      "endpoints": [
+        {
+          "url": "https://www.oracleinsight.xyz/api/mcp",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": false,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x5FBbbCbF2Ade44F5c604E5E55f11945E1ADdD231",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:137",
+              "asset": "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
+              "payTo": "0x5FBbbCbF2Ade44F5c604E5E55f11945E1ADdD231",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:42161",
+              "asset": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+              "payTo": "0x5FBbbCbF2Ade44F5c604E5E55f11945E1ADdD231",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:143",
+              "asset": "0x754704Bc059F8C67012fEd69BC8A327a5aafb603",
+              "payTo": "0x5FBbbCbF2Ade44F5c604E5E55f11945E1ADdD231",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1",
+              "asset": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU",
+              "payTo": "BfVX9jcEALijnEuGPcGTjqjBgTFLTFMt6F7NrMHzGWf4",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 825,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://www.oracleinsight.xyz/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://www.oracleinsight.xyz/skill.md",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": false,
+      "header_envelope": true,
+      "body_envelope": false,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 825,
+      "networks_detected": [
+        "eip155:8453",
+        "eip155:137",
+        "eip155:42161",
+        "eip155:143",
+        "solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1"
+      ],
+      "pass": true
+    }
+  ],
+  "proof_check": {
+    "ok": true,
+    "reason": null,
+    "tx_hash": "0x3319c7d4e7e80f52cc4617a54bbf355a59937b4c3d449360f217cf2aadd223be",
+    "block": 52686724,
+    "block_time": "2026-10-16T14:59:55.000Z",
+    "amount_atomic": "2000",
+    "payer": "0x1bf19c0e42f5cccf8261dabfd755b827a2091dec",
+    "confirmations": 454,
+    "checked_at": "2026-10-16T15:15:03.787Z"
+  },
+  "forgemesh_paid": null,
+  "bazaar_listed": true,
+  "status": "active"
+}
