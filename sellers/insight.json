@@ -1,0 +1,39 @@
+{
+  "name": "Insight",
+  "slug": "insight",
+  "homepage": "https://www.oracleinsight.xyz",
+  "description": "Oracle-manipulation-aware pre-trade safety checks for AI agents: manipulation cost, TWAP spread, oracle lag, verdicts.",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://www.oracleinsight.xyz/api/mcp",
+      "method": "POST",
+      "price_usdc": "0.002",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "get_symbols",
+          "arguments": {}
+        }
+      }
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x5fbbbcbf2ade44f5c604e5e55f11945e1addd231",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://www.oracleinsight.xyz/.well-known/x402",
+  "llms_txt": "https://www.oracleinsight.xyz/skill.md",
+  "contact": "github:imokokok",
+  "proof": {
+    "tx_hash": "0x3319c7d4e7e80f52cc4617a54bbf355a59937b4c3d449360f217cf2aadd223be",
+    "endpoint": 0,
+    "payer_kind": "self"
+  },
+  "added_at": "2026-10-16"
+}
