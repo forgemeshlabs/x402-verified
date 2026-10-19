@@ -95,6 +95,43 @@
         "eip155:8453"
       ],
       "pass": true
+    },
+    {
+      "at": "2026-10-19T05:30:04.997Z",
+      "endpoints": [
+        {
+          "url": "https://blinka-machine-mouths.netlify.app/structure",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 500,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
+          "envelope_errors": [],
+          "x402_version": null,
+          "accepts": [],
+          "mpp_header": false,
+          "response_time_ms": 503,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://blinka-machine-mouths.netlify.app/.well-known/x402",
+      "manifest_ok": false,
+      "manifest_lists_route": false,
+      "llms_url": "https://blinka-machine-mouths.netlify.app/llms.txt",
+      "llms_ok": false,
+      "is_402": false,
+      "envelope_valid": false,
+      "payto_match": false,
+      "header_envelope": false,
+      "body_envelope": false,
+      "x402_version_2": false,
+      "mpp_header": false,
+      "ms": 503,
+      "networks_detected": [],
+      "pass": false
     }
   ],
   "proof_check": {
@@ -110,5 +147,5 @@
   },
   "forgemesh_paid": null,
   "bazaar_listed": false,
-  "status": "active"
+  "status": "degraded"
 }
