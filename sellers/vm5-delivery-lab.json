@@ -1,0 +1,29 @@
+{
+  "name": "VM5 Delivery Lab",
+  "slug": "vm5-delivery-lab",
+  "homepage": "https://vm5-openapi-x402.onrender.com",
+  "description": "AI-assisted x402 template with a real one-time external scout payment; reproducible Base USDC API tools, not recurring customer claims.",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://vm5-openapi-x402.onrender.com/v1/x402-template",
+      "method": "GET",
+      "price_usdc": "0.01"
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x6b01efA0705E91a7aca54271510bf9e594717f34",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://vm5-openapi-x402.onrender.com/.well-known/x402",
+  "contact": "github:livastic-vm5-primary-20260911",
+  "proof": {
+    "tx_hash": "0x5ced9d7d47a864b62afd408d785e0cf7a6b0cc862a6940630ee9283ce18be912",
+    "endpoint": 0,
+    "payer_kind": "customer"
+  },
+  "added_at": "2026-10-20"
+}
