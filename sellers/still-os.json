@@ -1,0 +1,41 @@
+{
+  "name": "Still OS",
+  "slug": "still-os",
+  "homepage": "https://stillosdigitalholdings.com",
+  "description": "OFAC wallet and name screens with publicly verifiable Ed25519 receipts, plus Kalshi perp funding estimates at ~5-minute resolution.",
+  "protocols": ["x402"],
+  "endpoints": [
+    {
+      "url": "https://stillosdigitalholdings.com/bazaar-v2/screen-wallet?agent=your-id&address=1EXAMPLEbtcaddressxxxxxxxxxxxxxxxx",
+      "method": "GET",
+      "price_usdc": "0.001"
+    },
+    {
+      "url": "https://stillosdigitalholdings.com/bazaar-v2/screen-entity?agent=your-id&entity=Acme+Corp",
+      "method": "GET",
+      "price_usdc": "0.001"
+    },
+    {
+      "url": "https://stillosdigitalholdings.com/funding/current",
+      "method": "GET",
+      "price_usdc": "0.002"
+    },
+    {
+      "url": "https://stillosdigitalholdings.com/bazaar-v2/grade-strategy",
+      "method": "GET",
+      "price_usdc": "0.050"
+    }
+  ],
+  "nominated_endpoint": 2,
+  "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+  "networks": ["eip155:8453"],
+  "manifest": "https://stillosdigitalholdings.com/.well-known/x402",
+  "llms_txt": "https://stillosdigitalholdings.com/llms.txt",
+  "contact": "mailto:stillmarcus24@gmail.com",
+  "proof": {
+    "tx_hash": "0xb9d0b2d45af25ad07ab415e7e8c957922b5914b31187d81afdbbab700e37f7f3",
+    "endpoint": 0,
+    "payer_kind": "customer"
+  },
+  "added_at": "2026-10-22"
+}
