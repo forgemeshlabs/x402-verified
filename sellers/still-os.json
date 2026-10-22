@@ -29,7 +29,7 @@
   "nominated_endpoint": 2,
   "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
   "networks": ["eip155:8453"],
-  "manifest": "https://stillosdigitalholdings.com/.well-known/x402",
+  "manifest": "https://stillosdigitalholdings.com/x402-resources.json?compact=1",
   "llms_txt": "https://stillosdigitalholdings.com/llms.txt",
   "contact": "mailto:stillmarcus24@gmail.com",
   "proof": {
