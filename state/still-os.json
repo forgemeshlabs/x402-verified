@@ -1,0 +1,194 @@
+{
+  "probes": [
+    {
+      "at": "2026-10-22T01:05:02.165Z",
+      "endpoints": [
+        {
+          "url": "https://stillosdigitalholdings.com/bazaar-v2/screen-wallet?agent=your-id&address=1EXAMPLEbtcaddressxxxxxxxxxxxxxxxx",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": false,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "1000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:137",
+              "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "1000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:42161",
+              "asset": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "1000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 443,
+          "error": null
+        },
+        {
+          "url": "https://stillosdigitalholdings.com/bazaar-v2/screen-entity?agent=your-id&entity=Acme+Corp",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": false,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "1000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:137",
+              "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "1000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:42161",
+              "asset": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "1000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 333,
+          "error": null
+        },
+        {
+          "url": "https://stillosdigitalholdings.com/funding/current",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": false,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "2000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 361,
+          "error": null
+        },
+        {
+          "url": "https://stillosdigitalholdings.com/bazaar-v2/grade-strategy",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": false,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "50000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:137",
+              "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "50000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:42161",
+              "asset": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+              "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+              "amount": "50000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 496,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://stillosdigitalholdings.com/.well-known/x402",
+      "manifest_ok": false,
+      "manifest_lists_route": false,
+      "llms_url": "https://stillosdigitalholdings.com/llms.txt",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": true,
+      "header_envelope": true,
+      "body_envelope": false,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 496,
+      "networks_detected": [
+        "eip155:8453",
+        "eip155:137",
+        "eip155:42161"
+      ],
+      "pass": true
+    }
+  ],
+  "proof_check": {
+    "ok": true,
+    "reason": null,
+    "tx_hash": "0xb9d0b2d45af25ad07ab415e7e8c957922b5914b31187d81afdbbab700e37f7f3",
+    "block": 52799849,
+    "block_time": "2026-10-19T05:50:45.000Z",
+    "amount_atomic": "1000",
+    "payer": "0x54e163e9b8edda194d83f46add921bfa5fc5f4e0",
+    "confirmations": 121029,
+    "checked_at": "2026-10-22T01:05:03.305Z"
+  },
+  "forgemesh_paid": null,
+  "bazaar_listed": true,
+  "status": "active"
+}

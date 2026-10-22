@@ -1,7 +1,7 @@
 {
   "version": 2,
   "program": "x402",
-  "generated_at": "2026-10-19T15:20:04.882Z",
+  "generated_at": "2026-10-22T01:05:06.618Z",
   "score_spec": "2.0",
   "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
   "marks": {
@@ -2140,6 +2140,214 @@
       "added_at": "2026-09-21",
       "page": "https://forgemesh.io/verified/agentresolver",
       "badge": "https://forgemesh.io/badge/x402/agentresolver"
+    },
+    {
+      "slug": "still-os",
+      "name": "Still OS",
+      "homepage": "https://stillosdigitalholdings.com",
+      "description": "OFAC wallet and name screens with publicly verifiable Ed25519 receipts, plus Kalshi perp funding estimates at ~5-minute resolution.",
+      "protocols": [
+        "x402"
+      ],
+      "endpoints": [
+        {
+          "url": "https://stillosdigitalholdings.com/bazaar-v2/screen-wallet?agent=your-id&address=1EXAMPLEbtcaddressxxxxxxxxxxxxxxxx",
+          "method": "GET",
+          "price_usdc": "0.001"
+        },
+        {
+          "url": "https://stillosdigitalholdings.com/bazaar-v2/screen-entity?agent=your-id&entity=Acme+Corp",
+          "method": "GET",
+          "price_usdc": "0.001"
+        },
+        {
+          "url": "https://stillosdigitalholdings.com/funding/current",
+          "method": "GET",
+          "price_usdc": "0.002"
+        },
+        {
+          "url": "https://stillosdigitalholdings.com/bazaar-v2/grade-strategy",
+          "method": "GET",
+          "price_usdc": "0.050"
+        }
+      ],
+      "nominated_endpoint": 2,
+      "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+      "networks": [
+        "eip155:8453"
+      ],
+      "networks_detected": [
+        "eip155:8453",
+        "eip155:137",
+        "eip155:42161"
+      ],
+      "score": 84,
+      "score_band": "ready",
+      "dimensions": {
+        "payability": 40,
+        "reliability": 20,
+        "interoperability": 15,
+        "discoverability": 9
+      },
+      "score_details": [
+        {
+          "dimension": "payability",
+          "points": 10,
+          "max": 10,
+          "check": "every declared endpoint answers HTTP 402",
+          "ok": true
+        },
+        {
+          "dimension": "payability",
+          "points": 10,
+          "max": 10,
+          "check": "every 402 carries a valid x402 envelope",
+          "ok": true
+        },
+        {
+          "dimension": "payability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope payTo matches the declared payTo",
+          "ok": true
+        },
+        {
+          "dimension": "payability",
+          "points": 15,
+          "max": 15,
+          "check": "seller-supplied on-chain proof verified",
+          "ok": true
+        },
+        {
+          "dimension": "reliability",
+          "points": 14,
+          "max": 14,
+          "check": "1/1 recent probe runs passed",
+          "ok": true
+        },
+        {
+          "dimension": "reliability",
+          "points": 6,
+          "max": 6,
+          "check": "latest response 496 ms",
+          "ok": true
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope declares x402Version 2",
+          "ok": true
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope delivered in the payment-required header",
+          "ok": true
+        },
+        {
+          "dimension": "interoperability",
+          "points": 0,
+          "max": 5,
+          "check": "envelope also present in the JSON body (stock v1 clients)",
+          "ok": false
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "accepts[] entries well-formed: exact scheme, CAIP-2 network, canonical USDC, amount = declared price",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 0,
+          "max": 6,
+          "check": "/.well-known/x402 manifest present",
+          "ok": false
+        },
+        {
+          "dimension": "discoverability",
+          "points": 0,
+          "max": 5,
+          "check": "manifest names every declared route",
+          "ok": false
+        },
+        {
+          "dimension": "discoverability",
+          "points": 4,
+          "max": 4,
+          "check": "llms.txt present",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 5,
+          "max": 5,
+          "check": "listed in the CDP Bazaar",
+          "ok": true
+        }
+      ],
+      "status": "active",
+      "perfect": false,
+      "forgemesh_paid": false,
+      "forgemesh_paid_at": null,
+      "forgemesh_paid_tx": null,
+      "forgemesh_paid_amount_atomic": null,
+      "forgemesh_paid_stale": false,
+      "proof": {
+        "tx_hash": "0xb9d0b2d45af25ad07ab415e7e8c957922b5914b31187d81afdbbab700e37f7f3",
+        "endpoint": 0,
+        "payer_kind": "customer"
+      },
+      "proof_check": {
+        "ok": true,
+        "reason": null,
+        "tx_hash": "0xb9d0b2d45af25ad07ab415e7e8c957922b5914b31187d81afdbbab700e37f7f3",
+        "block": 52799849,
+        "block_time": "2026-10-19T05:50:45.000Z",
+        "amount_atomic": "1000",
+        "payer": "0x54e163e9b8edda194d83f46add921bfa5fc5f4e0",
+        "confirmations": 121029,
+        "checked_at": "2026-10-22T01:05:03.305Z"
+      },
+      "claimed": false,
+      "probes": [
+        {
+          "at": "2026-10-22T01:05:02.165Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": false,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 496,
+          "manifest_ok": false,
+          "manifest_lists_route": false,
+          "llms_ok": true
+        }
+      ],
+      "last_probe": "2026-10-22T01:05:02.165Z",
+      "bazaar_listed": true,
+      "protocol_capabilities": {
+        "x402": {
+          "supported": true,
+          "verified": true,
+          "version": 2
+        },
+        "mpp": {
+          "supported": false,
+          "verified": false,
+          "note": "detected only; MPP Verified by ForgeMesh is a separate future program"
+        }
+      },
+      "contact": "mailto:stillmarcus24@gmail.com",
+      "added_at": "2026-10-22",
+      "page": "https://forgemesh.io/verified/still-os",
+      "badge": "https://forgemesh.io/badge/x402/still-os"
     },
     {
       "slug": "saymon-ru-data-api",
