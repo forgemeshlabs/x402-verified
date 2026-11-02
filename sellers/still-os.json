@@ -18,7 +18,7 @@
     {
       "url": "https://stillosdigitalholdings.com/funding/current",
       "method": "GET",
-      "price_usdc": "0.002"
+      "price_usdc": "0.050"
     },
     {
       "url": "https://stillosdigitalholdings.com/bazaar-v2/grade-strategy",
@@ -26,7 +26,7 @@
       "price_usdc": "0.050"
     }
   ],
-  "nominated_endpoint": 2,
+  "nominated_endpoint": 0,
   "payTo": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
   "networks": ["eip155:8453"],
   "manifest": "https://stillosdigitalholdings.com/x402-resources.json?compact=1",
