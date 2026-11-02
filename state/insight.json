@@ -176,6 +176,54 @@
         "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
       ],
       "pass": true
+    },
+    {
+      "at": "2026-11-02T05:30:14.878Z",
+      "endpoints": [
+        {
+          "url": "https://www.oracleinsight.xyz/api/mcp",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:999",
+              "asset": "0xb88339CB7199b77E23DB6E890353E22632Ba630f",
+              "payTo": "0x5FBbbCbF2Ade44F5c604E5E55f11945E1ADdD231",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 2865,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://www.oracleinsight.xyz/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://www.oracleinsight.xyz/skill.md",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": true,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 2865,
+      "networks_detected": [
+        "eip155:999"
+      ],
+      "pass": true
     }
   ],
   "proof_check": {

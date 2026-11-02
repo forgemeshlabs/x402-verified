@@ -47,6 +47,54 @@
         "eip155:8453"
       ],
       "pass": true
+    },
+    {
+      "at": "2026-11-02T05:30:23.503Z",
+      "endpoints": [
+        {
+          "url": "https://vm5-openapi-x402.onrender.com/v1/x402-template",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x6b01efA0705E91a7aca54271510bf9e594717f34",
+              "amount": "10000",
+              "maxTimeoutSeconds": 300
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 178,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://vm5-openapi-x402.onrender.com/.well-known/x402",
+      "manifest_ok": false,
+      "manifest_lists_route": false,
+      "llms_url": "https://vm5-openapi-x402.onrender.com/llms.txt",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": true,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 178,
+      "networks_detected": [
+        "eip155:8453"
+      ],
+      "pass": true
     }
   ],
   "proof_check": {

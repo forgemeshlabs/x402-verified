@@ -28,19 +28,18 @@ The badge is separate cells side by side: the label, the score colored by its ba
 <!-- SELLERS:START -->
 | Seller | Score | Marks | Status | Protocols | Cheapest route | Proof | Last probe |
 |---|---|---|---|---|---|---|---|
-| [KushBitx AgentProof](https://forgemesh.io/verified/kushbitx-agentproof) | 100/100 excellent | ★ | active | x402 ✓ | GET https://kushbitx.com/api/agentproof-quick-check $0.001 | [tx](https://basescan.org/tx/0x000dcab74621c9bb075cdb85b062ea331a524cd6e177d2ab748c4607f2d786ac) | 2026-10-19 |
-| [PennyAPI](https://forgemesh.io/verified/pennyapi) | 100/100 excellent | ★ | active | x402 ✓ | POST https://pennyregwatch.com/v1/search $0.004 | [tx](https://basescan.org/tx/0x338308fdacc4b16e6110025152549b7a09bb8e30053e0ab37a8e2f45789b9462) | 2026-10-19 |
-| [HumanMirror](https://forgemesh.io/verified/humanmirror) | 96/100 excellent | — | active | x402 ✓ | POST https://humanmirror.fr/api/machine/resolve/ $0.001 | [tx](https://basescan.org/tx/0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b) | 2026-10-19 |
-| [brick.blue](https://forgemesh.io/verified/brick-blue) | 95/100 excellent | — | active | x402 ✓ | POST https://brick.blue/api/v1/services/x402-quote $0.001 | [tx](https://basescan.org/tx/0xadb7ba8d6cb6b7bf8f4dea39a358d5d8b4f702188a4d0d30c3a3f1dbef1d980d) | 2026-10-19 |
-| [Quietforge x402 Tools](https://forgemesh.io/verified/quietforge-docs-api) | 95/100 excellent | — | active | x402 ✓ | GET https://qf-api.quietforge-studio.workers.dev/v1/x402/services $0.005 | [tx](https://basescan.org/tx/0x638d90ba82ca8765c2871ad68568a4dbcafbe28d60ce1dfe0bb3bd61fbb26439) | 2026-10-19 |
-| [Free Asset Radar x402](https://forgemesh.io/verified/free-asset-radar-x402) | 91/100 excellent | — | active | x402 ✓ | GET https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/decode-inspect $0.001 | [tx](https://basescan.org/tx/0x2f7023b65e7be37f248774908b13dd4be58cb0b03c11bbb9bfe01fce4c8a9a26) | 2026-10-19 |
-| [VM5 Delivery Lab](https://forgemesh.io/verified/vm5-delivery-lab) | 91/100 excellent | — | active | x402 ✓ | GET https://vm5-openapi-x402.onrender.com/v1/x402-template $0.01 | [tx](https://basescan.org/tx/0x5ced9d7d47a864b62afd408d785e0cf7a6b0cc862a6940630ee9283ce18be912) | 2026-10-19 |
-| [Insight](https://forgemesh.io/verified/insight) | 88/100 excellent | — | active | x402 ✓ | POST https://www.oracleinsight.xyz/api/mcp $0.002 | [tx](https://basescan.org/tx/0x3319c7d4e7e80f52cc4617a54bbf355a59937b4c3d449360f217cf2aadd223be) | 2026-10-19 |
-| [AgentResolver](https://forgemesh.io/verified/agentresolver) | 84/100 ready | — | active | x402 ✓ | GET https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET $0.001 | [tx](https://basescan.org/tx/0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b) | 2026-10-19 |
-| [Still OS](https://forgemesh.io/verified/still-os) | 84/100 ready | — | active | x402 ✓ | GET https://stillosdigitalholdings.com/bazaar-v2/screen-wallet?agent=your-id&address=1EXAMPLEbtcaddressxxxxxxxxxxxxxxxx $0.001 | [tx](https://basescan.org/tx/0xb9d0b2d45af25ad07ab415e7e8c957922b5914b31187d81afdbbab700e37f7f3) | 2026-10-22 |
-| [Saymon RU Data API](https://forgemesh.io/verified/saymon-ru-data-api) | 42/100 at-risk | — | degraded | x402 ✓ · MPP detected | POST https://payforapi.com/v1/ticker $0.005 | [tx](https://basescan.org/tx/0x00294faacf6bc8ff8cea2380c1f6510bb53a1666334338fe3fa07d85b7a542ec) | 2026-10-19 |
-| [Blinka Machine Mouths](https://forgemesh.io/verified/blinka-machine-mouths) | 30/100 at-risk | — | degraded | x402 ✓ | POST https://blinka-machine-mouths.netlify.app/structure $0.010 | [tx](https://basescan.org/tx/0x1d64f32221aa490679ab32087c3982dac73eaa695361dab4ee9ccee80cd7c5fc) | 2026-10-19 |
-| [loop2-quickstart](https://forgemesh.io/verified/loop2-quickstart) | 28/100 at-risk | — | degraded | x402 ✓ | GET https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402 $0.001 | [tx](https://basescan.org/tx/0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6) | 2026-10-19 |
+| [KushBitx AgentProof](https://forgemesh.io/verified/kushbitx-agentproof) | 100/100 excellent | ★ | active | x402 ✓ | GET https://kushbitx.com/api/agentproof-quick-check $0.001 | [tx](https://basescan.org/tx/0x000dcab74621c9bb075cdb85b062ea331a524cd6e177d2ab748c4607f2d786ac) | 2026-11-02 |
+| [PennyAPI](https://forgemesh.io/verified/pennyapi) | 100/100 excellent | ★ | active | x402 ✓ | POST https://pennyregwatch.com/v1/search $0.004 | [tx](https://basescan.org/tx/0x338308fdacc4b16e6110025152549b7a09bb8e30053e0ab37a8e2f45789b9462) | 2026-11-02 |
+| [HumanMirror](https://forgemesh.io/verified/humanmirror) | 98/100 excellent | — | active | x402 ✓ | POST https://humanmirror.fr/api/machine/resolve/ $0.001 | [tx](https://basescan.org/tx/0x74bc1cd5fc72c304c351a021c9cb17f2779db990a148b3ae0ba6b19e0fd7982b) | 2026-11-02 |
+| [Insight](https://forgemesh.io/verified/insight) | 98/100 excellent | — | active | x402 ✓ | POST https://www.oracleinsight.xyz/api/mcp $0.002 | [tx](https://basescan.org/tx/0x3319c7d4e7e80f52cc4617a54bbf355a59937b4c3d449360f217cf2aadd223be) | 2026-11-02 |
+| [brick.blue](https://forgemesh.io/verified/brick-blue) | 95/100 excellent | — | active | x402 ✓ | POST https://brick.blue/api/v1/services/x402-quote $0.001 | [tx](https://basescan.org/tx/0xadb7ba8d6cb6b7bf8f4dea39a358d5d8b4f702188a4d0d30c3a3f1dbef1d980d) | 2026-11-02 |
+| [Quietforge x402 Tools](https://forgemesh.io/verified/quietforge-docs-api) | 95/100 excellent | — | active | x402 ✓ | GET https://qf-api.quietforge-studio.workers.dev/v1/x402/services $0.005 | [tx](https://basescan.org/tx/0x638d90ba82ca8765c2871ad68568a4dbcafbe28d60ce1dfe0bb3bd61fbb26439) | 2026-11-02 |
+| [Still OS](https://forgemesh.io/verified/still-os) | 95/100 excellent | — | active | x402 ✓ | GET https://stillosdigitalholdings.com/bazaar-v2/screen-wallet?agent=your-id&address=1EXAMPLEbtcaddressxxxxxxxxxxxxxxxx $0.001 | [tx](https://basescan.org/tx/0xb9d0b2d45af25ad07ab415e7e8c957922b5914b31187d81afdbbab700e37f7f3) | 2026-11-02 |
+| [Free Asset Radar x402](https://forgemesh.io/verified/free-asset-radar-x402) | 91/100 excellent | — | active | x402 ✓ | GET https://free-asset-radar-x402.besenok2018.workers.dev/api/x402/decode-inspect $0.001 | [tx](https://basescan.org/tx/0x2f7023b65e7be37f248774908b13dd4be58cb0b03c11bbb9bfe01fce4c8a9a26) | 2026-11-02 |
+| [AgentResolver](https://forgemesh.io/verified/agentresolver) | 84/100 ready | — | active | x402 ✓ | GET https://agentresolver.vercel.app/api/x402-payment-preflight?url=https%3A%2F%2Fagentresolver.vercel.app%2Fapi%2Fx402-ping&method=GET $0.001 | [tx](https://basescan.org/tx/0x64ff5b46c59626999516d29cb53c979e3eeab4fed81aafc2fb7a36465d50f16b) | 2026-11-02 |
+| [VM5 Delivery Lab](https://forgemesh.io/verified/vm5-delivery-lab) | 84/100 ready | — | active | x402 ✓ | GET https://vm5-openapi-x402.onrender.com/v1/x402-template $0.01 | [tx](https://basescan.org/tx/0x5ced9d7d47a864b62afd408d785e0cf7a6b0cc862a6940630ee9283ce18be912) | 2026-11-02 |
+| [Saymon RU Data API](https://forgemesh.io/verified/saymon-ru-data-api) | 40/100 at-risk | — | degraded | x402 ✓ · MPP detected | POST https://payforapi.com/v1/ticker $0.005 | [tx](https://basescan.org/tx/0x00294faacf6bc8ff8cea2380c1f6510bb53a1666334338fe3fa07d85b7a542ec) | 2026-11-02 |
+| [Blinka Machine Mouths](https://forgemesh.io/verified/blinka-machine-mouths) | 28/100 at-risk | — | degraded | x402 ✓ | POST https://blinka-machine-mouths.netlify.app/structure $0.010 | [tx](https://basescan.org/tx/0x1d64f32221aa490679ab32087c3982dac73eaa695361dab4ee9ccee80cd7c5fc) | 2026-11-02 |
 <!-- SELLERS:END -->
 
 ## Get listed
@@ -107,7 +106,9 @@ Not scored sellers: networks, indexes, directories and tooling ForgeMesh works w
 ## Delisted
 
 <!-- DELISTED:START -->
-_None._
+| Seller | Score | Marks | Status | Protocols | Cheapest route | Proof | Last probe |
+|---|---|---|---|---|---|---|---|
+| [loop2-quickstart](https://forgemesh.io/verified/loop2-quickstart) | 27/100 at-risk | — | delisted | x402 ✓ | GET https://loop2-quickstart.manhliemcn4euwlu.workers.dev/mkt/x402 $0.001 | [tx](https://basescan.org/tx/0x9ab390cce63e0fe7cc55e72a10f47c32ea0993e3c8019a167c5834cb834db1f6) | 2026-11-02 |
 <!-- DELISTED:END -->
 
 ## Conflict of interest
