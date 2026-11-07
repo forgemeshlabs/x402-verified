@@ -1,0 +1,62 @@
+{
+  "name": "aptu.dev",
+  "slug": "aptu-dev",
+  "homepage": "https://aptu.dev",
+  "description": "Machine-payable API microservices: resume ATS scoring, domain agent-readiness audit, x402 conformance pre-flight check, BTC regime check, echo probe.",
+  "protocols": [
+    "x402"
+  ],
+  "endpoints": [
+    {
+      "url": "https://aptu.dev/v1/echo",
+      "method": "POST",
+      "price_usdc": "0.010",
+      "body": {
+        "message": "hello"
+      }
+    },
+    {
+      "url": "https://aptu.dev/v1/resume-eval",
+      "method": "POST",
+      "price_usdc": "0.005",
+      "body": {
+        "resume_text": "Senior engineer with 8 years of TypeScript and distributed systems experience.",
+        "format": "markdown"
+      }
+    },
+    {
+      "url": "https://aptu.dev/v1/agent-readiness",
+      "method": "POST",
+      "price_usdc": "0.050",
+      "body": {
+        "domain": "example.com"
+      }
+    },
+    {
+      "url": "https://aptu.dev/v1/btc-regime",
+      "method": "GET",
+      "price_usdc": "0.003"
+    },
+    {
+      "url": "https://aptu.dev/v1/x402-preflight",
+      "method": "POST",
+      "price_usdc": "0.050",
+      "body": {
+        "url": "https://aptu.dev/v1/echo"
+      }
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+  "networks": [
+    "eip155:8453"
+  ],
+  "manifest": "https://aptu.dev/.well-known/x402",
+  "contact": "mailto:info@aptu.dev",
+  "proof": {
+    "tx_hash": "0xdffef4be1df845694398f90745ad165e6af0ada81603840c3fc42707d7cba797",
+    "endpoint": 0,
+    "payer_kind": "self"
+  },
+  "added_at": "2026-11-28"
+}
