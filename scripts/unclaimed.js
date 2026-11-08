@@ -216,7 +216,7 @@ function writeFeed(merged, probed) {
     version: 1, program: "x402", kind: "unclaimed-index", generated_at: new Date().toISOString(), score_spec: SPEC,
     source: "CDP Bazaar snapshot, probed by ForgeMesh on protocol facts only; no seller input",
     note: "Unclaimed rows have no proof tx, so the ceiling is 85/100. Claiming adds contact, routes, the README badge and re-probe on demand; a proof tx added by PR unlocks the last 15 points. The free GitHub PR path is unchanged.",
-    claim: { url: CLAIM_URL, price_usdc: CLAIM_PRICE_USDC, method: "POST", ownership: ["pay the fee from the row's payTo wallet", "or publish the returned token at /.well-known/x402 or llms.txt"], docs: "https://router.forgemesh.io/openapi.json" },
+    claim: { url: CLAIM_URL, price_usdc: CLAIM_PRICE_USDC, method: "POST", why: "Unclaimed rows carry no owner contact: buyers who find them cannot reach the seller. A claim adds contact, chosen routes, a public seller page, a README badge and re-probe on demand, minutes after settlement.", ownership: ["pay the fee from the row's payTo wallet", "or publish the returned token at /.well-known/x402 or llms.txt"], docs: "https://router.forgemesh.io/openapi.json", card_url: "https://kit.forgemesh.io/claim" },
     free_path: "https://github.com/forgemeshlabs/x402-verified/blob/main/CONTRIBUTING.md",
     list_min_score: LIST_MIN_SCORE,
     counts: { probed, payable: merged.length, listed: merged.filter((r) => r.listed).length },
