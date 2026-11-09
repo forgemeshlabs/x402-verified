@@ -20,13 +20,25 @@ function commitAndPush(paths, message, { push = true } = {}) {
   const staged = git(["diff", "--cached", "--name-only"]);
   if (!staged) return { committed: false, pushed: false };
   git(["-c", "user.name=x402-verified-bot", "-c", "user.email=hello@forgemesh.io", "commit", "-q", "-m", message]);
-  const sha = git(["rev-parse", "--short", "HEAD"]);
+  let sha = git(["rev-parse", "--short", "HEAD"]);
   if (!push) return { committed: true, pushed: false, sha };
+  // The clone is routinely behind by the time this pushes: the Monday 05:30 reprobe's
+  // publish PR merges on GitHub ~an hour before the 06:30 unclaimed crawl, so a push
+  // without a pull was rejected every Monday (last: 2026-11-09, index stayed local-only).
+  // Rebase our fresh commit onto origin/main first; on a conflict, abort and let the
+  // pull-request fallback below carry the commit instead.
+  try {
+    git(["fetch", "-q", "origin", "main"]);
+    git(["rebase", "-q", "origin/main"]);
+    sha = git(["rev-parse", "--short", "HEAD"]);
+  } catch (_) {
+    try { git(["rebase", "--abort"]); } catch (_) { /* no rebase in progress */ }
+  }
   try {
     git(["push", "-q", "origin", "HEAD:main"]);
     return { committed: true, pushed: true, sha, via: "push" };
   } catch (err) {
-    if (!/protected branch|GH006|pull request/i.test(String(err.stderr || err.message))) throw err;
+    if (!/protected branch|GH006|pull request|non-fast-forward|fetch first|behind/i.test(String(err.stderr || err.message))) throw err;
   }
   const branch = `auto/${message.split(":")[0].toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${Date.now()}`;
   git(["push", "-q", "origin", `HEAD:refs/heads/${branch}`]);
