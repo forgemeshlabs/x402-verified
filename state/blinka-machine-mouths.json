@@ -169,6 +169,43 @@
       "ms": 199,
       "networks_detected": [],
       "pass": false
+    },
+    {
+      "at": "2026-11-09T05:30:04.988Z",
+      "endpoints": [
+        {
+          "url": "https://blinka-machine-mouths.netlify.app/structure",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 502,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
+          "envelope_errors": [],
+          "x402_version": null,
+          "accepts": [],
+          "mpp_header": false,
+          "response_time_ms": 253,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://blinka-machine-mouths.netlify.app/.well-known/x402",
+      "manifest_ok": false,
+      "manifest_lists_route": false,
+      "llms_url": "https://blinka-machine-mouths.netlify.app/llms.txt",
+      "llms_ok": false,
+      "is_402": false,
+      "envelope_valid": false,
+      "payto_match": false,
+      "header_envelope": false,
+      "body_envelope": false,
+      "x402_version_2": false,
+      "mpp_header": false,
+      "ms": 253,
+      "networks_detected": [],
+      "pass": false
     }
   ],
   "proof_check": {
@@ -184,5 +221,5 @@
   },
   "forgemesh_paid": null,
   "bazaar_listed": false,
-  "status": "degraded"
+  "status": "delisted"
 }
