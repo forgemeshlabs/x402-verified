@@ -2,7 +2,7 @@
   "name": "KushBitx AgentProof",
   "slug": "kushbitx-agentproof",
   "homepage": "https://kushbitx.com",
-  "description": "Non-custodial x402 v2 verification APIs for AI agents on Base, including deterministic quick checks, token risk, unsigned transaction…",
+  "description": "KushBitx Preflight checks AI-agent transactions on Base against the intended recipient, the simulated outcome and security risks before signing, for 0.005 USDC per check via x402.",
   "protocols": [
     "x402"
   ],
@@ -11,9 +11,110 @@
       "url": "https://kushbitx.com/api/agentproof-quick-check",
       "method": "GET",
       "price_usdc": "0.001"
+    },
+    {
+      "url": "https://kushbitx.com/api/preflight",
+      "method": "POST",
+      "price_usdc": "0.005",
+      "body": {
+        "chainId": 8453,
+        "from": "0x0d68028d06af13379C872FEE032568B4Be712f22",
+        "to": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "value": "0",
+        "data": "0xa9059cbb000000000000000000000000d2db751a2fdba554706fb535438d81d3a0b4297900000000000000000000000000000000000000000000000000000000000003e8",
+        "intent": "transfer"
+      }
+    },
+    {
+      "url": "https://kushbitx.com/api/signature-check",
+      "method": "POST",
+      "price_usdc": "0.003",
+      "body": {
+        "chainId": 8453,
+        "signer": "0x0d68028d06af13379C872FEE032568B4Be712f22",
+        "typedData": {
+          "domain": {
+            "name": "USD Coin",
+            "version": "2",
+            "chainId": 8453,
+            "verifyingContract": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+          },
+          "types": {
+            "TransferWithAuthorization": [
+              {
+                "name": "from",
+                "type": "address"
+              },
+              {
+                "name": "to",
+                "type": "address"
+              },
+              {
+                "name": "value",
+                "type": "uint256"
+              },
+              {
+                "name": "validAfter",
+                "type": "uint256"
+              },
+              {
+                "name": "validBefore",
+                "type": "uint256"
+              },
+              {
+                "name": "nonce",
+                "type": "bytes32"
+              }
+            ]
+          },
+          "primaryType": "TransferWithAuthorization",
+          "message": {
+            "from": "0x0d68028d06af13379C872FEE032568B4Be712f22",
+            "to": "0xd2db751a2fdba554706fb535438d81d3a0b42979",
+            "value": "1000",
+            "validAfter": "0",
+            "validBefore": "1800000000",
+            "nonce": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        "expectedPayTo": "0xd2db751a2fdba554706fb535438d81d3a0b42979",
+        "expectedAmount": "1000"
+      }
+    },
+    {
+      "url": "https://kushbitx.com/api/verify-payment",
+      "method": "POST",
+      "price_usdc": "0.00288",
+      "body": {
+        "chain": "base",
+        "txHash": "0xd534855eb9d6296b1b8508a72d3a4f36db5d6b5f749aae160c46611018df2b30",
+        "expectedTo": "0x0d68028d06af13379C872FEE032568B4Be712f22",
+        "expectedAmount": "0.001"
+      }
+    },
+    {
+      "url": "https://kushbitx.com/api/token-risk",
+      "method": "POST",
+      "price_usdc": "0.001",
+      "body": {
+        "chain": "base",
+        "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      }
+    },
+    {
+      "url": "https://kushbitx.com/api/transaction-preflight",
+      "method": "POST",
+      "price_usdc": "0.001",
+      "body": {
+        "chain": "base",
+        "from": "0x0d68028d06af13379C872FEE032568B4Be712f22",
+        "to": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "valueWei": "0",
+        "data": "0xa9059cbb000000000000000000000000d2db751a2fdba554706fb535438d81d3a0b4297900000000000000000000000000000000000000000000000000000000000003e8"
+      }
     }
   ],
-  "nominated_endpoint": 0,
+  "nominated_endpoint": 1,
   "payTo": "0x0d68028d06af13379C872FEE032568B4Be712f22",
   "networks": [
     "eip155:8453"
@@ -22,9 +123,9 @@
   "llms_txt": "https://kushbitx.com/llms.txt",
   "contact": "mailto:admin@kushbitx.com",
   "proof": {
-    "tx_hash": "0x000dcab74621c9bb075cdb85b062ea331a524cd6e177d2ab748c4607f2d786ac",
-    "endpoint": 0,
-    "payer_kind": "self"
+    "tx_hash": "0xf2a892f9d1a547e2b742e4051b8a617a69d64f171eda6aa53c39cbc1a2a7a65b",
+    "endpoint": 3,
+    "payer_kind": "customer"
   },
   "added_at": "2026-09-27"
 }
