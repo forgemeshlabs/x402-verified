@@ -1,7 +1,7 @@
 {
   "version": 2,
   "program": "x402",
-  "generated_at": "2026-11-09T05:30:26.942Z",
+  "generated_at": "2026-11-13T07:35:13.976Z",
   "score_spec": "2.0",
   "disclaimer": "x402 Verified by ForgeMesh is an independent ForgeMesh program. It is not an x402 Foundation or Coinbase certification, endorsement, or official program. A listing records checks and a settled payment at a point in time; it is not a warranty or guarantee.",
   "marks": {
@@ -754,6 +754,207 @@
       "added_at": "2026-10-22",
       "page": "https://forgemesh.io/verified/still-os",
       "badge": "https://forgemesh.io/badge/x402/still-os"
+    },
+    {
+      "slug": "foundations-elements",
+      "name": "Foundations Elements",
+      "homepage": "https://foundations.tensegrity.works",
+      "description": "UI encyclopedia for agents: component specs, expected behaviors, anti-patterns, and best practices.",
+      "protocols": [
+        "x402"
+      ],
+      "endpoints": [
+        {
+          "url": "https://foundations.tensegrity.works/mcp/elements/charts",
+          "method": "GET",
+          "price_usdc": "0.010"
+        },
+        {
+          "url": "https://foundations.tensegrity.works/mcp/search",
+          "method": "GET",
+          "price_usdc": "0.020"
+        },
+        {
+          "url": "https://foundations.tensegrity.works/mcp/elements/search",
+          "method": "GET",
+          "price_usdc": "0.020"
+        }
+      ],
+      "nominated_endpoint": 0,
+      "payTo": "0x955012ddC5c9b7F86Ad8D48F3F26d61BdBC899a9",
+      "networks": [
+        "eip155:8453"
+      ],
+      "networks_detected": [
+        "eip155:8453"
+      ],
+      "score": 98,
+      "score_band": "excellent",
+      "dimensions": {
+        "payability": 40,
+        "reliability": 18,
+        "interoperability": 20,
+        "discoverability": 20
+      },
+      "score_details": [
+        {
+          "dimension": "payability",
+          "points": 10,
+          "max": 10,
+          "check": "every declared endpoint answers HTTP 402",
+          "ok": true
+        },
+        {
+          "dimension": "payability",
+          "points": 10,
+          "max": 10,
+          "check": "every 402 carries a valid x402 envelope",
+          "ok": true
+        },
+        {
+          "dimension": "payability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope payTo matches the declared payTo",
+          "ok": true
+        },
+        {
+          "dimension": "payability",
+          "points": 15,
+          "max": 15,
+          "check": "seller-supplied on-chain proof verified",
+          "ok": true
+        },
+        {
+          "dimension": "reliability",
+          "points": 14,
+          "max": 14,
+          "check": "1/1 recent probe runs passed",
+          "ok": true
+        },
+        {
+          "dimension": "reliability",
+          "points": 4,
+          "max": 6,
+          "check": "latest response 1530 ms",
+          "ok": false
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope declares x402Version 2",
+          "ok": true
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope delivered in the payment-required header",
+          "ok": true
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "envelope also present in the JSON body (stock v1 clients)",
+          "ok": true
+        },
+        {
+          "dimension": "interoperability",
+          "points": 5,
+          "max": 5,
+          "check": "accepts[] entries well-formed: exact scheme, CAIP-2 network, canonical USDC, amount = declared price",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 6,
+          "max": 6,
+          "check": "/.well-known/x402 manifest present",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 5,
+          "max": 5,
+          "check": "manifest names every declared route",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 4,
+          "max": 4,
+          "check": "llms.txt present",
+          "ok": true
+        },
+        {
+          "dimension": "discoverability",
+          "points": 5,
+          "max": 5,
+          "check": "listed in the CDP Bazaar",
+          "ok": true
+        }
+      ],
+      "status": "active",
+      "perfect": false,
+      "forgemesh_paid": false,
+      "forgemesh_paid_at": null,
+      "forgemesh_paid_tx": null,
+      "forgemesh_paid_amount_atomic": null,
+      "forgemesh_paid_stale": false,
+      "proof": {
+        "tx_hash": "0xbc8580cc26c9483dede0f3e153b0d1010dddb4c80d075148a484ead3b9af45d9",
+        "endpoint": 1,
+        "payer_kind": "self"
+      },
+      "proof_check": {
+        "ok": true,
+        "reason": null,
+        "tx_hash": "0xbc8580cc26c9483dede0f3e153b0d1010dddb4c80d075148a484ead3b9af45d9",
+        "block": 56806521,
+        "block_time": "2026-11-13T06:34:39.000Z",
+        "amount_atomic": "20000",
+        "payer": "0x941ff9d6ebc452d3e0171f97e41969d493f37e31",
+        "confirmations": 18120,
+        "checked_at": "2026-11-13T07:35:03.905Z"
+      },
+      "claimed": false,
+      "probes": [
+        {
+          "at": "2026-11-13T07:35:02.275Z",
+          "pass": true,
+          "is_402": true,
+          "envelope_valid": true,
+          "payto_match": true,
+          "header_envelope": true,
+          "body_envelope": true,
+          "x402_version_2": true,
+          "mpp_header": false,
+          "ms": 1530,
+          "manifest_ok": true,
+          "manifest_lists_route": true,
+          "llms_ok": true
+        }
+      ],
+      "last_probe": "2026-11-13T07:35:02.275Z",
+      "bazaar_listed": true,
+      "protocol_capabilities": {
+        "x402": {
+          "supported": true,
+          "verified": true,
+          "version": 2
+        },
+        "mpp": {
+          "supported": false,
+          "verified": false,
+          "note": "detected only; MPP Verified by ForgeMesh is a separate future program"
+        }
+      },
+      "contact": "mailto:support@tensegrity.company",
+      "added_at": "2026-11-13",
+      "page": "https://forgemesh.io/verified/foundations-elements",
+      "badge": "https://forgemesh.io/badge/x402/foundations-elements"
     },
     {
       "slug": "humanmirror",
