@@ -1,0 +1,36 @@
+{
+  "name": "Foundations Elements",
+  "slug": "foundations-elements",
+  "homepage": "https://foundations.tensegrity.works",
+  "description": "UI encyclopedia for agents: component specs, expected behaviors, anti-patterns, and best practices.",
+  "protocols": ["x402"],
+  "endpoints": [
+    {
+      "url": "https://foundations.tensegrity.works/mcp/elements/charts",
+      "method": "GET",
+      "price_usdc": "0.010"
+    },
+    {
+      "url": "https://foundations.tensegrity.works/mcp/search",
+      "method": "GET",
+      "price_usdc": "0.020"
+    },
+    {
+      "url": "https://foundations.tensegrity.works/mcp/elements/search",
+      "method": "GET",
+      "price_usdc": "0.020"
+    }
+  ],
+  "nominated_endpoint": 0,
+  "payTo": "0x955012ddC5c9b7F86Ad8D48F3F26d61BdBC899a9",
+  "networks": ["eip155:8453"],
+  "manifest": "https://foundations.tensegrity.works/.well-known/x402",
+  "llms_txt": "https://foundations.tensegrity.works/llms.txt",
+  "contact": "mailto:support@tensegrity.company",
+  "proof": {
+    "tx_hash": "0xbc8580cc26c9483dede0f3e153b0d1010dddb4c80d075148a484ead3b9af45d9",
+    "endpoint": 1,
+    "payer_kind": "self"
+  },
+  "added_at": "2026-11-13"
+}
