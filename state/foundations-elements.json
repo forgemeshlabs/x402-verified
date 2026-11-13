@@ -1,0 +1,118 @@
+{
+  "probes": [
+    {
+      "at": "2026-11-13T07:35:02.275Z",
+      "endpoints": [
+        {
+          "url": "https://foundations.tensegrity.works/mcp/elements/charts",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x955012ddC5c9b7F86Ad8D48F3F26d61BdBC899a9",
+              "amount": "10000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 332,
+          "error": null
+        },
+        {
+          "url": "https://foundations.tensegrity.works/mcp/search",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x955012ddC5c9b7F86Ad8D48F3F26d61BdBC899a9",
+              "amount": "20000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 1530,
+          "error": null
+        },
+        {
+          "url": "https://foundations.tensegrity.works/mcp/elements/search",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x955012ddC5c9b7F86Ad8D48F3F26d61BdBC899a9",
+              "amount": "20000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 220,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://foundations.tensegrity.works/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://foundations.tensegrity.works/llms.txt",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": true,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 1530,
+      "networks_detected": [
+        "eip155:8453"
+      ],
+      "pass": true
+    }
+  ],
+  "proof_check": {
+    "ok": true,
+    "reason": null,
+    "tx_hash": "0xbc8580cc26c9483dede0f3e153b0d1010dddb4c80d075148a484ead3b9af45d9",
+    "block": 56806521,
+    "block_time": "2026-11-13T06:34:39.000Z",
+    "amount_atomic": "20000",
+    "payer": "0x941ff9d6ebc452d3e0171f97e41969d493f37e31",
+    "confirmations": 18120,
+    "checked_at": "2026-11-13T07:35:03.905Z"
+  },
+  "forgemesh_paid": null,
+  "bazaar_listed": true,
+  "status": "active"
+}
