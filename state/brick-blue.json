@@ -607,6 +607,111 @@
         "eip155:8453"
       ],
       "pass": true
+    },
+    {
+      "at": "2026-11-16T05:30:05.551Z",
+      "endpoints": [
+        {
+          "url": "https://brick.blue/api/v1/services/x402-quote",
+          "method_used": "POST",
+          "reachable": false,
+          "http_status": null,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
+          "envelope_errors": [],
+          "x402_version": null,
+          "accepts": [],
+          "mpp_header": false,
+          "response_time_ms": 8004,
+          "error": "The operation was aborted due to timeout"
+        },
+        {
+          "url": "https://brick.blue/api/v1/services/verdict",
+          "method_used": "POST",
+          "reachable": false,
+          "http_status": null,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
+          "envelope_errors": [],
+          "x402_version": null,
+          "accepts": [],
+          "mpp_header": false,
+          "response_time_ms": 7999,
+          "error": "The operation was aborted due to timeout"
+        },
+        {
+          "url": "https://brick.blue/api/v1/services/tool-brief",
+          "method_used": "POST",
+          "reachable": false,
+          "http_status": null,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
+          "envelope_errors": [],
+          "x402_version": null,
+          "accepts": [],
+          "mpp_header": false,
+          "response_time_ms": 8001,
+          "error": "The operation was aborted due to timeout"
+        },
+        {
+          "url": "https://brick.blue/api/v1/services/card-read",
+          "method_used": "POST",
+          "reachable": false,
+          "http_status": null,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
+          "envelope_errors": [],
+          "x402_version": null,
+          "accepts": [],
+          "mpp_header": false,
+          "response_time_ms": 8001,
+          "error": "The operation was aborted due to timeout"
+        },
+        {
+          "url": "https://brick.blue/api/v1/services/schema-to-english",
+          "method_used": "POST",
+          "reachable": false,
+          "http_status": null,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
+          "envelope_errors": [],
+          "x402_version": null,
+          "accepts": [],
+          "mpp_header": false,
+          "response_time_ms": 8001,
+          "error": "The operation was aborted due to timeout"
+        }
+      ],
+      "manifest_url": "https://brick.blue/.well-known/x402",
+      "manifest_ok": false,
+      "manifest_lists_route": false,
+      "llms_url": "https://brick.blue/llms.txt",
+      "llms_ok": false,
+      "is_402": false,
+      "envelope_valid": false,
+      "payto_match": false,
+      "header_envelope": false,
+      "body_envelope": false,
+      "x402_version_2": false,
+      "mpp_header": false,
+      "ms": 8004,
+      "networks_detected": [],
+      "pass": false
     }
   ],
   "proof_check": {
@@ -622,5 +727,5 @@
   },
   "forgemesh_paid": null,
   "bazaar_listed": false,
-  "status": "active"
+  "status": "degraded"
 }
