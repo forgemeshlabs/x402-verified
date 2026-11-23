@@ -1,0 +1,211 @@
+{
+  "probes": [
+    {
+      "at": "2026-11-23T13:15:03.118Z",
+      "endpoints": [
+        {
+          "url": "https://aptu.dev/v1/echo",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+              "amount": "10000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+              "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "payTo": "364mUWTYwsteDSKLjHBrV8y77rAdqwmnWLB8sJBkBD1E",
+              "amount": "10000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 229,
+          "error": null
+        },
+        {
+          "url": "https://aptu.dev/v1/resume-eval",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+              "amount": "5000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+              "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "payTo": "364mUWTYwsteDSKLjHBrV8y77rAdqwmnWLB8sJBkBD1E",
+              "amount": "5000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 341,
+          "error": null
+        },
+        {
+          "url": "https://aptu.dev/v1/agent-readiness",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+              "amount": "50000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+              "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "payTo": "364mUWTYwsteDSKLjHBrV8y77rAdqwmnWLB8sJBkBD1E",
+              "amount": "50000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 305,
+          "error": null
+        },
+        {
+          "url": "https://aptu.dev/v1/btc-regime",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+              "amount": "3000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+              "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "payTo": "364mUWTYwsteDSKLjHBrV8y77rAdqwmnWLB8sJBkBD1E",
+              "amount": "3000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 220,
+          "error": null
+        },
+        {
+          "url": "https://aptu.dev/v1/x402-preflight",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x169313d28075a6dDB70E7e5190a1eDdc0d105671",
+              "amount": "50000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+              "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "payTo": "364mUWTYwsteDSKLjHBrV8y77rAdqwmnWLB8sJBkBD1E",
+              "amount": "50000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 67,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://aptu.dev/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://aptu.dev/llms.txt",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": false,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 341,
+      "networks_detected": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "pass": true
+    }
+  ],
+  "proof_check": {
+    "ok": true,
+    "reason": null,
+    "tx_hash": "0xdffef4be1df845694398f90745ad165e6af0ada81603840c3fc42707d7cba797",
+    "block": 53555653,
+    "block_time": "2026-11-05T17:44:13.000Z",
+    "amount_atomic": "50000",
+    "payer": "0xd0d40c485c6878df38485e71bcc0ad95fb97fa5e",
+    "confirmations": 7690987,
+    "checked_at": "2026-11-23T13:15:03.595Z"
+  },
+  "forgemesh_paid": null,
+  "bazaar_listed": true,
+  "status": "active"
+}
