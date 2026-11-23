@@ -181,6 +181,88 @@
         "eip155:8453"
       ],
       "pass": false
+    },
+    {
+      "at": "2026-11-23T05:30:16.473Z",
+      "endpoints": [
+        {
+          "url": "https://foundations.tensegrity.works/mcp/elements/charts",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x955012ddC5c9b7F86Ad8D48F3F26d61BdBC899a9",
+              "amount": "10000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 230,
+          "error": null
+        },
+        {
+          "url": "https://foundations.tensegrity.works/mcp/search",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 200,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
+          "envelope_errors": [],
+          "x402_version": null,
+          "accepts": [],
+          "mpp_header": false,
+          "response_time_ms": 2698,
+          "error": null
+        },
+        {
+          "url": "https://foundations.tensegrity.works/mcp/elements/search",
+          "method_used": "GET",
+          "reachable": true,
+          "http_status": 200,
+          "is_402": false,
+          "envelope_source": "missing",
+          "header_envelope": false,
+          "body_envelope": false,
+          "envelope_valid": false,
+          "envelope_errors": [],
+          "x402_version": null,
+          "accepts": [],
+          "mpp_header": false,
+          "response_time_ms": 2549,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://foundations.tensegrity.works/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://foundations.tensegrity.works/llms.txt",
+      "llms_ok": true,
+      "is_402": false,
+      "envelope_valid": false,
+      "payto_match": false,
+      "header_envelope": false,
+      "body_envelope": false,
+      "x402_version_2": false,
+      "mpp_header": false,
+      "ms": 2698,
+      "networks_detected": [
+        "eip155:8453"
+      ],
+      "pass": false
     }
   ],
   "proof_check": {

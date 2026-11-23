@@ -318,6 +318,72 @@
       "ms": 8003,
       "networks_detected": [],
       "pass": false
+    },
+    {
+      "at": "2026-11-23T05:30:25.318Z",
+      "endpoints": [
+        {
+          "url": "https://www.oracleinsight.xyz/api/mcp",
+          "method_used": "POST",
+          "reachable": true,
+          "http_status": 402,
+          "is_402": true,
+          "envelope_source": "header",
+          "header_envelope": true,
+          "body_envelope": true,
+          "envelope_valid": true,
+          "envelope_errors": [],
+          "x402_version": 2,
+          "accepts": [
+            {
+              "scheme": "exact",
+              "network": "eip155:8453",
+              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+              "payTo": "0x5fbbbcbf2ade44f5c604e5e55f11945e1addd231",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "eip155:999",
+              "asset": "0xb88339CB7199b77E23DB6E890353E22632Ba630f",
+              "payTo": "0x5fbbbcbf2ade44f5c604e5e55f11945e1addd231",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            },
+            {
+              "scheme": "exact",
+              "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+              "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "payTo": "BfVX9jcEALijnEuGPcGTjqjBgTFLTFMt6F7NrMHzGWf4",
+              "amount": "2000",
+              "maxTimeoutSeconds": 60
+            }
+          ],
+          "mpp_header": false,
+          "response_time_ms": 2491,
+          "error": null
+        }
+      ],
+      "manifest_url": "https://www.oracleinsight.xyz/.well-known/x402",
+      "manifest_ok": true,
+      "manifest_lists_route": true,
+      "llms_url": "https://www.oracleinsight.xyz/skill.md",
+      "llms_ok": true,
+      "is_402": true,
+      "envelope_valid": true,
+      "payto_match": false,
+      "header_envelope": true,
+      "body_envelope": true,
+      "x402_version_2": true,
+      "mpp_header": false,
+      "ms": 2491,
+      "networks_detected": [
+        "eip155:8453",
+        "eip155:999",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "pass": true
     }
   ],
   "proof_check": {
@@ -333,5 +399,5 @@
   },
   "forgemesh_paid": null,
   "bazaar_listed": true,
-  "status": "degraded"
+  "status": "active"
 }
